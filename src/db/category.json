@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Ordinary Drink"
+    },
+    {
+        "id": 2,
+        "name": "Cocktail"
+    },
+    {
+        "id": 3,
+        "name": "other"
+    },
+    {
+        "id": 4,
+        "name": "Punch / Party"
+    },
+    {
+        "id": 5,
+        "name": "Clásicos Contemporáneos"
+    },
+    {
+        "id": 6,
+        "name": "bebidas de nueva era"
+    }
+]
