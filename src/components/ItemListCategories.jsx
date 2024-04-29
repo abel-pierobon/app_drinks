@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import bebidas from "../db/bebidas.json";
 import { colors } from "../constants/colors";
 import { FlatList } from "react-native";
@@ -8,19 +8,31 @@ import Search from "./Search";
 
 const ItemListCategories = () => {
     const [busqueda, setBusqueda] = useState("");
-    // console.log(bebidas);
-    const onSearch = (busqueda) => {
-        const bebidasFilter = bebidas.filter((item) => item.nombre.toLocaleLowerCase() === busqueda.toLocaleLowerCase());
-        setBusqueda(bebidasFilter)
+    const [bebidasFiltradas, setBebidasFiltradas] = useState([]);
+
+    const goBack = () => {
+        setBusqueda("");
     }
+    useEffect(() => {
+        if (busqueda.trim() === "") {
+            setBebidasFiltradas(bebidas);
+        } else {
+            const bebidasFilter = bebidas.filter(item =>
+                item.nombre.toLocaleLowerCase().includes(busqueda)
+
+            );
+            setBebidasFiltradas(bebidasFilter);
+        }
+    }, [busqueda]);
+
     return (
         <View>
-            <Search onSearch={onSearch}/>
+            <Search goBack={goBack} busqueda={busqueda} setBusqueda={setBusqueda}/>
             <FlatList
-                data={busqueda.length === 0 ? bebidas : busqueda}
-                renderItem={({ item }) => <DrinkItem drink={item} />}
+                data={bebidasFiltradas}
+                renderItem={({ item }) => <DrinkItem drink={item}/>}
                 keyExtractor={(item, index) => index.toString()}
-                />
+            />
         </View>
     );
 };

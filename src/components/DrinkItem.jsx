@@ -6,7 +6,7 @@ import { colors } from "../constants/colors";
 const DrinkItem = ({drink}) => {
     return (
         <Card >
-            <Image source={{ uri: drink.imagen }} style={{ width: 200, height: 200 }} />
+            <Image  source={{ uri: drink.imagen }} style={{ width: 200, height: 200,marginHorizontal: 10 }} />
             <Text style={styles.titulo}>{drink.nombre}</Text>
         </Card>
     );
@@ -21,5 +21,6 @@ const styles = StyleSheet.create({
         textAlign: "center",
         marginTop: 5,
         color: colors.teel900,
+        justifyContent: "center",
     },
 });

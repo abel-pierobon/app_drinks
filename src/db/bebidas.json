@@ -1,20 +1,5 @@
 [
     {
-        "id": "17254",
-        "nombre": "Bijou",
-        "categoria": "Cocktail",
-        "alcoholica": "Alcohólica",
-        "vaso": "Vaso de cóctel",
-        "instrucciones": "Revuelve en una coctelera con hielo y cuela.",
-        "imagen": "https://www.thecocktaildb.com/images/media/drink/rysb3r1513706985.jpg",
-        "ingredientes": [
-            "Bíter de naranja",
-            "Chartreuse verde",
-            "Ginebra",
-            "Vermut dulce"
-        ]
-    },
-    {
         "id": "11149",
         "nombre": "Boxcar",
         "categoria": "Cocktail",
@@ -29,93 +14,6 @@
             "Granadina",
             "Clara de huevo"
         ]
-    },
-    {
-        "id": "13222",
-        "nombre": "Big Red",
-        "categoria": "Cocktail",
-        "alcoholica": "Alcohólica",
-        "vaso": "Vaso de chupito",
-        "instrucciones": "Vierte los ingredientes en un vaso de chupito de 1 onza.",
-        "imagen": "https://www.thecocktaildb.com/images/media/drink/yqwuwu1441248116.jpg",
-        "ingredientes": ["Crema de whisky", "Goldschlager"]
-    },
-    {
-        "id": "17195",
-        "nombre": "Bellini",
-        "categoria": "Clásicos",
-        "alcoholica": "Alcohólica",
-        "vaso": "Flauta de champán",
-        "instrucciones": "Vierte puré de durazno en una flauta enfriada, agrega vino espumoso. Revuelve suavemente.",
-        "imagen": "https://www.thecocktaildb.com/images/media/drink/eaag491504367543.jpg",
-        "ingredientes": ["Champán", "Schnapps de durazno"]
-    },
-    {
-        "id": "17210",
-        "nombre": "Bramble",
-        "categoria": "Nuevos",
-        "alcoholica": "Alcohólica",
-        "vaso": "Vaso Old-Fashioned",
-        "instrucciones": "Llena el vaso con hielo triturado. Agrega ginebra, jugo de limón y jarabe de azúcar. Revuelve, y luego vierte licor de mora en un movimiento circular para crear un efecto marmóreo. Adorna con dos moras y una rodaja de limón.",
-        "imagen": "https://www.thecocktaildb.com/images/media/drink/twtbh51630406392.jpg",
-        "ingredientes": [
-            "Ginebra",
-            "Jugo de limón",
-            "Jarabe de azúcar",
-            "Creme de Mure"
-        ]
-    },
-    {
-        "id": "11060",
-        "nombre": "Balmoral",
-        "categoria": "Cocktail",
-        "alcoholica": "Alcohólica",
-        "vaso": "Vaso de cóctel",
-        "instrucciones": "En un vaso mezclador medio lleno de cubitos de hielo, combina todos los ingredientes. Revuelve bien. Cuela en una copa de cóctel.",
-        "imagen": "https://www.thecocktaildb.com/images/media/drink/vysuyq1441206297.jpg",
-        "ingredientes": ["Escocés", "Vermut dulce", "Vermut seco", "Bíter"]
-    },
-    {
-        "id": "11120",
-        "nombre": "Bluebird",
-        "categoria": "Cocktail",
-        "alcoholica": "Alcohólica",
-        "vaso": "Vaso de cóctel",
-        "instrucciones": "En un vaso mezclador medio lleno de hielo triturado, combina la ginebra, triple sec, Curacao y bíter. Revuelve bien. Cuela en una copa de cóctel y decora con la cáscara de limón y la guinda.",
-        "imagen": "https://www.thecocktaildb.com/images/media/drink/5jhyd01582579843.jpg",
-        "ingredientes": [
-            "Ginebra",
-            "Triple sec",
-            "Curacao azul",
-            "Bíter",
-            "Guinda en almíbar",
-            "Cáscara de limón"
-        ]
-    },
-    {
-        "id": "178310",
-        "nombre": "Brooklyn",
-        "categoria": "Cocktail",
-        "alcoholica": "Alcohólica",
-        "vaso": "Vaso de cóctel",
-        "instrucciones": "Combina los ingredientes con hielo y revuelve hasta que estén bien fríos. Cuela en una copa de cóctel previamente enfriada. Decora con una cereza.",
-        "imagen": "https://www.thecocktaildb.com/images/media/drink/srpxxp1441209622.jpg",
-        "ingredientes": [
-            "Whisky de centeno",
-            "Vermut dulce",
-            "Aguardiente de cereza",
-            "Bíter"
-        ]
-    },
-    {
-        "id": "15853",
-        "nombre": "B-52",
-        "categoria": "Nuevos",
-        "alcoholica": "Alcohólica",
-        "vaso": "Vaso de chupito",
-        "instrucciones": "Coloca los ingredientes en capas en un vaso de chupito. Sirve con un removedor.",
-        "imagen": "https://www.thecocktaildb.com/images/media/drink/5a3vg61504372070.jpg",
-        "ingredientes": ["Baileys Irish Cream", "Grand Marnier", "Kahlua"]
     },
     {
         "id": "13332",
@@ -140,22 +38,6 @@
             "Chartreuse verde",
             "Ginebra",
             "Vermut dulce"
-        ]
-    },
-    {
-        "id": "11149",
-        "nombre": "Boxcar",
-        "categoria": "Cocktail",
-        "alcoholica": "Alcohólica",
-        "vaso": "Vaso de sour de whiskey",
-        "instrucciones": "En una coctelera medio llena de cubitos de hielo, combina todos los ingredientes. Agita bien. Cuela en un vaso sour.",
-        "imagen": "https://www.thecocktaildb.com/images/media/drink/pwgtpa1504366376.jpg",
-        "ingredientes": [
-            "Ginebra",
-            "Triple sec",
-            "Jugo de limón",
-            "Granadina",
-            "Clara de huevo"
         ]
     },
     {
@@ -265,22 +147,6 @@
             "Bíter",
             "Licor Maraschino",
             "Guinda en almíbar"
-        ]
-    },
-    {
-        "id": "17209",
-        "nombre": "Barracuda",
-        "categoria": "Nuevos",
-        "alcoholica": "Alcohólica",
-        "vaso": "Margarita glass",
-        "instrucciones": "Agita y vierte los ingredientes con hielo. Cuela en el vaso y agrega vino espumoso.",
-        "imagen": "https://www.thecocktaildb.com/images/media/drink/jwmr1x1504372337.jpg",
-        "ingredientes": [
-            "Ron",
-            "Galliano",
-            "Jugo de piña",
-            "Jugo de lima",
-            "Prosecco"
         ]
     },
     {
@@ -509,5 +375,138 @@
         "instruccionesES": "Agite y cuele todos los ingredientes en una coctelera con hielo. Decore el borde del vaso con azúcar.",
         "imagen": "https://www.thecocktaildb.com/images/media/drink/mtpxgk1504373297.jpg",
         "ingredientes": "Absolut Citron, Cointreau, Lemon juice, Sugar"
+    },
+    {
+        "id": "11000",
+        "nombre": "Mojito",
+        "strCategory": "Cóctel",
+        "strAlcoholic": "Alcohólico",
+        "vaso": "Vaso alto",
+        "strInstructions": "Machaca las hojas de menta con azúcar y jugo de lima. Agrega un chorrito de soda y llena el vaso con hielo picado. Vierte el ron y termina con soda. Decora y sirve con pajilla.",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/metwgh1606770327.jpg",
+        "ingredientes": ["Ron ligero", "Lima", "Azúcar", "Menta", "Soda"]
+    },
+    {
+        "id": "15841",
+        "nombre": "Mojito Extra",
+        "strCategory": "Cóctel",
+        "strAlcoholic": "Alcohólico",
+        "vaso": "Vaso Collins",
+        "strInstructions": "Pon la menta con jugo de limón en un vaso, machaca la menta con una cuchara, agrega hielo, ron y completa con soda. Termina con Angostura.",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/vwxrsw1478251483.jpg",
+        "ingredientes": [
+            "Menta",
+            "Jugo de limón",
+            "Ron oscuro",
+            "Soda",
+            "Angostura"
+        ]
+    },
+    {
+        "id": "178358",
+        "nombre": "Mango Mojito",
+        "strCategory": "Cóctel",
+        "strAlcoholic": "Alcohólico",
+        "vaso": "Jarra",
+        "strInstructions": "Exprime el jugo de 1½ limas y mézclalo con el mango para obtener un puré suave. Corta el resto de las limas en cuartos y luego corta cada gajo por la mitad nuevamente. Pon 2 trozos de lima en un vaso alto para cada persona y agrega 1 cucharadita de azúcar y 5-6 hojas de menta en cada vaso. Machaca todo con un muddler o el extremo de un rodillo para liberar todos los sabores de la lima y la menta. Divide el puré de mango entre los vasos y agrega 30 ml de ron blanco y un puñado de hielo picado a cada uno, revolviendo bien para mezclar todo. Completa con soda y decora con más menta, si lo deseas.",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/wfqmgm1630406820.jpg",
+        "ingredientes": [
+            "Lima",
+            "Mango",
+            "Menta",
+            "Ron blanco",
+            "Hielo",
+            "Soda"
+        ]
+    },
+    {
+        "id": "178336",
+        "nombre": "Blueberry Mojito",
+        "strCategory": "Cóctel",
+        "strAlcoholic": "Alcohólico",
+        "vaso": "Vaso alto",
+        "strInstructions": "Machaca los arándanos con los demás ingredientes y sirve en un vaso alto. Decora con menta y una rodaja de lima.",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/07iep51598719977.jpg",
+        "ingredientes": [
+            "Ron oscuro",
+            "Jugo de lima",
+            "Azúcar",
+            "Arándanos",
+            "Refresco de lima-limón"
+        ]
+    },
+    {
+        "id": "11007",
+        "nombre": "Margarita",
+        "strCategory": "Bebida común",
+        "strAlcoholic": "Alcohólico",
+        "vaso": "Copa de cóctel",
+        "strInstructions": "Frota el borde de la copa con la rodaja de lima para que la sal se adhiera. Ten cuidado de humedecer solo el borde exterior y espolvorea la sal. La sal debe presentarse en los labios del bebedor y nunca mezclarse en el cóctel. Agita los otros ingredientes con hielo, luego vierte cuidadosamente en la copa.",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg",
+        "ingredientes": ["Tequila", "Triple sec", "Jugo de lima", "Sal"]
+    },
+    {
+        "id": "11118",
+        "nombre": "Blue Margarita",
+        "strCategory": "Bebida común",
+        "strAlcoholic": "Alcohólico",
+        "vaso": "Copa de cóctel",
+        "strInstructions": "Frota el borde de la copa de cóctel con jugo de lima. Sumerge el borde en sal gruesa. Agita el tequila, el curaçao azul y el jugo de lima con hielo, cuela en la copa con borde de sal y sirve.",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/bry4qh1582751040.jpg",
+        "ingredientes": ["Tequila", "Curaçao azul", "Jugo de lima", "Sal"]
+    },
+    {
+        "id": "17216",
+        "nombre": "Margarita de Tommy",
+        "strCategory": "Bebida común",
+        "strAlcoholic": "Alcohólico",
+        "vaso": "Vaso old-fashioned",
+        "strInstructions": "Agita y cuela en una copa de cóctel fría.",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/loezxn1504373874.jpg",
+        "ingredientes": ["Tequila", "Jugo de lima", "Jarabe de agave"]
+    },
+    {
+        "id": "16158",
+        "nombre": "Margarita Whitecap",
+        "strCategory": "Otro / Desconocido",
+        "strAlcoholic": "Alcohólico",
+        "vaso": "Copa Margarita/Coupette",
+        "strInstructions": "Coloca todos los ingredientes en una licuadora y mezcla hasta que quede suave. Esto hace una bebida.",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/srpxxp1441209622.jpg",
+        "ingredientes": ["Hielo", "Tequila", "Crema de coco", "Jugo de lima"]
+    },
+    {
+        "id": "12322",
+        "nombre": "Margarita de Fresa",
+        "strCategory": "Bebida común",
+        "strAlcoholic": "Alcohólico",
+        "vaso": "Copa de cóctel",
+        "strInstructions": "Frota el borde de la copa de cóctel con jugo de limón y sumérgelo en sal. Agita el licor de fresa, el tequila, el triple sec, el jugo de limón y las fresas con hielo, cuela en la copa con borde de sal y sirve.",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/tqyrpw1439905311.jpg",
+        "ingredientes": [
+            "Licor de fresa",
+            "Tequila",
+            "Triple sec",
+            "Jugo de limón",
+            "Fresas",
+            "Sal"
+        ]
+    },
+    {
+        "id": "178332",
+        "nombre": "Margarita de Sandía Machacada",
+        "strCategory": "Cóctel",
+        "strAlcoholic": "Alcohólico",
+        "vaso": "Vaso Collins",
+        "strInstructions": "En un frasco Mason, machaca la sandía y 5 hojas de menta juntas en un puré y cuela. Luego agrega el jugo de toronja, el jugo de medio limón y el tequila, así como un poco de hielo. Pon una tapa en el frasco y agita. Vierte en un vaso y agrega más hielo. Decora con menta fresca y una pequeña rodaja de sandía.",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/dztcv51598717861.jpg",
+        "ingredientes": [
+            "Sandía",
+            "Menta",
+            "Jugo de toronja",
+            "Limón",
+            "Tequila",
+            "Hielo"
+        ]
     }
 ]
