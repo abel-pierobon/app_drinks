@@ -1,33 +1,13 @@
 [
     {
-        "idDrink": "15853",
-        "strDrink": "B-52",
-        "strCategory": "Bebidas de Nueva Era",
-        "strAlcoholic": "Alcohólica",
-        "strGlass": "Vaso de chupito",
-        "strInstructions": "Coloca los ingredientes en capas en un vaso de chupito. Sirve con un removedor.",
-        "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/5a3vg61504372070.jpg",
-        "strIngredients": ["Baileys Irish Cream", "Grand Marnier", "Kahlua"]
-    },
-    {
-        "idDrink": "13332",
-        "strDrink": "B-53",
-        "strCategory": null,
-        "strAlcoholic": "Alcohólica",
-        "strGlass": "Vaso Collins",
-        "strInstructions": "Coloca el Kahlua, Sambuca y Grand Marnier en capas en un vaso de chupito en ese orden. Mejor que el B-52.",
-        "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/rwqxrv1461866023.jpg",
-        "strIngredients": ["Kahlua", "Sambuca", "Grand Marnier"]
-    },
-    {
-        "idDrink": "17254",
-        "strDrink": "Bijou",
-        "strCategory": "Alcohólica",
-        "strAlcoholic": "Alcohólica",
-        "strGlass": "Vaso de cóctel",
-        "strInstructions": "Revuelve en una coctelera con hielo y cuela.",
-        "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/rysb3r1513706985.jpg",
-        "strIngredients": [
+        "id": "17254",
+        "nombre": "Bijou",
+        "categoria": "Cocktail",
+        "alcoholica": "Alcohólica",
+        "vaso": "Vaso de cóctel",
+        "instrucciones": "Revuelve en una coctelera con hielo y cuela.",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/rysb3r1513706985.jpg",
+        "ingredientes": [
             "Bíter de naranja",
             "Chartreuse verde",
             "Ginebra",
@@ -35,14 +15,14 @@
         ]
     },
     {
-        "idDrink": "11149",
-        "strDrink": "Boxcar",
-        "strCategory": null,
-        "strAlcoholic": "Alcohólica",
-        "strGlass": "Vaso de sour de whiskey",
-        "strInstructions": "En una coctelera medio llena de cubitos de hielo, combina todos los ingredientes. Agita bien. Cuela en un vaso sour.",
-        "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/pwgtpa1504366376.jpg",
-        "strIngredients": [
+        "id": "11149",
+        "nombre": "Boxcar",
+        "categoria": "Cocktail",
+        "alcoholica": "Alcohólica",
+        "vaso": "Vaso de sour de whiskey",
+        "instrucciones": "En una coctelera medio llena de cubitos de hielo, combina todos los ingredientes. Agita bien. Cuela en un vaso sour.",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/pwgtpa1504366376.jpg",
+        "ingredientes": [
             "Ginebra",
             "Triple sec",
             "Jugo de limón",
@@ -51,34 +31,34 @@
         ]
     },
     {
-        "idDrink": "13222",
-        "strDrink": "Big Red",
-        "strCategory": null,
-        "strAlcoholic": "Alcohólica",
-        "strGlass": "Vaso de chupito",
-        "strInstructions": "Vierte los ingredientes en un vaso de chupito de 1 onza.",
-        "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/yqwuwu1441248116.jpg",
-        "strIngredients": ["Crema de whisky", "Goldschlager"]
+        "id": "13222",
+        "nombre": "Big Red",
+        "categoria": "Cocktail",
+        "alcoholica": "Alcohólica",
+        "vaso": "Vaso de chupito",
+        "instrucciones": "Vierte los ingredientes en un vaso de chupito de 1 onza.",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/yqwuwu1441248116.jpg",
+        "ingredientes": ["Crema de whisky", "Goldschlager"]
     },
     {
-        "idDrink": "17195",
-        "strDrink": "Bellini",
-        "strCategory": "Clásicos Contemporáneos",
-        "strAlcoholic": "Alcohólica",
-        "strGlass": "Flauta de champán",
-        "strInstructions": "Vierte puré de durazno en una flauta enfriada, agrega vino espumoso. Revuelve suavemente.",
-        "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/eaag491504367543.jpg",
-        "strIngredients": ["Champán", "Schnapps de durazno"]
+        "id": "17195",
+        "nombre": "Bellini",
+        "categoria": "Clásicos",
+        "alcoholica": "Alcohólica",
+        "vaso": "Flauta de champán",
+        "instrucciones": "Vierte puré de durazno en una flauta enfriada, agrega vino espumoso. Revuelve suavemente.",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/eaag491504367543.jpg",
+        "ingredientes": ["Champán", "Schnapps de durazno"]
     },
     {
-        "idDrink": "17210",
-        "strDrink": "Bramble",
-        "strCategory": "Bebidas de Nueva Era",
-        "strAlcoholic": "Alcohólica",
-        "strGlass": "Vaso Old-Fashioned",
-        "strInstructions": "Llena el vaso con hielo triturado. Agrega ginebra, jugo de limón y jarabe de azúcar. Revuelve, y luego vierte licor de mora en un movimiento circular para crear un efecto marmóreo. Adorna con dos moras y una rodaja de limón.",
-        "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/twtbh51630406392.jpg",
-        "strIngredients": [
+        "id": "17210",
+        "nombre": "Bramble",
+        "categoria": "Nuevos",
+        "alcoholica": "Alcohólica",
+        "vaso": "Vaso Old-Fashioned",
+        "instrucciones": "Llena el vaso con hielo triturado. Agrega ginebra, jugo de limón y jarabe de azúcar. Revuelve, y luego vierte licor de mora en un movimiento circular para crear un efecto marmóreo. Adorna con dos moras y una rodaja de limón.",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/twtbh51630406392.jpg",
+        "ingredientes": [
             "Ginebra",
             "Jugo de limón",
             "Jarabe de azúcar",
@@ -86,24 +66,24 @@
         ]
     },
     {
-        "idDrink": "11060",
-        "strDrink": "Balmoral",
-        "strCategory": null,
-        "strAlcoholic": "Alcohólica",
-        "strGlass": "Vaso de cóctel",
-        "strInstructions": "En un vaso mezclador medio lleno de cubitos de hielo, combina todos los ingredientes. Revuelve bien. Cuela en una copa de cóctel.",
-        "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/vysuyq1441206297.jpg",
-        "strIngredients": ["Escocés", "Vermut dulce", "Vermut seco", "Bíter"]
+        "id": "11060",
+        "nombre": "Balmoral",
+        "categoria": "Cocktail",
+        "alcoholica": "Alcohólica",
+        "vaso": "Vaso de cóctel",
+        "instrucciones": "En un vaso mezclador medio lleno de cubitos de hielo, combina todos los ingredientes. Revuelve bien. Cuela en una copa de cóctel.",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/vysuyq1441206297.jpg",
+        "ingredientes": ["Escocés", "Vermut dulce", "Vermut seco", "Bíter"]
     },
     {
-        "idDrink": "11120",
-        "strDrink": "Bluebird",
-        "strCategory": null,
-        "strAlcoholic": "Alcohólica",
-        "strGlass": "Vaso de cóctel",
-        "strInstructions": "En un vaso mezclador medio lleno de hielo triturado, combina la ginebra, triple sec, Curacao y bíter. Revuelve bien. Cuela en una copa de cóctel y decora con la cáscara de limón y la guinda.",
-        "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/5jhyd01582579843.jpg",
-        "strIngredients": [
+        "id": "11120",
+        "nombre": "Bluebird",
+        "categoria": "Cocktail",
+        "alcoholica": "Alcohólica",
+        "vaso": "Vaso de cóctel",
+        "instrucciones": "En un vaso mezclador medio lleno de hielo triturado, combina la ginebra, triple sec, Curacao y bíter. Revuelve bien. Cuela en una copa de cóctel y decora con la cáscara de limón y la guinda.",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/5jhyd01582579843.jpg",
+        "ingredientes": [
             "Ginebra",
             "Triple sec",
             "Curacao azul",
@@ -113,14 +93,14 @@
         ]
     },
     {
-        "idDrink": "178310",
-        "strDrink": "Brooklyn",
-        "strCategory": null,
-        "strAlcoholic": "Alcohólica",
-        "strGlass": "Vaso de cóctel",
-        "strInstructions": "Combina los ingredientes con hielo y revuelve hasta que estén bien fríos. Cuela en una copa de cóctel previamente enfriada. Decora con una cereza.",
-        "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/srpxxp1441209622.jpg",
-        "strIngredients": [
+        "id": "178310",
+        "nombre": "Brooklyn",
+        "categoria": "Cocktail",
+        "alcoholica": "Alcohólica",
+        "vaso": "Vaso de cóctel",
+        "instrucciones": "Combina los ingredientes con hielo y revuelve hasta que estén bien fríos. Cuela en una copa de cóctel previamente enfriada. Decora con una cereza.",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/srpxxp1441209622.jpg",
+        "ingredientes": [
             "Whisky de centeno",
             "Vermut dulce",
             "Aguardiente de cereza",
@@ -128,31 +108,33 @@
         ]
     },
     {
-        "idBebida": "15853",
-        "nombreBebida": "B-52",
-        "categoriaIBA": "Bebidas de Nueva Era",
+        "id": "15853",
+        "nombre": "B-52",
+        "categoria": "Nuevos",
         "alcoholica": "Alcohólica",
         "vaso": "Vaso de chupito",
         "instrucciones": "Coloca los ingredientes en capas en un vaso de chupito. Sirve con un removedor.",
-        "imagenBebida": "https://www.thecocktaildb.com/images/media/drink/5a3vg61504372070.jpg",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/5a3vg61504372070.jpg",
         "ingredientes": ["Baileys Irish Cream", "Grand Marnier", "Kahlua"]
     },
     {
-        "idBebida": "13332",
-        "nombreBebida": "B-53",
+        "id": "13332",
+        "nombre": "B-53",
+        "categoria": "Nuevos",
         "alcoholica": "Alcohólica",
         "vaso": "Vaso Collins",
         "instrucciones": "Coloca el Kahlua, Sambuca y Grand Marnier en capas en un vaso de chupito en ese orden. Mejor que el B-52.",
-        "imagenBebida": "https://www.thecocktaildb.com/images/media/drink/rwqxrv1461866023.jpg",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/rwqxrv1461866023.jpg",
         "ingredientes": ["Kahlua", "Sambuca", "Grand Marnier"]
     },
     {
-        "idBebida": "17254",
-        "nombreBebida": "Bijou",
+        "id": "17254",
+        "nombre": "Bijou",
+        "categoria": "Cocktail",
         "alcoholica": "Alcohólica",
         "vaso": "Vaso de cóctel",
         "instrucciones": "Revuelve en una coctelera con hielo y cuela.",
-        "imagenBebida": "https://www.thecocktaildb.com/images/media/drink/rysb3r1513706985.jpg",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/rysb3r1513706985.jpg",
         "ingredientes": [
             "Bíter de naranja",
             "Chartreuse verde",
@@ -161,12 +143,13 @@
         ]
     },
     {
-        "idBebida": "11149",
-        "nombreBebida": "Boxcar",
+        "id": "11149",
+        "nombre": "Boxcar",
+        "categoria": "Cocktail",
         "alcoholica": "Alcohólica",
         "vaso": "Vaso de sour de whiskey",
         "instrucciones": "En una coctelera medio llena de cubitos de hielo, combina todos los ingredientes. Agita bien. Cuela en un vaso sour.",
-        "imagenBebida": "https://www.thecocktaildb.com/images/media/drink/pwgtpa1504366376.jpg",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/pwgtpa1504366376.jpg",
         "ingredientes": [
             "Ginebra",
             "Triple sec",
@@ -176,32 +159,33 @@
         ]
     },
     {
-        "idBebida": "13222",
-        "nombreBebida": "Big Red",
+        "id": "13222",
+        "nombre": "Big Red",
+        "categoria": "Cocktail",
         "alcoholica": "Alcohólica",
         "vaso": "Vaso de chupito",
         "instrucciones": "Vierte los ingredientes en un vaso de chupito de 1 onza.",
-        "imagenBebida": "https://www.thecocktaildb.com/images/media/drink/yqwuwu1441248116.jpg",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/yqwuwu1441248116.jpg",
         "ingredientes": ["Crema de whisky", "Goldschlager"]
     },
     {
-        "idBebida": "17195",
-        "nombreBebida": "Bellini",
-        "categoriaIBA": "Clásicos Contemporáneos",
+        "id": "17195",
+        "nombre": "Bellini",
+        "categoria": "Clásicos",
         "alcoholica": "Alcohólica",
         "vaso": "Flauta de champán",
         "instrucciones": "Vierte puré de durazno en una flauta enfriada, agrega vino espumoso. Revuelve suavemente.",
-        "imagenBebida": "https://www.thecocktaildb.com/images/media/drink/eaag491504367543.jpg",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/eaag491504367543.jpg",
         "ingredientes": ["Champán", "Schnapps de durazno"]
     },
     {
-        "idBebida": "17210",
-        "nombreBebida": "Bramble",
-        "categoriaIBA": "Bebidas de Nueva Era",
+        "id": "17210",
+        "nombre": "Bramble",
+        "categoria": "Nuevos",
         "alcoholica": "Alcohólica",
         "vaso": "Vaso Old-Fashioned",
         "instrucciones": "Llena el vaso con hielo triturado. Agrega ginebra, jugo de limón y jarabe de azúcar. Revuelve, y luego vierte licor de mora en un movimiento circular para crear un efecto marmóreo. Adorna con dos moras y una rodaja de limón.",
-        "imagenBebida": "https://www.thecocktaildb.com/images/media/drink/twtbh51630406392.jpg",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/twtbh51630406392.jpg",
         "ingredientes": [
             "Ginebra",
             "Jugo de limón",
@@ -210,21 +194,23 @@
         ]
     },
     {
-        "idBebida": "11060",
-        "nombreBebida": "Balmoral",
+        "id": "11060",
+        "nombre": "Balmoral",
+        "categoria": "Clásicos",
         "alcoholica": "Alcohólica",
         "vaso": "Vaso de cóctel",
         "instrucciones": "En un vaso mezclador medio lleno de cubitos de hielo, combina todos los ingredientes. Revuelve bien. Cuela en una copa de cóctel.",
-        "imagenBebida": "https://www.thecocktaildb.com/images/media/drink/vysuyq1441206297.jpg",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/vysuyq1441206297.jpg",
         "ingredientes": ["Escocés", "Vermut dulce", "Vermut seco", "Bíter"]
     },
     {
-        "idBebida": "11120",
-        "nombreBebida": "Bluebird",
+        "id": "11120",
+        "nombre": "Bluebird",
+        "categoria": "Clásicos",
         "alcoholica": "Alcohólica",
         "vaso": "Vaso de cóctel",
         "instrucciones": "En un vaso mezclador medio lleno de hielo triturado, combina la ginebra, triple sec, Curacao y bíter. Revuelve bien. Cuela en una copa de cóctel y decora con la cáscara de limón y la guinda.",
-        "imagenBebida": "https://www.thecocktaildb.com/images/media/drink/5jhyd01582579843.jpg",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/5jhyd01582579843.jpg",
         "ingredientes": [
             "Ginebra",
             "Triple sec",
@@ -235,12 +221,13 @@
         ]
     },
     {
-        "idBebida": "178310",
-        "nombreBebida": "Brooklyn",
+        "id": "178310",
+        "nombre": "Brooklyn",
+        "categoria": "Clásicos",
         "alcoholica": "Alcohólica",
         "vaso": "Vaso de cóctel",
         "instrucciones": "Combina los ingredientes con hielo y revuelve hasta que estén bien fríos. Cuela en una copa de cóctel fría.",
-        "imagenBebida": "https://www.thecocktaildb.com/images/media/drink/ojsezf1582477277.jpg",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/ojsezf1582477277.jpg",
         "ingredientes": [
             "Whiskey de centeno",
             "Vermut seco",
@@ -250,12 +237,13 @@
         ]
     },
     {
-        "idBebida": "12572",
-        "nombreBebida": "Bora Bora",
+        "id": "12572",
+        "nombre": "Bora Bora",
+        "categoria": "Party",
         "alcoholica": "No alcohólica",
         "vaso": "Vaso highball",
         "instrucciones": "Prepara en una licuadora o coctelera, sirve en un vaso highball con hielo. Decora con 1 rodaja de piña y una cereza.",
-        "imagenBebida": "https://www.thecocktaildb.com/images/media/drink/xwuqvw1473201811.jpg",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/xwuqvw1473201811.jpg",
         "ingredientes": [
             "Jugo de piña",
             "Jugo de fruta de la pasión",
@@ -264,12 +252,13 @@
         ]
     },
     {
-        "idBebida": "11124",
-        "nombreBebida": "Boomerang",
+        "id": "11124",
+        "nombre": "Boomerang",
+        "categoria": "Party",
         "alcoholica": "Alcohólica",
         "vaso": "Vaso de cóctel",
         "instrucciones": "En un vaso mezclador medio lleno de cubitos de hielo, combina la ginebra, vermú, bíter y licor maraschino. Revuelve bien. Cuela en un vaso de cóctel y decora con la guinda.",
-        "imagenBebida": "https://www.thecocktaildb.com/images/media/drink/3m6yz81504389551.jpg",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/3m6yz81504389551.jpg",
         "ingredientes": [
             "Ginebra",
             "Vermut seco",
@@ -279,13 +268,13 @@
         ]
     },
     {
-        "idBebida": "17209",
-        "nombreBebida": "Barracuda",
-        "categoriaIBA": "Bebidas de Nueva Era",
+        "id": "17209",
+        "nombre": "Barracuda",
+        "categoria": "Nuevos",
         "alcoholica": "Alcohólica",
         "vaso": "Margarita glass",
         "instrucciones": "Agita y vierte los ingredientes con hielo. Cuela en el vaso y agrega vino espumoso.",
-        "imagenBebida": "https://www.thecocktaildb.com/images/media/drink/jwmr1x1504372337.jpg",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/jwmr1x1504372337.jpg",
         "ingredientes": [
             "Ron",
             "Galliano",
@@ -295,12 +284,13 @@
         ]
     },
     {
-        "idBebida": "17825",
-        "nombreBebida": "Brigadier",
+        "id": "17825",
+        "nombre": "Brigadier",
+        "categoria": "Party",
         "alcoholica": "Alcohólica",
         "vaso": "Vaso coupé",
         "instrucciones": "Mezcla los ingredientes en una taza caliente y revuelve.",
-        "imagenBebida": "https://www.thecocktaildb.com/images/media/drink/nl89tf1518947401.jpg",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/nl89tf1518947401.jpg",
         "ingredientes": [
             "Chocolate caliente",
             "Chartreuse verde",
@@ -308,12 +298,13 @@
         ]
     },
     {
-        "idBebida": "178311",
-        "nombreBebida": "Broadside",
+        "id": "178311",
+        "nombre": "Broadside",
+        "categoria": "Party",
         "alcoholica": "Alcohólica",
         "vaso": "Vaso highball",
         "instrucciones": "Llena la mitad del vaso con cubitos de hielo. Tritura el ajenjo y agrégalo al hielo. Vierte el ron, el whisky y el bíter, ¡y luego sirve!",
-        "imagenBebida": "https://www.thecocktaildb.com/images/media/drink/l2o6xu1582476870.jpg",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/l2o6xu1582476870.jpg",
         "ingredientes": [
             "Ron de 151 grados",
             "Whisky escocés",
@@ -323,21 +314,23 @@
         ]
     },
     {
-        "idBebida": "17035",
-        "nombreBebida": "Buccaneer",
+        "id": "17035",
+        "nombre": "Buccaneer",
+        "categoria": "Party",
         "alcoholica": "Alcohólica",
         "vaso": "Pilsner de cerveza",
         "instrucciones": "Vierte la Corona en un vaso de cerveza de 18 onzas y luego la Bacardi Limon en la cerveza. Revuelve muy suavemente.",
-        "imagenBebida": "https://www.thecocktaildb.com/images/media/drink/upvtyt1441249023.jpg",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/upvtyt1441249023.jpg",
         "ingredientes": ["Corona", "Bacardi Limon"]
     },
     {
-        "idBebida": "17120",
-        "nombreBebida": "Brain Fart",
+        "id": "17120",
+        "nombre": "Brain Fart",
+        "categoria": "Clásicos",
         "alcoholica": "Alcohólica",
         "vaso": "Bol de ponche",
         "instrucciones": "Mezcla todos los ingredientes juntos. Lentamente y suavemente. Funciona mejor si se agrega hielo al bol de ponche y las sodas están muy frías.",
-        "imagenBebida": "https://www.thecocktaildb.com/images/media/drink/rz5aun1504389701.jpg",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/rz5aun1504389701.jpg",
         "ingredientes": [
             "Everclear",
             "Vodka",
@@ -348,21 +341,23 @@
         ]
     },
     {
-        "idBebida": "11106",
-        "nombreBebida": "Blackthorn",
+        "id": "11106",
+        "nombre": "Blackthorn",
+        "categoria": "Clásicos",
         "alcoholica": "Alcohólica",
         "vaso": "Vaso de cóctel",
         "instrucciones": "Revuelve el gin de endrino y el vermut con hielo y cuela en un vaso de cóctel. Agrega la cáscara de limón y sirve.",
-        "imagenBebida": "https://www.thecocktaildb.com/images/media/drink/dgj92f1616098672.jpg",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/dgj92f1616098672.jpg",
         "ingredientes": ["Vermut dulce", "Gin de endrino", "Cáscara de limón"]
     },
     {
-        "idBebida": "13395",
-        "nombreBebida": "Bob Marley",
+        "id": "13395",
+        "nombre": "Bob Marley",
+        "categoria": "Clásicos",
         "alcoholica": "Alcohólica",
         "vaso": "Vaso de chupito",
         "instrucciones": "Haz capas en un vaso de chupito de 2 oz o un vaso pequeño.",
-        "imagenBebida": "https://www.thecocktaildb.com/images/media/drink/rrqrst1477140664.jpg",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/rrqrst1477140664.jpg",
         "ingredientes": [
             "Licor de melón Midori",
             "Jägermeister",
@@ -370,21 +365,23 @@
         ]
     },
     {
-        "idBebida": "16986",
-        "nombreBebida": "Bible Belt",
+        "id": "16986",
+        "nombre": "Bible Belt",
+        "categoria": "Clásicos",
         "alcoholica": "Alcohólica",
         "vaso": "Vaso highball",
         "instrucciones": "Mezcla todos los ingredientes y vierte sobre hielo.",
-        "imagenBebida": "https://www.thecocktaildb.com/images/media/drink/6bec6v1503563675.jpg",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/6bec6v1503563675.jpg",
         "ingredientes": ["Southern Comfort", "Triple sec", "Lima", "Sour mix"]
     },
     {
-        "idBebida": "14730",
-        "nombreBebida": "Bubble Gum",
+        "id": "14730",
+        "nombre": "Bubble Gum",
+        "categoria": "Cocktail",
         "alcoholica": "Alcohólica",
         "vaso": "Vaso de chupito",
         "instrucciones": "Haz capas en orden en un vaso de chupito.",
-        "imagenBebida": "https://www.thecocktaildb.com/images/media/drink/spuurv1468878783.jpg",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/spuurv1468878783.jpg",
         "ingredientes": [
             "Vodka",
             "Licor de plátano",
@@ -393,30 +390,33 @@
         ]
     },
     {
-        "idBebida": "14538",
-        "nombreBebida": "Bumble Bee",
+        "id": "14538",
+        "nombre": "Bumble Bee",
+        "categoria": "Cocktail",
         "alcoholica": "Alcohólica",
         "vaso": "Vaso de chupito",
         "instrucciones": "Este es un shot en capas. Primero vierte el Bailey's en el vaso de chupito. Luego toma una cuchara boca abajo y tócala en la pared interior del vaso. Agrega con cuidado el Kahlua. Repite este proceso para el Sambuca. Si se hace correctamente, el alcohol se mantendrá separado y se parecerá a una abeja. ¡Disfruta!",
-        "imagenBebida": "https://www.thecocktaildb.com/images/media/drink/uwqpvv1461866378.jpg",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/uwqpvv1461866378.jpg",
         "ingredientes": ["Baileys Irish Cream", "Kahlua", "Sambuca"]
     },
     {
-        "idBebida": "15511",
-        "nombreBebida": "Baby Eskimo",
+        "id": "15511",
+        "nombre": "Baby Eskimo",
+        "categoria": "Cocktail",
         "alcoholica": "Alcohólica",
         "vaso": "Vaso Collins",
         "instrucciones": "Deja el helado fuera durante unos 10 minutos. Agrega los ingredientes en orden, revuelve con un palito (también funciona con un cuchillo de mantequilla o una cuchara). Consume inmediatamente y a menudo. Agradable y ligero, ideal para después de una bebida fuerte.",
-        "imagenBebida": "https://www.thecocktaildb.com/images/media/drink/wywrtw1472720227.jpg",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/wywrtw1472720227.jpg",
         "ingredientes": ["Kahlua", "Leche", "Helado de vainilla"]
     },
     {
-        "idBebida": "11129",
-        "nombreBebida": "Boston Sour",
+        "id": "11129",
+        "nombre": "Boston Sour",
+        "categoria": "Clásicos",
         "alcoholica": "Alcohólica",
         "vaso": "Vaso sour de whiskey",
         "instrucciones": "Agita el jugo de limón, el azúcar en polvo, el whisky mezclado y la clara de huevo con hielo triturado y cuela en un vaso sour de whiskey. Agrega la rodaja de limón, coloca la guinda encima y sirve.",
-        "imagenBebida": "https://www.thecocktaildb.com/images/media/drink/kxlgbi1504366100.jpg",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/kxlgbi1504366100.jpg",
         "ingredientes": [
             "Whisky mezclado",
             "Limón",
@@ -427,12 +427,13 @@
         ]
     },
     {
-        "idBebida": "17267",
-        "nombreBebida": "Bahama Mama",
+        "id": "17267",
+        "nombre": "Bahama Mama",
+        "categoria": "Ordinary Drink",
         "alcoholica": "Alcohólica",
         "vaso": "Vaso highball",
         "instrucciones": "Agrega 2 partes de soda o más o menos al gusto.\r\n\r\nMezcla todo y vierte sobre mucho hielo. Bebe con una pajita.",
-        "imagenBebida": "https://www.thecocktaildb.com/images/media/drink/tyb4a41515793339.jpg",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/tyb4a41515793339.jpg",
         "ingredientes": [
             "Ron",
             "Ron oscuro",
@@ -444,69 +445,69 @@
         ]
     },
     {
-        "idDrink": "17208",
-        "strDrink": "Rose",
-        "strCategory": "Ordinary Drink",
-        "strAlcoholic": "Alcoholic",
-        "strGlass": "Cocktail glass",
-        "strInstructions": "Agita en una coctelera, luego cuela en un vaso frío. Decora y sirve.",
-        "strInstructionsES": "Agita en una coctelera, luego cuela en un vaso frío. Decora y sirve.",
-        "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/8kxbvq1504371462.jpg",
-        "strIngredients": "Dry Vermouth, Gin, Apricot brandy, Lemon juice, Grenadine, Powdered sugar"
+        "id": "17208",
+        "nombre": "Rose",
+        "categoria": "Ordinary Drink",
+        "alcoholica": "Alcoholic",
+        "vaso": "Cocktail glass",
+        "instrucciones": "Agita en una coctelera, luego cuela en un vaso frío. Decora y sirve.",
+        "instruccionesES": "Agita en una coctelera, luego cuela en un vaso frío. Decora y sirve.",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/8kxbvq1504371462.jpg",
+        "ingredientes": "Dry Vermouth, Gin, Apricot brandy, Lemon juice, Grenadine, Powdered sugar"
     },
     {
-        "idDrink": "16031",
-        "strDrink": "Radler",
-        "strCategory": "Ordinary Drink",
-        "strAlcoholic": "Alcoholic",
-        "strGlass": "Highball glass",
-        "strInstructions": "Vierte la cerveza en una jarra grande, luego añade lentamente la 7-Up (o Sprite).",
-        "strInstructionsES": "Vierte la cerveza en una jarra grande, luego añade lentamente la 7-Up (o Sprite).",
-        "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/xz8igv1504888995.jpg",
-        "strIngredients": "Beer, 7-Up"
+        "id": "16031",
+        "nombre": "Radler",
+        "categoria": "Ordinary Drink",
+        "alcoholica": "Alcoholic",
+        "vaso": "Highball glass",
+        "instrucciones": "Vierte la cerveza en una jarra grande, luego añade lentamente la 7-Up (o Sprite).",
+        "instruccionesES": "Vierte la cerveza en una jarra grande, luego añade lentamente la 7-Up (o Sprite).",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/xz8igv1504888995.jpg",
+        "ingredientes": "Beer, 7-Up"
     },
     {
-        "idDrink": "12093",
-        "strDrink": "Rum Sour",
-        "strCategory": "Ordinary Drink",
-        "strAlcoholic": "Alcoholic",
-        "strGlass": "Whiskey sour glass",
-        "strInstructions": "En una coctelera medio llena de cubitos de hielo, combina el ron, el jugo de limón y el azúcar. Agita bien. Cuela en un vaso de sour y decora con la rodaja de naranja y la cereza.",
-        "strInstructionsES": "En una coctelera medio llena de cubitos de hielo, combina el ron, el jugo de limón y el azúcar. Agita bien. Cuela en un vaso de sour y decora con la rodaja de naranja y la cereza.",
-        "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/bylfi21504886323.jpg",
-        "strIngredients": "Light rum, Lemon juice, Sugar, Orange, Maraschino cherry"
+        "id": "12093",
+        "nombre": "Rum Sour",
+        "categoria": "Ordinary Drink",
+        "alcoholica": "Alcoholic",
+        "vaso": "Whiskey sour glass",
+        "instrucciones": "En una coctelera medio llena de cubitos de hielo, combina el ron, el jugo de limón y el azúcar. Agita bien. Cuela en un vaso de sour y decora con la rodaja de naranja y la cereza.",
+        "instruccionesES": "En una coctelera medio llena de cubitos de hielo, combina el ron, el jugo de limón y el azúcar. Agita bien. Cuela en un vaso de sour y decora con la rodaja de naranja y la cereza.",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/bylfi21504886323.jpg",
+        "ingredientes": "Light rum, Lemon juice, Sugar, Orange, Maraschino cherry"
     },
     {
-        "idDrink": "11007",
-        "strDrink": "Rum Toddy",
-        "strCategory": "Punch / Party Drink",
-        "strAlcoholic": "Alcoholic",
-        "strGlass": "Whiskey sour glass",
-        "strInstructions": "Poner en una taza 1 cucharada de azúcar y 2 oz de ron caliente. Rellenar con agua caliente y revolver.",
-        "strInstructionsES": "Poner en una taza 1 cucharada de azúcar y 2 oz de ron caliente. Rellenar con agua caliente y revolver.",
-        "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/athdk71504886286.jpg",
-        "strIngredients": "Sugar, Dark rum, Water, Ground cinnamon, Ground cloves"
+        "id": "11007",
+        "nombre": "Rum Toddy",
+        "categoria": "Party",
+        "alcoholica": "Alcoholic",
+        "vaso": "Whiskey sour glass",
+        "instrucciones": "Poner en una taza 1 cucharada de azúcar y 2 oz de ron caliente. Rellenar con agua caliente y revolver.",
+        "instruccionesES": "Poner en una taza 1 cucharada de azúcar y 2 oz de ron caliente. Rellenar con agua caliente y revolver.",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/athdk71504886286.jpg",
+        "ingredientes": "Sugar, Dark rum, Water, Ground cinnamon, Ground cloves"
     },
     {
-        "idDrink": "12688",
-        "strDrink": "Old-Fashioned",
-        "strCategory": "Ordinary Drink",
-        "strAlcoholic": "Alcoholic",
-        "strGlass": "Old-fashioned glass",
-        "strInstructions": "En un vaso viejo, mezcle el azúcar y el agua. Agregar los cubitos de hielo y el whisky. Remover bien y decorar con la cáscara de naranja y la cereza.",
-        "strInstructionsES": "En un vaso viejo, mezcle el azúcar y el agua. Agregar los cubitos de hielo y el whisky. Remover bien y decorar con la cáscara de naranja y la cereza.",
-        "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg",
-        "strIngredients": "Water, Sugar, Bourbon, Orange, Maraschino cherry"
+        "id": "12688",
+        "nombre": "Old-Fashioned",
+        "categoria": "Ordinary Drink",
+        "alcoholica": "Alcoholic",
+        "vaso": "Old-fashioned glass",
+        "instrucciones": "En un vaso viejo, mezcle el azúcar y el agua. Agregar los cubitos de hielo y el whisky. Remover bien y decorar con la cáscara de naranja y la cereza.",
+        "instruccionesES": "En un vaso viejo, mezcle el azúcar y el agua. Agregar los cubitos de hielo y el whisky. Remover bien y decorar con la cáscara de naranja y la cereza.",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg",
+        "ingredientes": "Water, Sugar, Bourbon, Orange, Maraschino cherry"
     },
     {
-        "idDrink": "17244",
-        "strDrink": "Lemon Drop",
-        "strCategory": "Cocktail",
-        "strAlcoholic": "Alcoholic",
-        "strGlass": "Cocktail glass",
-        "strInstructions": "Agite y cuele todos los ingredientes en una coctelera con hielo. Decore el borde del vaso con azúcar.",
-        "strInstructionsES": "Agite y cuele todos los ingredientes en una coctelera con hielo. Decore el borde del vaso con azúcar.",
-        "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/mtpxgk1504373297.jpg",
-        "strIngredients": "Absolut Citron, Cointreau, Lemon juice, Sugar"
+        "id": "17244",
+        "nombre": "Lemon Drop",
+        "categoria": "Cocktail",
+        "alcoholica": "Alcoholic",
+        "vaso": "Cocktail glass",
+        "instrucciones": "Agite y cuele todos los ingredientes en una coctelera con hielo. Decore el borde del vaso con azúcar.",
+        "instruccionesES": "Agite y cuele todos los ingredientes en una coctelera con hielo. Decore el borde del vaso con azúcar.",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/mtpxgk1504373297.jpg",
+        "ingredientes": "Absolut Citron, Cointreau, Lemon juice, Sugar"
     }
 ]

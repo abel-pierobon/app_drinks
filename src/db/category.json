@@ -8,19 +8,15 @@
         "name": "Cocktail"
     },
     {
-        "id": 3,
-        "name": "other"
-    },
-    {
         "id": 4,
-        "name": "Punch / Party"
+        "name": "Party"
     },
     {
         "id": 5,
-        "name": "Clásicos Contemporáneos"
+        "name": "Clásicos"
     },
     {
         "id": 6,
-        "name": "bebidas de nueva era"
+        "name": "Nuevos"
     }
 ]

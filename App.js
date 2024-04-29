@@ -1,25 +1,38 @@
-import { StatusBar } from 'expo-status-bar';
-import { FlatList, StyleSheet, Text, View } from 'react-native';
-import category from './src/db/category.json';
-
+import React from "react";
+import { StatusBar, Image, StyleSheet, View } from "react-native";
+import Home from "./src/screens/Home";
+import imagen from "./src/imagen.jpg";
+import { colors } from "./src/constants/colors";
+import Header from "./src/components/Header";
+import ItemListCategories from "./src/components/ItemListCategories";
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <FlatList 
-        data={category}
-        renderItem={({item}) => <Text>{item.name}</Text>}
-        keyExtractor={(item) => item.id}/>
-      <StatusBar style="auto" />
-    </View>
-  );
+    return (
+        <View style={styles.container}>
+            <Image
+                style={styles.backgroundImage}
+                source={imagen}
+                resizeMode="cover"
+            />
+            <Header />
+            {/* <Home /> */}
+            <ItemListCategories />
+            <StatusBar style="auto" />
+        </View>
+    );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'start',
-  },
+    container: {
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "flex-start",
+        marginTop: 5,
+    },
+    backgroundImage: {
+        width: "100%",
+        height: "100%",
+        position: "absolute",
+        zIndex: -1,
+        opacity: 0.45,
+    },
 });
