@@ -17,9 +17,9 @@ const Drink = ({ drink, setItemIdSelected }) => {
     };
     return (
         <Card style={styles.container}>
-            <View style={{ flexDirection: "row", gap: 10 }}>
+            <View style={styles.iconos}>
                 <Pressable onPress={goBack} style={{ alignSelf: "flex-end" }}>
-                <MaterialIcons name="favorite" size={24} color="black" />
+                    <MaterialIcons name="favorite" size={24} color="black" />
                 </Pressable>
                 <Pressable onPress={goBack} style={{ alignSelf: "flex-end" }}>
                     <AntDesign name="back" size={36} color="black" />
@@ -29,8 +29,8 @@ const Drink = ({ drink, setItemIdSelected }) => {
             <View style={{ padding: 10 }}>
                 <Text style={styles.titulo}>Nombre de bebida: </Text>
                 <Text style={styles.descripcion}>{drink.nombre}</Text>
-                <Text style={styles.titulo}>Categoría de Trago: </Text>
-                <Text style={styles.descripcion}>{drink.categoria}</Text>
+                {/* <Text style={styles.titulo}>Categoría de Trago: </Text>
+                <Text style={styles.descripcion}>{drink.categoria}</Text> */}
                 <Text style={styles.titulo}>Ingredientes:</Text>
                 <FlatList
                     data={drink.ingredientes}
@@ -41,7 +41,7 @@ const Drink = ({ drink, setItemIdSelected }) => {
                 <Text style={styles.titulo}>
                     Instrucciones de preparación:{" "}
                 </Text>
-                <Text style={styles.descripcion}>{drink.instrucciones}</Text>
+                <Text style={styles.instrucciones}>{drink.instrucciones}</Text>
             </View>
         </Card>
     );
@@ -67,5 +67,16 @@ const styles = StyleSheet.create({
     },
     descripcion: {
         fontSize: 16,
+    },
+    instrucciones: {
+        fontSize: 12,
+    },
+    iconos: {
+        flexDirection: "row",
+        gap: 10,
+        justifyContent: "space-between",
+        alignItems: "space-between",
+        width   : "80%",
+        marginTop: 10
     },
 });

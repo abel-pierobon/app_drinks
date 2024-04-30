@@ -1,20 +1,23 @@
 import React, { useState } from "react";
 import { StatusBar, Image, StyleSheet, View } from "react-native";
 import Home from "./src/screens/Home";
-import imagen from "./src/imagen.jpg";
 import { colors } from "./src/constants/colors";
 import Header from "./src/components/Header";
 import ItemListCategories from "./src/screens/ItemListCategories";
 import ItemSelected from "./src/screens/ItemSelected";
+import Search from "./src/components/Search";
 
 export default function App() {
     const [categorySelected, setCategorySelected] = useState("");
     const [itemIdSelected, setItemIdSelected] = useState("");
+
     return (
         <View style={styles.container}>
             <Image
                 style={styles.backgroundImage}
-                source={imagen}
+                source={{
+                    uri: "https://firebasestorage.googleapis.com/v0/b/appasados-d7bd8.appspot.com/o/imagenes%2Fbar.jpg?alt=media&token=403b0ecd-4bf1-443a-a54c-41589539a542",
+                }}
                 resizeMode="cover"
             />
             <Header
@@ -23,7 +26,10 @@ export default function App() {
             />
 
             {!categorySelected && !itemIdSelected ? (
-                <Home setCategorySelected={setCategorySelected} />
+                <Home
+                    setCategorySelected={setCategorySelected}
+                    setItemIdSelected={setItemIdSelected}
+                />
             ) : categorySelected ? (
                 <ItemListCategories
                     categorySelected={categorySelected}
@@ -31,7 +37,10 @@ export default function App() {
                     setCategorySelected={setCategorySelected}
                 />
             ) : (
-                <ItemSelected itemIdSelected={itemIdSelected} setItemIdSelected={setItemIdSelected} />
+                <ItemSelected
+                    itemIdSelected={itemIdSelected}
+                    setItemIdSelected={setItemIdSelected}
+                />
             )}
         </View>
     );
@@ -50,6 +59,6 @@ const styles = StyleSheet.create({
         height: "100%",
         position: "absolute",
         zIndex: -1,
-        opacity: 0.5,
+        opacity: 0.99,
     },
 });

@@ -30,6 +30,7 @@ const ItemListCategories = ({
     };
     useEffect(() => {
         if (busqueda.trim() === "") {
+            
             setBebidasFiltradas(categoryDrink);
         } else {
             const bebidasFilter = categoryDrink.filter((item) =>

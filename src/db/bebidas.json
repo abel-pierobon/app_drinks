@@ -319,7 +319,7 @@
         "instrucciones": "Agita en una coctelera, luego cuela en un vaso frío. Decora y sirve.",
         "instruccionesES": "Agita en una coctelera, luego cuela en un vaso frío. Decora y sirve.",
         "imagen": "https://www.thecocktaildb.com/images/media/drink/8kxbvq1504371462.jpg",
-        "ingredientes": "Dry Vermouth, Gin, Apricot brandy, Lemon juice, Grenadine, Powdered sugar"
+        "ingredientes": ["Dry Vermouth, Gin, Apricot brandy, Lemon juice, Grenadine, Powdered sugar"]
     },
     {
         "id": "16031",
@@ -330,7 +330,7 @@
         "instrucciones": "Vierte la cerveza en una jarra grande, luego añade lentamente la 7-Up (o Sprite).",
         "instruccionesES": "Vierte la cerveza en una jarra grande, luego añade lentamente la 7-Up (o Sprite).",
         "imagen": "https://www.thecocktaildb.com/images/media/drink/xz8igv1504888995.jpg",
-        "ingredientes": "Beer, 7-Up"
+        "ingredientes": ["Beer, 7-Up"]
     },
     {
         "id": "12093",
@@ -341,10 +341,10 @@
         "instrucciones": "En una coctelera medio llena de cubitos de hielo, combina el ron, el jugo de limón y el azúcar. Agita bien. Cuela en un vaso de sour y decora con la rodaja de naranja y la cereza.",
         "instruccionesES": "En una coctelera medio llena de cubitos de hielo, combina el ron, el jugo de limón y el azúcar. Agita bien. Cuela en un vaso de sour y decora con la rodaja de naranja y la cereza.",
         "imagen": "https://www.thecocktaildb.com/images/media/drink/bylfi21504886323.jpg",
-        "ingredientes": "Light rum, Lemon juice, Sugar, Orange, Maraschino cherry"
+        "ingredientes": ["Light rum, Lemon juice, Sugar, Orange, Maraschino cherry"]
     },
     {
-        "id": "11007",
+        "id": "11009",
         "nombre": "Rum Toddy",
         "categoria": "Party",
         "alcoholica": "Alcoholic",
@@ -352,7 +352,7 @@
         "instrucciones": "Poner en una taza 1 cucharada de azúcar y 2 oz de ron caliente. Rellenar con agua caliente y revolver.",
         "instruccionesES": "Poner en una taza 1 cucharada de azúcar y 2 oz de ron caliente. Rellenar con agua caliente y revolver.",
         "imagen": "https://www.thecocktaildb.com/images/media/drink/athdk71504886286.jpg",
-        "ingredientes": "Sugar, Dark rum, Water, Ground cinnamon, Ground cloves"
+        "ingredientes": ["Sugar, Dark rum, Water, Ground cinnamon, Ground cloves"]
     },
     {
         "id": "12688",
@@ -363,7 +363,7 @@
         "instrucciones": "En un vaso viejo, mezcle el azúcar y el agua. Agregar los cubitos de hielo y el whisky. Remover bien y decorar con la cáscara de naranja y la cereza.",
         "instruccionesES": "En un vaso viejo, mezcle el azúcar y el agua. Agregar los cubitos de hielo y el whisky. Remover bien y decorar con la cáscara de naranja y la cereza.",
         "imagen": "https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg",
-        "ingredientes": "Water, Sugar, Bourbon, Orange, Maraschino cherry"
+        "ingredientes": ["Water, Sugar, Bourbon, Orange, Maraschino cherry"]
     },
     {
         "id": "17244",
@@ -374,7 +374,7 @@
         "instrucciones": "Agite y cuele todos los ingredientes en una coctelera con hielo. Decore el borde del vaso con azúcar.",
         "instruccionesES": "Agite y cuele todos los ingredientes en una coctelera con hielo. Decore el borde del vaso con azúcar.",
         "imagen": "https://www.thecocktaildb.com/images/media/drink/mtpxgk1504373297.jpg",
-        "ingredientes": "Absolut Citron, Cointreau, Lemon juice, Sugar"
+        "ingredientes": ["Absolut Citron, Cointreau, Lemon juice, Sugar"]
     },
     {
         "id": "11000",
@@ -468,7 +468,7 @@
     {
         "id": "16158",
         "nombre": "Margarita Whitecap",
-        "categoria": "Raros",
+        "categoria": "Simple",
         "alcoholica": "Alcohólico",
         "vaso": "Copa Margarita/Coupette",
         "instrucciones": "Coloca todos los ingredientes en una licuadora y mezcla hasta que quede suave. Esto hace una bebida.",
@@ -506,6 +506,20 @@
             "Jugo de toronja",
             "Limón",
             "Tequila",
+            "Hielo"
+        ]
+    },
+    {
+        "id": "1",
+        "nombre": "Fernet con Coca",
+        "categoria": "Fernet Cordobés",
+        "alcoholica": "Alcohólico",
+        "vaso": "Botella Arremangada",
+        "instrucciones": "cortar con un cuchillo 3/4 de botella de plástico descartable de 2.25lts, quemar los bordes. Luégo verter hielo hasta cubrir la mitad del recipiente. Posteriormente vertir 30% de bebida ' Fernet Branca', 70% de bebida 'Coca Cola', y revolver con el dedo.",
+        "imagen": "https://firebasestorage.googleapis.com/v0/b/appasados-d7bd8.appspot.com/o/imagenes%2FFernet.jpg?alt=media&token=a10a5814-0a20-4764-9222-deb0085f1706",
+        "ingredientes": [
+            "Fernet Branca",
+            "Coca Cola",
             "Hielo"
         ]
     }

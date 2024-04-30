@@ -18,11 +18,14 @@ const styles = StyleSheet.create({
     container: {
         minWidth: 250,
         marginTop: 10,
-        borderColor: colors.color1,
+        borderColor: 'black',
         borderWidth: 2,
+        backgroundColor: colors.color5,
+        borderRadius: 10,
+        opacity: 0.9,
     },
     title: {
-        fontSize: 20,
+        fontSize: 28,
         fontWeight: "900",
         textAlign: "center",
         marginTop: 5,

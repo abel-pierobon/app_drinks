@@ -8,8 +8,7 @@ const Header = ({ categorySelected, setCategorySelected }) => {
     };
     return (
         <View>
-            <Text style={styles.title}>Prepara tu bebida</Text>
-            <Text style={styles.subTitle}>Elige tu categoria favorita</Text>
+            <Text style={styles.title}>make your drink</Text>
             {!categorySelected ? null : (
                 <Pressable onPress={backcategory} style={{alignSelf: "flex-end" }}>
                     <AntDesign name="back" size={36} color="black" />

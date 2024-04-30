@@ -1,12 +1,8 @@
-import { Pressable, StyleSheet, Text } from "react-native";
-import React from "react";
+import { StyleSheet, Text, Pressable, Image } from "react-native";
 import Card from "./Card";
-import { Image } from "react-native";
-import { colors } from "../constants/colors";
-const DrinkItem = ({ drink, setItemIdSelected = () => {},setCategorySelected = () => {} }) => {
-
+const DrinkFilter = ({drink,setItemIdSelected = () => {},setCategorySelected = () => {}}) => {
     return (
-        <Card style={styles.container}>
+        <Card>
             <Pressable onPress={() => {setItemIdSelected(drink.id);setCategorySelected('')}}>
                 <Image source={{ uri: drink.imagen }} style={styles.imagen} />
                 <Text style={styles.titulo}>{drink.nombre}</Text>
@@ -14,9 +10,7 @@ const DrinkItem = ({ drink, setItemIdSelected = () => {},setCategorySelected = (
         </Card>
     );
 };
-
-export default DrinkItem;
-
+export default DrinkFilter;
 const styles = StyleSheet.create({
     container: {
         maxWidth: 500,
@@ -24,10 +18,10 @@ const styles = StyleSheet.create({
     },
     titulo: {
         fontSize: 20,
-        fontWeight: "900",
+        fontWeight: "bold",
         textAlign: "center",
         marginTop: 5,
-        color: "white",
+        color: "black",
         justifyContent: "center",
     },
     imagen: {
