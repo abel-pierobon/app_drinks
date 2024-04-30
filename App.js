@@ -5,7 +5,6 @@ import { colors } from "./src/constants/colors";
 import Header from "./src/components/Header";
 import ItemListCategories from "./src/screens/ItemListCategories";
 import ItemSelected from "./src/screens/ItemSelected";
-import Search from "./src/components/Search";
 
 export default function App() {
     const [categorySelected, setCategorySelected] = useState("");
@@ -50,15 +49,18 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: "center",
-        justifyContent: "flex-start",
         marginBottom: 5,
         marginTop: StatusBar.currentHeight || 0,
+        backgroundColor: colors.color2,
+        alignItems: "center",
+        borderRadius: 5,
+        borderWidth: 1,
     },
     backgroundImage: {
         width: "100%",
         height: "100%",
         position: "absolute",
         zIndex: -1,
-        opacity: 0.99,
+        opacity: 0.45,
     },
 });

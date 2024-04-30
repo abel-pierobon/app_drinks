@@ -8,8 +8,8 @@ import Search from "../components/Search";
 
 const ItemListCategories = ({
     categorySelected,
-    setItemIdSelected = () => {},
-    setCategorySelected = () => {},
+    setItemIdSelected,
+    setCategorySelected ,
 }) => {
     const [busqueda, setBusqueda] = useState("");
     const [bebidasFiltradas, setBebidasFiltradas] = useState([]);
@@ -46,6 +46,8 @@ const ItemListCategories = ({
                 goBack={goBack}
                 busqueda={busqueda}
                 setBusqueda={setBusqueda}
+                setCategorySelected={setCategorySelected}
+                categorySelected={categorySelected}
             />
             <FlatList
                 data={bebidasFiltradas}

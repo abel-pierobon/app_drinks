@@ -21,13 +21,16 @@ const styles = StyleSheet.create({
     container: {
         maxWidth: 500,
         maxHeight: 400,
+        borderColor: "black",
+        borderWidth: 1,
+        backgroundColor: colors.color2,
     },
     titulo: {
         fontSize: 20,
         fontWeight: "900",
         textAlign: "center",
         marginTop: 5,
-        color: "white",
+        color: "black",
         justifyContent: "center",
     },
     imagen: {

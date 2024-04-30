@@ -1,8 +1,9 @@
 import { StyleSheet, Text, Pressable, Image } from "react-native";
 import Card from "./Card";
+import { colors } from "../constants/colors";
 const DrinkFilter = ({drink,setItemIdSelected = () => {},setCategorySelected = () => {}}) => {
     return (
-        <Card>
+        <Card style={styles.container}>
             <Pressable onPress={() => {setItemIdSelected(drink.id);setCategorySelected('')}}>
                 <Image source={{ uri: drink.imagen }} style={styles.imagen} />
                 <Text style={styles.titulo}>{drink.nombre}</Text>
@@ -15,6 +16,9 @@ const styles = StyleSheet.create({
     container: {
         maxWidth: 500,
         maxHeight: 400,
+        borderColor: "black",
+        borderWidth: 1,
+        backgroundColor: colors.color2,
     },
     titulo: {
         fontSize: 20,

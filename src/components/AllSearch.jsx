@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { StyleSheet, Text, View,TextInput,Pressable } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
+import { colors } from "../constants/colors";
 
 const AllSearch = ({busquedaGeneral,setBusquedaGeneral}) => {
 
@@ -11,6 +12,9 @@ const AllSearch = ({busquedaGeneral,setBusquedaGeneral}) => {
                 value={busquedaGeneral}
                 onChangeText={setBusquedaGeneral}
                 style={styles.input}
+                fontWeight="900"
+                fontSize={15}
+                placeholderTextColor="black"
             />
             <Pressable onPress={() => setBusquedaGeneral("")}>
                     <MaterialIcons name="cancel" size={36} color="black" />
@@ -22,16 +26,17 @@ export default AllSearch;
 const styles = StyleSheet.create({
     container: {
         flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "space-between",
+        alignItems: "space-evenly",
+        justifyContent: "center",
         marginHorizontal: 10,
         marginVertical: 10,
-    },
-    input: {
         borderWidth: 1,
         borderColor: "black",
         borderRadius: 10,
+    },
+    input: {
         padding: 10,
-        width: "80%",
+        width: "60%",
+        height: 35,
     }
 });

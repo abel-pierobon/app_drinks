@@ -2,18 +2,12 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { colors } from "../constants/colors";
 import { AntDesign } from "@expo/vector-icons";
-const Header = ({ categorySelected, setCategorySelected }) => {
-    const backcategory = () => {
-        setCategorySelected("");
-    };
+
+const Header = ({}) => {
+
     return (
         <View>
             <Text style={styles.title}>make your drink</Text>
-            {!categorySelected ? null : (
-                <Pressable onPress={backcategory} style={{alignSelf: "flex-end" }}>
-                    <AntDesign name="back" size={36} color="black" />
-                </Pressable>
-            )}
         </View>
     );
 };

@@ -15,7 +15,7 @@ const Home = ({setCategorySelected, setItemIdSelected = () => {} }) => {
         setBebidasFiltradas(busquedaGeneralFilter)
     }, [busquedaGeneral])
     return (
-        <View>
+        <View style={styles.container}>
             <AllSearch busquedaGeneral={busquedaGeneral} setBusquedaGeneral={setBusquedaGeneral}/>
 
             {busquedaGeneral ? (
@@ -40,6 +40,10 @@ const Home = ({setCategorySelected, setItemIdSelected = () => {} }) => {
 export default Home;
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: "center",
+    },
     subTitle: {
         fontSize: 20,
         fontWeight: "900",

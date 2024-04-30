@@ -20,9 +20,9 @@ const styles = StyleSheet.create({
         marginTop: 10,
         borderColor: 'black',
         borderWidth: 2,
-        backgroundColor: colors.color5,
         borderRadius: 10,
         opacity: 0.9,
+        backgroundColor: colors.color2
     },
     title: {
         fontSize: 28,
