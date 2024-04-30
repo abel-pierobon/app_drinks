@@ -3,27 +3,38 @@ import React, { useEffect, useState } from "react";
 import bebidas from "../db/bebidas.json";
 import { colors } from "../constants/colors";
 import { FlatList } from "react-native";
-import DrinkItem from "./DrinkItem";
-import Search from "./Search";
+import DrinkItem from "../components/DrinkItem";
+import Search from "../components/Search";
 
-const ItemListCategories = () => {
+const ItemListCategories = ({categorySelected}) => {
     const [busqueda, setBusqueda] = useState("");
     const [bebidasFiltradas, setBebidasFiltradas] = useState([]);
+    const [categoryDrink, setCategoryDrink] = useState([]);
+    console.log(bebidasFiltradas)
 
+    useEffect(() => {
+        if (categorySelected) {
+            const categoryFilter = bebidas.filter(item =>
+                item.categoria === categorySelected
+            );
+            setCategoryDrink(categoryFilter);
+        } else {
+            setCategoryDrink(bebidas);
+        }
+    }, [categorySelected]);
     const goBack = () => {
         setBusqueda("");
     }
     useEffect(() => {
         if (busqueda.trim() === "") {
-            setBebidasFiltradas(bebidas);
+            setBebidasFiltradas(categoryDrink);
         } else {
-            const bebidasFilter = bebidas.filter(item =>
-                item.nombre.toLocaleLowerCase().includes(busqueda)
-
+            const bebidasFilter = categoryDrink.filter(item =>
+                item.nombre.toLocaleLowerCase().includes(busqueda.toLowerCase())
             );
             setBebidasFiltradas(bebidasFilter);
         }
-    }, [busqueda]);
+    }, [busqueda, categoryDrink])
 
     return (
         <View>

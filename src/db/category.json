@@ -1,22 +1,27 @@
 [
-    {
-        "id": 1,
-        "name": "Ordinary Drink"
-    },
-    {
-        "id": 2,
-        "name": "Cocktail"
-    },
-    {
-        "id": 4,
-        "name": "Party"
-    },
-    {
-        "id": 5,
-        "name": "Clásicos"
-    },
-    {
-        "id": 6,
-        "name": "Nuevos"
-    }
+    
+        {
+            "id":"1",
+            "name":"Cocktail"
+        },
+        {
+            "id":"2",
+            "name":"Nuevos"
+        },
+        {
+            "id":"3",
+            "name":"Clásicos"
+        },
+        {
+            "id":"4",
+            "name":"Party"
+        },
+        {
+            "id":"5",
+            "name":"Simple"
+        },
+        {
+            "id":"6",
+            "name":"Raros"
+        }
 ]
