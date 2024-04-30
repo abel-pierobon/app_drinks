@@ -5,11 +5,11 @@ import imagen from "./src/imagen.jpg";
 import { colors } from "./src/constants/colors";
 import Header from "./src/components/Header";
 import ItemListCategories from "./src/screens/ItemListCategories";
+import ItemSelected from "./src/screens/ItemSelected";
 
 export default function App() {
     const [categorySelected, setCategorySelected] = useState("");
     const [itemIdSelected, setItemIdSelected] = useState("");
-    console.log(itemIdSelected);
     return (
         <View style={styles.container}>
             <Image
@@ -17,15 +17,24 @@ export default function App() {
                 source={imagen}
                 resizeMode="cover"
             />
-            <Header setCategorySelected={setCategorySelected} categorySelected={categorySelected}/>
-            {!categorySelected.length>0 ? (
+            <Header
+                setCategorySelected={setCategorySelected}
+                categorySelected={categorySelected}
+            />
+
+            {!categorySelected && !itemIdSelected ? (
                 <Home setCategorySelected={setCategorySelected} />
+            ) : categorySelected ? (
+                <ItemListCategories
+                    categorySelected={categorySelected}
+                    setItemIdSelected={setItemIdSelected}
+                    setCategorySelected={setCategorySelected}
+                />
             ) : (
-                <ItemListCategories categorySelected={categorySelected} setItemIdSelected={setItemIdSelected} />
+                <ItemSelected itemIdSelected={itemIdSelected} setItemIdSelected={setItemIdSelected} />
             )}
         </View>
     );
-    
 }
 
 const styles = StyleSheet.create({
@@ -34,6 +43,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "flex-start",
         marginBottom: 5,
+        marginTop: StatusBar.currentHeight || 0,
     },
     backgroundImage: {
         width: "100%",

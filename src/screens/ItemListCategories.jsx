@@ -9,6 +9,7 @@ import Search from "../components/Search";
 const ItemListCategories = ({
     categorySelected,
     setItemIdSelected = () => {},
+    setCategorySelected = () => {},
 }) => {
     const [busqueda, setBusqueda] = useState("");
     const [bebidasFiltradas, setBebidasFiltradas] = useState([]);
@@ -51,6 +52,7 @@ const ItemListCategories = ({
                     <DrinkItem
                         drink={item}
                         setItemIdSelected={setItemIdSelected}
+                        setCategorySelected={setCategorySelected}
                     />
                 )}
                 keyExtractor={(item, index) => index.toString()}

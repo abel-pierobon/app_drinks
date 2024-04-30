@@ -3,11 +3,11 @@ import React from "react";
 import Card from "./Card";
 import { Image } from "react-native";
 import { colors } from "../constants/colors";
-const DrinkItem = ({ drink, setItemIdSelected = () => {} }) => {
+const DrinkItem = ({ drink, setItemIdSelected = () => {},setCategorySelected = () => {} }) => {
 
     return (
         <Card style={styles.container}>
-            <Pressable onPress={() => setItemIdSelected(drink.id)}>
+            <Pressable onPress={() => {setItemIdSelected(drink.id);setCategorySelected('')}}>
                 <Image source={{ uri: drink.imagen }} style={styles.imagen} />
                 <Text style={styles.titulo}>{drink.nombre}</Text>
             </Pressable>
