@@ -8,6 +8,8 @@ import ItemListCategories from "./src/screens/ItemListCategories";
 
 export default function App() {
     const [categorySelected, setCategorySelected] = useState("");
+    const [itemIdSelected, setItemIdSelected] = useState("");
+    console.log(itemIdSelected);
     return (
         <View style={styles.container}>
             <Image
@@ -19,11 +21,11 @@ export default function App() {
             {!categorySelected.length>0 ? (
                 <Home setCategorySelected={setCategorySelected} />
             ) : (
-                <ItemListCategories categorySelected={categorySelected} />
+                <ItemListCategories categorySelected={categorySelected} setItemIdSelected={setItemIdSelected} />
             )}
-            <StatusBar style="auto" />
         </View>
     );
+    
 }
 
 const styles = StyleSheet.create({
@@ -31,13 +33,13 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         justifyContent: "flex-start",
-        marginTop: 5,
+        marginBottom: 5,
     },
     backgroundImage: {
         width: "100%",
         height: "100%",
         position: "absolute",
         zIndex: -1,
-        opacity: 0.45,
+        opacity: 0.5,
     },
 });

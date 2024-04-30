@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         borderColor: colors.color1,
         // border solid
-        borderWidth: 1,
+        // borderWidth: 2,
         shadowColor: "black",
     },
 });
