@@ -1,10 +1,11 @@
 import { StyleSheet, Text, Pressable, Image } from "react-native";
 import Card from "./Card";
 import { colors } from "../constants/colors";
-const DrinkFilter = ({drink,setItemIdSelected = () => {},setCategorySelected = () => {}}) => {
+const DrinkFilter = ({drink,navigation}) => {
     return (
+        
         <Card style={styles.container}>
-            <Pressable onPress={() => {setItemIdSelected(drink.id);setCategorySelected('')}}>
+            <Pressable onPress={() => {navigation.navigate('ItemSelected',{itemIdSelected:drink.id})}}>
                 <Image source={{ uri: drink.imagen }} style={styles.imagen} />
                 <Text style={styles.titulo}>{drink.nombre}</Text>
             </Pressable>

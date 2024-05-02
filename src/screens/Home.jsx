@@ -6,7 +6,8 @@ import CategoryItem from "../components/CategoryItem";
 import AllSearch from "../components/AllSearch";
 import bebidas from "../db/bebidas.json";
 import DrinkFilter from "../components/DrinkFilter";
-const Home = ({setCategorySelected, setItemIdSelected = () => {} }) => {
+const Home = ({navigation }) => {
+
     const [busquedaGeneral,setBusquedaGeneral]=useState('')
     const [bebidasFiltradas,setBebidasFiltradas]=useState(bebidas)
 
@@ -16,19 +17,19 @@ const Home = ({setCategorySelected, setItemIdSelected = () => {} }) => {
     }, [busquedaGeneral])
     return (
         <View style={styles.container}>
-            <AllSearch busquedaGeneral={busquedaGeneral} setBusquedaGeneral={setBusquedaGeneral}/>
+            <AllSearch busquedaGeneral={busquedaGeneral} setBusquedaGeneral={setBusquedaGeneral}/> 
 
             {busquedaGeneral ? (
                 <FlatList 
                 data={bebidasFiltradas}
-                renderItem={({item}) => <DrinkFilter drink={item} setItemIdSelected ={setItemIdSelected} setCategorySelected={setCategorySelected}/> }
+                renderItem={({item}) => <DrinkFilter drink={item} navigation={navigation} /> }
                 />
             ):(
                 <View>
                     <Text style={styles.subTitle}> O Elige tu categoria favorita</Text>
                 <FlatList
                 data={category}
-                renderItem={({ item }) => <CategoryItem selectCategory={setCategorySelected} category={item}/>}
+                renderItem={({ item }) => <CategoryItem navigation={navigation} category={item}/>}
                 keyExtractor={(item, index) => index.toString()}
             /> 
                 </View>

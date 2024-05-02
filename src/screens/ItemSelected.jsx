@@ -3,13 +3,17 @@ import React from "react";
 import bebidas from "../db/bebidas.json";
 import Drink from "../components/Drink";
 
-const ItemSelected = ({ itemIdSelected , setItemIdSelected = () => {}}) => {
+const ItemSelected = ({ setItemIdSelected = () => {}, route, navigation }) => {
+    const { itemIdSelected } = route.params;
 
     return (
         <View>
             <FlatList
                 data={bebidas.filter((item) => item.id === itemIdSelected)}
-                renderItem={({ item }) => <Drink drink={item} setItemIdSelected={setItemIdSelected}/>}
+                renderItem={({ item }) => (
+                    <Drink drink={item} setItemIdSelected={setItemIdSelected} 
+                    goBack={() => navigation.goBack()}/>
+                )}
             />
         </View>
     );

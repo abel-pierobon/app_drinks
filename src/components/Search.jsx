@@ -2,14 +2,14 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
 import { TextInput } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
-import { AntDesign } from "@expo/vector-icons";
+import { Ionicons } from '@expo/vector-icons';
+const Search = ({ busqueda, setBusqueda, goBack }) => {
 
-const Search = ({ busqueda, setBusqueda,setCategorySelected,categorySelected }) => {
-    const goBack = () => {
-        setCategorySelected("");
-    }
     return (
         <View style={styles.container}>
+            <Pressable onPress={goBack} >
+                <Ionicons name="arrow-back-circle-outline" size={36} color="black" />
+                </Pressable>
             <TextInput
                 placeholder="Busca tu bebida"
                 value={busqueda}
@@ -19,14 +19,9 @@ const Search = ({ busqueda, setBusqueda,setCategorySelected,categorySelected }) 
                 fontSize={15}
                 placeholderTextColor="black"
             />
-            <View style={{ flexDirection: "row", gap: 10 }}>
                 <Pressable onPress={() => setBusqueda("")}>
                     <MaterialIcons name="cancel" size={36} color="black" />
                 </Pressable>
-                <Pressable onPress={goBack} >
-                    <AntDesign name="back" size={36} color="black" />
-                </Pressable>
-            </View>
         </View>
     );
 };

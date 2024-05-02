@@ -7,14 +7,14 @@ import DrinkItem from "../components/DrinkItem";
 import Search from "../components/Search";
 
 const ItemListCategories = ({
-    categorySelected,
     setItemIdSelected,
-    setCategorySelected ,
+    setCategorySelected,
+    route,navigation 
 }) => {
     const [busqueda, setBusqueda] = useState("");
     const [bebidasFiltradas, setBebidasFiltradas] = useState([]);
     const [categoryDrink, setCategoryDrink] = useState([]);
-
+    const {category: categorySelected}=route.params
     useEffect(() => {
         if (categorySelected) {
             const categoryFilter = bebidas.filter(
@@ -25,12 +25,9 @@ const ItemListCategories = ({
             setCategoryDrink(bebidas);
         }
     }, [categorySelected]);
-    const goBack = () => {
-        setBusqueda("");
-    };
+
     useEffect(() => {
         if (busqueda.trim() === "") {
-            
             setBebidasFiltradas(categoryDrink);
         } else {
             const bebidasFilter = categoryDrink.filter((item) =>
@@ -41,9 +38,9 @@ const ItemListCategories = ({
     }, [busqueda, categoryDrink]);
 
     return (
-        <View>
+        <View style={styles.container}>
             <Search
-                goBack={goBack}
+                goBack={() => navigation.goBack()}
                 busqueda={busqueda}
                 setBusqueda={setBusqueda}
                 setCategorySelected={setCategorySelected}
@@ -56,6 +53,7 @@ const ItemListCategories = ({
                         drink={item}
                         setItemIdSelected={setItemIdSelected}
                         setCategorySelected={setCategorySelected}
+                        navigation={navigation}
                     />
                 )}
                 keyExtractor={(item, index) => index.toString()}
@@ -68,4 +66,10 @@ const ItemListCategories = ({
 
 export default ItemListCategories;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: "center",
+        marginHorizontal: 15,
+    },
+});

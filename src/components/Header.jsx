@@ -3,11 +3,11 @@ import React from "react";
 import { colors } from "../constants/colors";
 import { AntDesign } from "@expo/vector-icons";
 
-const Header = ({}) => {
+const Header = ({title}) => {
 
     return (
         <View>
-            <Text style={styles.title}>make your drink</Text>
+            <Text style={styles.title}>{title}</Text>
         </View>
     );
 };
@@ -22,5 +22,6 @@ const styles = StyleSheet.create({
         marginTop: 5,
         color: "black",
         textTransform: "uppercase",
+        marginTop: 30,
     },
 });

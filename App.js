@@ -1,47 +1,15 @@
 import React, { useState } from "react";
-import { StatusBar, Image, StyleSheet, View } from "react-native";
-import Home from "./src/screens/Home";
+import { StatusBar, Image, StyleSheet, Platform, View} from "react-native";
 import { colors } from "./src/constants/colors";
-import Header from "./src/components/Header";
-import ItemListCategories from "./src/screens/ItemListCategories";
-import ItemSelected from "./src/screens/ItemSelected";
+import { SafeAreaView } from "react-native";
+import Navigator from "./src/navigation/Navigator";
 
 export default function App() {
     const [categorySelected, setCategorySelected] = useState("");
     const [itemIdSelected, setItemIdSelected] = useState("");
 
     return (
-        <View style={styles.container}>
-            <Image
-                style={styles.backgroundImage}
-                source={{
-                    uri: "https://firebasestorage.googleapis.com/v0/b/appasados-d7bd8.appspot.com/o/imagenes%2Fbar.jpg?alt=media&token=403b0ecd-4bf1-443a-a54c-41589539a542",
-                }}
-                resizeMode="cover"
-            />
-            <Header
-                setCategorySelected={setCategorySelected}
-                categorySelected={categorySelected}
-            />
-
-            {!categorySelected && !itemIdSelected ? (
-                <Home
-                    setCategorySelected={setCategorySelected}
-                    setItemIdSelected={setItemIdSelected}
-                />
-            ) : categorySelected ? (
-                <ItemListCategories
-                    categorySelected={categorySelected}
-                    setItemIdSelected={setItemIdSelected}
-                    setCategorySelected={setCategorySelected}
-                />
-            ) : (
-                <ItemSelected
-                    itemIdSelected={itemIdSelected}
-                    setItemIdSelected={setItemIdSelected}
-                />
-            )}
-        </View>
+            <Navigator />
     );
 }
 
@@ -50,11 +18,12 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         marginBottom: 5,
-        marginTop: StatusBar.currentHeight || 0,
+        // marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
         backgroundColor: colors.color2,
         alignItems: "center",
         borderRadius: 5,
         borderWidth: 1,
+
     },
     backgroundImage: {
         width: "100%",

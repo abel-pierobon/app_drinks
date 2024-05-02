@@ -8,22 +8,31 @@ import {
 } from "react-native";
 import React from "react";
 import Card from "./Card";
-import { AntDesign } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
+
 import { MaterialIcons } from "@expo/vector-icons";
 import { colors } from "../constants/colors";
 
-const Drink = ({ drink, setItemIdSelected }) => {
-    const goBack = () => {
-        setItemIdSelected("");
-    };
+const Drink = ({ drink, goBack }) => {
     return (
         <Card style={styles.container}>
-            <View style={styles.iconos}>
-                <Pressable onPress={goBack} style={{ alignSelf: "flex-end" }}>
-                    <MaterialIcons name="favorite" size={24} color="white" />
+            <Pressable
+                    onPress={() => goBack()}
+                    style={{ alignSelf: "flex-start" }}
+                >
+                    <Ionicons
+                        name="arrow-back-circle-outline"
+                        size={36}
+                        color="black"
+                    />
                 </Pressable>
-                <Pressable onPress={goBack} style={{ alignSelf: "flex-end" }}>
-                    <AntDesign name="back" size={36} color="black" />
+            <View style={styles.iconos}>
+                
+                <Pressable
+                    onPress={() => goBack()}
+                    style={{ alignSelf: "flex-end" }}
+                >
+                    <MaterialIcons name="favorite" size={24} color="white" />
                 </Pressable>
             </View>
             <Image source={{ uri: drink.imagen }} style={styles.imagen} />
@@ -53,7 +62,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor:colors.color2,
+        backgroundColor: colors.color2,
         borderRadius: 10,
         borderWidth: 1,
     },
@@ -76,9 +85,9 @@ const styles = StyleSheet.create({
     iconos: {
         flexDirection: "row",
         gap: 10,
-        justifyContent: "space-between",
-        alignItems: "space-between",
-        width   : "80%",
-        marginTop: 10
+        justifyContent: "flex-end",
+        alignItems: "space-evenly",
+        width: "80%",
+        marginTop: 10,
     },
 });
