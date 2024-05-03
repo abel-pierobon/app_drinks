@@ -7,7 +7,7 @@ import HomeStackNavigator from "./HomeStackNavigator";
 import { colors } from "../constants/colors";
 
 
-const Navigator = () => {
+const Navegacion = () => {
     return (
         <NavigationContainer style={styles.container}>
             <BottomTabNavigator />
@@ -15,7 +15,7 @@ const Navigator = () => {
     );
 };
 
-export default Navigator;
+export default Navegacion;
 
 const styles = StyleSheet.create({
     container: {

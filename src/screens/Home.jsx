@@ -1,37 +1,56 @@
 import { StyleSheet, Text, View, FlatList } from "react-native";
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 import category from "../db/category.json";
 import { colors } from "../constants/colors";
 import CategoryItem from "../components/CategoryItem";
 import AllSearch from "../components/AllSearch";
 import bebidas from "../db/bebidas.json";
 import DrinkFilter from "../components/DrinkFilter";
-const Home = ({navigation }) => {
-
-    const [busquedaGeneral,setBusquedaGeneral]=useState('')
-    const [bebidasFiltradas,setBebidasFiltradas]=useState(bebidas)
+const Home = ({ navigation }) => {
+    const [busquedaGeneral, setBusquedaGeneral] = useState("");
+    const [bebidasFiltradas, setBebidasFiltradas] = useState(bebidas);
 
     useEffect(() => {
-        const busquedaGeneralFilter = bebidas.filter((item) => item.nombre.toLocaleLowerCase().includes(busquedaGeneral.toLowerCase()));
-        setBebidasFiltradas(busquedaGeneralFilter)
-    }, [busquedaGeneral])
+        const busquedaGeneralFilter = bebidas.filter((item) =>
+            item.nombre
+                .toLocaleLowerCase()
+                .includes(busquedaGeneral.toLowerCase())
+        );
+        setBebidasFiltradas(busquedaGeneralFilter);
+    }, [busquedaGeneral]);
     return (
         <View style={styles.container}>
-            <AllSearch busquedaGeneral={busquedaGeneral} setBusquedaGeneral={setBusquedaGeneral}/> 
+            <AllSearch
+                busquedaGeneral={busquedaGeneral}
+                setBusquedaGeneral={setBusquedaGeneral}
+            />
 
             {busquedaGeneral ? (
-                <FlatList 
-                data={bebidasFiltradas}
-                renderItem={({item}) => <DrinkFilter drink={item} navigation={navigation} /> }
-                />
-            ):(
-                <View>
-                    <Text style={styles.subTitle}> O Elige tu categoria favorita</Text>
                 <FlatList
-                data={category}
-                renderItem={({ item }) => <CategoryItem navigation={navigation} category={item}/>}
-                keyExtractor={(item, index) => index.toString()}
-            /> 
+                    data={bebidasFiltradas}
+                    renderItem={({ item }) => (
+                        <DrinkFilter drink={item} navigation={navigation} />
+                    )}
+                />
+            ) : (
+                <View>
+                    <Text style={styles.subTitle}>
+                        Inicia Sesión o Registrate para mas opciones
+                    </Text>
+                    <Text style={styles.subTitle}>
+                        {" "}
+                        O Elige tu categoria favorita
+                    </Text>
+                    <FlatList
+                        data={category}
+                        renderItem={({ item }) => (
+                            <CategoryItem
+                                navigation={navigation}
+                                category={item}
+                            />
+                        )}
+                        keyExtractor={(item, index) => index.toString()}
+                    />
                 </View>
             )}
         </View>
@@ -51,6 +70,6 @@ const styles = StyleSheet.create({
         textAlign: "center",
         marginTop: 10,
         marginBottom: 10,
-        color: 'black',
+        color: "black",
     },
 });

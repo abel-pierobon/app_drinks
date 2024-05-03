@@ -1,15 +1,11 @@
 import React, { useState } from "react";
-import { StatusBar, Image, StyleSheet, Platform, View} from "react-native";
+import { StatusBar, Image, StyleSheet, Platform, View, Text } from "react-native";
 import { colors } from "./src/constants/colors";
 import { SafeAreaView } from "react-native";
 import Navigator from "./src/navigation/Navigator";
-
 export default function App() {
-    const [categorySelected, setCategorySelected] = useState("");
-    const [itemIdSelected, setItemIdSelected] = useState("");
-
     return (
-            <Navigator />
+                <Navigator />
     );
 }
 
@@ -18,7 +14,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         marginBottom: 5,
-        // marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+        // marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 10,
         backgroundColor: colors.color2,
         alignItems: "center",
         borderRadius: 5,

@@ -3,10 +3,16 @@ import React from "react";
 import { colors } from "../constants/colors";
 import Card from "./Card";
 
-const CategoryItem = ({ category,navigation }) => {
+const CategoryItem = ({ category, navigation }) => {
     return (
         <Card style={styles.container}>
-            <Pressable onPress={() => navigation.navigate('ItemListCategories',{category:category.name})}>
+            <Pressable
+                onPress={() =>
+                    navigation.navigate("ItemListCategories", {
+                        category: category.name,
+                    })
+                }
+            >
                 <Text style={styles.title}>{category.name}</Text>
             </Pressable>
         </Card>
@@ -19,17 +25,17 @@ const styles = StyleSheet.create({
     container: {
         minWidth: 250,
         marginTop: 10,
-        borderColor: 'black',
+        borderColor: "black",
         borderWidth: 2,
         borderRadius: 10,
         opacity: 0.9,
-        backgroundColor: colors.color2
+        backgroundColor: colors.color2,
     },
     title: {
         fontSize: 28,
         fontWeight: "900",
         textAlign: "center",
         marginTop: 5,
-        color: 'black',
+        color: "black",
     },
 });
