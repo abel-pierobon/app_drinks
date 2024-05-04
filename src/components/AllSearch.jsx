@@ -1,14 +1,13 @@
 import { useState } from "react";
-import { StyleSheet, Text, View,TextInput,Pressable } from "react-native";
+import { StyleSheet, Text, View, TextInput, Pressable } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import { colors } from "../constants/colors";
 
-const AllSearch = ({busquedaGeneral,setBusquedaGeneral}) => {
-
+const AllSearch = ({ busquedaGeneral, setBusquedaGeneral }) => {
     return (
         <View style={styles.container}>
             <TextInput
-                placeholder="Busca tu bebida"
+                placeholder="Toca aquí para buscar tu bebida preferida..."
                 value={busquedaGeneral}
                 onChangeText={setBusquedaGeneral}
                 style={styles.input}
@@ -16,9 +15,11 @@ const AllSearch = ({busquedaGeneral,setBusquedaGeneral}) => {
                 fontSize={15}
                 placeholderTextColor="black"
             />
-            <Pressable onPress={() => setBusquedaGeneral("")}>
+            {busquedaGeneral ? (
+                <Pressable onPress={() => setBusquedaGeneral("")}>
                     <MaterialIcons name="cancel" size={36} color="black" />
                 </Pressable>
+            ) : null}
         </View>
     );
 };
@@ -26,17 +27,18 @@ export default AllSearch;
 const styles = StyleSheet.create({
     container: {
         flexDirection: "row",
-        alignItems: "space-evenly",
+        alignItems: "center",
         justifyContent: "center",
-        marginHorizontal: 10,
-        marginVertical: 10,
-        borderWidth: 1,
-        borderColor: "black",
-        borderRadius: 10,
+        gap: 10,
+        backgroundColor: colors.color2,
+        padding: 1,
+        opacity: 0.9,
+        width: "100%",
     },
     input: {
+        alignItems: "center",
         padding: 10,
-        width: "60%",
-        height: 35,
-    }
+        width: "80%",
+        textAlign: "center",
+    },
 });

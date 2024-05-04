@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, FlatList } from "react-native";
+import { StyleSheet, Text, View, FlatList, Image } from "react-native";
 import React, { useEffect, useState } from "react";
 import category from "../db/category.json";
 import { colors } from "../constants/colors";
@@ -20,6 +20,13 @@ const Home = ({ navigation }) => {
     }, [busquedaGeneral]);
     return (
         <View style={styles.container}>
+            <Image
+                style={styles.backgroundImage}
+                source={{
+                    uri: "https://firebasestorage.googleapis.com/v0/b/appasados-d7bd8.appspot.com/o/imagenes%2Ffotor-20240504111637.png?alt=media&token=23f53bdf-90dd-4b64-8703-6e5d6c03d6a4",
+                }}
+                resizeMode="cover"
+            />
             <AllSearch
                 busquedaGeneral={busquedaGeneral}
                 setBusquedaGeneral={setBusquedaGeneral}
@@ -34,13 +41,10 @@ const Home = ({ navigation }) => {
                 />
             ) : (
                 <View>
-                    <Text style={styles.subTitle}>
-                        Inicia Sesión o Registrate para mas opciones
-                    </Text>
-                    <Text style={styles.subTitle}>
+                    {/* <Text style={styles.subTitle}>
                         {" "}
                         O Elige tu categoria favorita
-                    </Text>
+                    </Text> */}
                     <FlatList
                         data={category}
                         renderItem={({ item }) => (
@@ -63,13 +67,21 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: "center",
+        
     },
     subTitle: {
-        fontSize: 20,
-        fontWeight: "900",
+        fontSize: 24,
+        fontWeight: "800",
         textAlign: "center",
         marginTop: 10,
         marginBottom: 10,
-        color: "black",
+        color: "white",
+    },
+    backgroundImage: {
+        width: "100%",
+        height: "100%",
+        position: "absolute",
+        zIndex: -1,
+        opacity: 0.7,
     },
 });

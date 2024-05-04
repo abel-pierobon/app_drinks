@@ -9,32 +9,32 @@ import {
 import React from "react";
 import Card from "./Card";
 import { Ionicons } from "@expo/vector-icons";
-
-import { MaterialIcons } from "@expo/vector-icons";
+import iconoFavoritos from "../Icons/favorito.png";
 import { colors } from "../constants/colors";
 
 const Drink = ({ drink, goBack }) => {
     return (
         <Card style={styles.container}>
-            <Pressable
-                    onPress={() => goBack()}
-                    style={{ alignSelf: "flex-start" }}
-                >
-                    <Ionicons
-                        name="arrow-back-circle-outline"
-                        size={36}
-                        color="black"
-                    />
-                </Pressable>
             <View style={styles.iconos}>
-                
-                <Pressable
-                    onPress={() => goBack()}
-                    style={{ alignSelf: "flex-end" }}
-                >
-                    <MaterialIcons name="favorite" size={24} color="white" />
-                </Pressable>
+            <Pressable
+                onPress={() => goBack()}
+            >
+                <Ionicons
+                    name="arrow-back-circle-outline"
+                    size={36}
+                    color="black"
+                />
+            </Pressable>
+            <Pressable
+                onPress={() => goBack()}
+            >
+                <Image
+                                    source={iconoFavoritos}
+                                    style={{ width: 36, height: 36 }}
+                                />
+            </Pressable>
             </View>
+            
             <Image source={{ uri: drink.imagen }} style={styles.imagen} />
             <View style={{ padding: 10 }}>
                 <Text style={styles.titulo}>Nombre de bebida: </Text>
@@ -85,9 +85,9 @@ const styles = StyleSheet.create({
     iconos: {
         flexDirection: "row",
         gap: 10,
-        justifyContent: "flex-end",
-        alignItems: "space-evenly",
-        width: "80%",
+        alignItems: "center",
+        justifyContent: "space-between",
+        width: "100%",
         marginTop: 10,
     },
 });

@@ -22,11 +22,11 @@ const styles = StyleSheet.create({
         backgroundColor: colors.color2,
     },
     titulo: {
-        fontSize: 20,
+        fontSize: 24,
         fontWeight: "bold",
         textAlign: "center",
         marginTop: 5,
-        color: "black",
+        color: "white",
         justifyContent: "center",
     },
     imagen: {

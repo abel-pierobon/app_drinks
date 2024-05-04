@@ -23,7 +23,6 @@ const styles = StyleSheet.create({
         borderColor: "black",
         borderWidth: 1,
         backgroundColor: colors.color2,
-
     },
     titulo: {
         fontSize: 20,

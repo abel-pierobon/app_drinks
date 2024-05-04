@@ -1,13 +1,21 @@
-import { StyleSheet, Text, View, FlatList, Pressable } from "react-native";
+import { StyleSheet, Text, View, FlatList, Image } from "react-native";
 import React from "react";
 import bebidas from "../db/bebidas.json";
 import Drink from "../components/Drink";
+import { colors } from "../constants/colors";
 
 const ItemSelected = ({ setItemIdSelected = () => {}, route, navigation }) => {
     const { itemIdSelected } = route.params;
 
     return (
-        <View>
+        <View style={styles.container}>
+            <Image
+                style={styles.backgroundImage}
+                source={{
+                    uri: "https://firebasestorage.googleapis.com/v0/b/appasados-d7bd8.appspot.com/o/imagenes%2Ffotor-20240504111637.png?alt=media&token=23f53bdf-90dd-4b64-8703-6e5d6c03d6a4",
+                }}
+                resizeMode="cover"
+            />
             <FlatList
                 data={bebidas.filter((item) => item.id === itemIdSelected)}
                 renderItem={({ item }) => (
@@ -21,4 +29,16 @@ const ItemSelected = ({ setItemIdSelected = () => {}, route, navigation }) => {
 
 export default ItemSelected;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: colors.color2,
+    },
+    backgroundImage: {
+        width: "100%",
+        height: "100%",
+        position: "absolute",
+        zIndex: -1,
+        opacity: 0.7,
+    },
+});

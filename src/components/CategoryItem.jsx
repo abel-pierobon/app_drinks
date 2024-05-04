@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderRadius: 10,
         opacity: 0.9,
-        backgroundColor: colors.color2,
+        backgroundColor: colors.color5,
     },
     title: {
         fontSize: 28,
@@ -37,5 +37,6 @@ const styles = StyleSheet.create({
         textAlign: "center",
         marginTop: 5,
         color: "black",
+        
     },
 });

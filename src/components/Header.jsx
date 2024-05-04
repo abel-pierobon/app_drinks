@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
         marginTop: 5,
         color: "black",
         textTransform: "uppercase",
-        marginTop: 30,
+        marginTop: 5,
+        marginBottom: 5,
     },
 });

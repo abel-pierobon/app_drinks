@@ -13,22 +13,22 @@ const Stack = createNativeStackNavigator();
 const HomeStackNavigator = () => {
     return (
 
-        
-        <Stack.Navigator
+        <View style={{ flex: 1, backgroundColor: colors.color1, justifyContent: "center", alignContent: "center" }}>
+            <Stack.Navigator
             initialRouteName="Home"
+
             screenOptions={({ route }) => ({
                 header: ({ navigation }) => (
                     <Header
                         title={
                             route.name === "Home" ? (
-                                "Categorias"
+                                <Text style={{  }}>Categorias</Text>
                             ) : route.name === "ItemListCategories" ? (
-                                <Text>
-                                    Categoria:{" "}
-                                    <Text style={{ color: colors.color1  }}>
+
+                                    <Text style={{  }}>
                                         {route.params.category}
                                     </Text>
-                                </Text>
+
                             ) : (
                                 "Preparación"
                             )
@@ -45,7 +45,9 @@ const HomeStackNavigator = () => {
             <Stack.Screen name="ItemSelected" component={ItemSelected} />
         </Stack.Navigator>
         
+        </View>
     );
+
 };
 export default HomeStackNavigator;
 

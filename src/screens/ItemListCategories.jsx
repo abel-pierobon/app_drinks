@@ -1,4 +1,4 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Image } from "react-native";
 import React, { useEffect, useState } from "react";
 import bebidas from "../db/bebidas.json";
 import { colors } from "../constants/colors";
@@ -39,6 +39,13 @@ const ItemListCategories = ({
 
     return (
         <View style={styles.container}>
+            <Image
+                style={styles.backgroundImage}
+                source={{
+                    uri: "https://firebasestorage.googleapis.com/v0/b/appasados-d7bd8.appspot.com/o/imagenes%2Ffotor-20240504111637.png?alt=media&token=23f53bdf-90dd-4b64-8703-6e5d6c03d6a4",
+                }}
+                resizeMode="cover"
+            />
             <Search
                 goBack={() => navigation.goBack()}
                 busqueda={busqueda}
@@ -59,6 +66,7 @@ const ItemListCategories = ({
                 keyExtractor={(item, index) => index.toString()}
                 showsVerticalScrollIndicator={false}
                 // horizontal= {true}
+                // style={{ marginTop: 75, marginBottom: 25 }}
             />
         </View>
     );
@@ -70,6 +78,14 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: "center",
-        marginHorizontal: 15,
+        width: "100%",
+    },
+    
+    backgroundImage: {
+        width: "100%",
+        height: "100%",
+        position: "absolute",
+        zIndex: -1,
+        opacity: 0.95,
     },
 });

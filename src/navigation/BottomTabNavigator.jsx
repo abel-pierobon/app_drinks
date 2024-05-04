@@ -1,13 +1,13 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeStackNavigator from "./HomeStackNavigator";
-import { Entypo } from "@expo/vector-icons";
-import { Fontisto } from "@expo/vector-icons";
 import FavoritesNavigation from "./FavoritesNavigation";
 import { colors } from "../constants/colors";
 import LoginNavigator from "./LoginNavigator";
-import { AntDesign } from '@expo/vector-icons';
+import iconoBebida from "../Icons/tequila.png";
+import iconoFavoritos from "../Icons/favorito.png";
+import iconoLogin from "../Icons/perfil.png";
 
 const Tab = createBottomTabNavigator();
 
@@ -16,9 +16,10 @@ const BottomTabNavigator = () => {
         <Tab.Navigator
             screenOptions={{
                 headerShown: false,
-                tabBarStyle: { backgroundColor: colors.color2, marginTop: 20 },
+                tabBarStyle: { backgroundColor: colors.color3 },
             }}
         >
+            
             <Tab.Screen
                 name="drinks"
                 component={HomeStackNavigator}
@@ -31,20 +32,15 @@ const BottomTabNavigator = () => {
                                 style={
                                     focused
                                         ? {
-                                              borderTopLeftRadius: 50,
-                                              borderTopRightRadius: 50,
-                                              backgroundColor: "white",
-                                              padding: 5,
-                                              paddingBottom: 10,
-                                              marginTop: 5,
-                                              color: "white",
-                                              minWidth: 60,
-                                              alignItems: "center",
-                                          }
+                                            ...styles.icons,
+                                        }
                                         : { color: "gray" }
                                 }
                             >
-                                <Entypo name="drink" size={28} />
+                                <Image
+                                    source={iconoBebida}
+                                    style={{ width: 48, height: 48 }}
+                                />
                             </View>
                         );
                     },
@@ -62,20 +58,15 @@ const BottomTabNavigator = () => {
                                 style={
                                     focused
                                         ? {
-                                              borderTopLeftRadius: 50,
-                                              borderTopRightRadius: 50,
-                                              backgroundColor: "white",
-                                              padding: 5,
-                                              paddingBottom: 10,
-                                              marginTop: 5,
-                                              color: "white",
-                                              minWidth: 60,
-                                              alignItems: "center",
-                                          }
+                                            ...styles.icons,
+                                        }
                                         : { color: "gray" }
                                 }
                             >
-                                <Fontisto name="favorite" size={28} />
+                                <Image
+                                    source={iconoFavoritos}
+                                    style={{ width: 36, height: 36 }}
+                                />
                             </View>
                         );
                     },
@@ -93,20 +84,15 @@ const BottomTabNavigator = () => {
                                 style={
                                     focused
                                         ? {
-                                            borderTopLeftRadius: 50,
-                                            borderTopRightRadius: 50,
-                                            backgroundColor: "white",
-                                            padding: 5,
-                                            paddingBottom: 10,
-                                            marginTop: 5,
-                                            color: "white",
-                                            minWidth: 60,
-                                            alignItems: "center",
+                                            ...styles.icons    
                                         }
-                                        : { color: "gray" }
+                                        : null
                                 }
                             >
-                                <AntDesign name="user" size={28} color="black" />
+                                <Image
+                                    source={iconoLogin}
+                                    style={{ width: 36, height: 36 }}
+                                />
                             </View>
                         );
                     },
@@ -116,4 +102,12 @@ const BottomTabNavigator = () => {
     );
 };
 export default BottomTabNavigator;
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    icons: {
+        borderRadius: 15,
+        padding: 1,
+        minWidth: 30,
+        alignItems: "center",
+        transform: [{ scale: 1.4 }, { translateY: -8 }],
+    },
+});
