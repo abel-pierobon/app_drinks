@@ -1,0 +1,448 @@
+[
+    {
+        "id": "11149",
+        "nombre": "Boxcar",
+        "categoria": "Cocktail",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/pwgtpa1504366376.jpg",
+        "ingredientes": [
+            "Ginebra",
+            "Triple sec",
+            "Jugo de limón",
+            "Granadina",
+            "Clara de huevo"
+        ],
+        "puntuacion": "5"
+    },
+    {
+        "id": "13332",
+        "nombre": "B-53",
+        "categoria": "Nuevos",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/rwqxrv1461866023.jpg",
+        "ingredientes": ["Kahlua", "Sambuca", "Grand Marnier"],
+        "puntuacion": "3"
+    },
+    {
+        "id": "17254",
+        "nombre": "Bijou",
+        "categoria": "Cocktail",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/rysb3r1513706985.jpg",
+        "ingredientes": [
+            "Bíter de naranja",
+            "Chartreuse verde",
+            "Ginebra",
+            "Vermut dulce"
+        ],
+        "puntuacion": "1"
+    },
+    {
+        "id": "13222",
+        "nombre": "Big Red",
+        "categoria": "Cocktail",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/yqwuwu1441248116.jpg",
+        "ingredientes": ["Crema de whisky", "Goldschlager"],
+        "puntuacion": "4"
+    },
+    {
+        "id": "17195",
+        "nombre": "Bellini",
+        "categoria": "Clásicos",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/eaag491504367543.jpg",
+        "ingredientes": ["Champán", "Schnapps de durazno"],
+        "puntuacion": "2"
+    },
+    {
+        "id": "17210",
+        "nombre": "Bramble",
+        "categoria": "Nuevos",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/twtbh51630406392.jpg",
+        "ingredientes": [
+            "Ginebra",
+            "Jugo de limón",
+            "Jarabe de azúcar",
+            "Creme de Mure"
+        ],
+        "puntuacion": "2"
+    },
+    {
+        "id": "11060",
+        "nombre": "Balmoral",
+        "categoria": "Clásicos",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/vysuyq1441206297.jpg",
+        "ingredientes": ["Escocés", "Vermut dulce", "Vermut seco", "Bíter"],
+        "puntuacion": "4"
+    },
+    {
+        "id": "11120",
+        "nombre": "Bluebird",
+        "categoria": "Clásicos",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/5jhyd01582579843.jpg",
+        "ingredientes": [
+            "Ginebra",
+            "Triple sec",
+            "Curacao azul",
+            "Bíter",
+            "Guinda en almíbar",
+            "Cáscara de limón"
+        ],
+        "puntuacion": "1"
+    },
+    {
+        "id": "178310",
+        "nombre": "Brooklyn",
+        "categoria": "Clásicos",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/ojsezf1582477277.jpg",
+        "ingredientes": [
+            "Whiskey de centeno",
+            "Vermut seco",
+            "Licor de Maraschino",
+            "Bíter de Angostura",
+            "Cereza Maraschino"
+        ],
+        "puntuacion": "3"
+    },
+    {
+        "id": "12572",
+        "nombre": "Bora Bora",
+        "categoria": "Party",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/xwuqvw1473201811.jpg",
+        "ingredientes": [
+            "Jugo de piña",
+            "Jugo de fruta de la pasión",
+            "Jugo de limón",
+            "Granadina"
+        ],
+        "puntuacion": "5"
+    },
+    {
+        "id": "11124",
+        "nombre": "Boomerang",
+        "categoria": "Party",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/3m6yz81504389551.jpg",
+        "ingredientes": [
+            "Ginebra",
+            "Vermut seco",
+            "Bíter",
+            "Licor Maraschino",
+            "Guinda en almíbar"
+        ],
+        "puntuacion": "1"
+    },
+    {
+        "id": "17825",
+        "nombre": "Brigadier",
+        "categoria": "Party",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/nl89tf1518947401.jpg",
+        "ingredientes": [
+            "Chocolate caliente",
+            "Chartreuse verde",
+            "Cherry Heering"
+        ],
+        "puntuacion": "2"
+    },
+    {
+        "id": "178311",
+        "nombre": "Broadside",
+        "categoria": "Party",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/l2o6xu1582476870.jpg",
+        "ingredientes": [
+            "Ron de 151 grados",
+            "Whisky escocés",
+            "Bíter",
+            "Ajenjo",
+            "Hielo"
+        ],
+        "puntuacion": ""
+    },
+    {
+        "id": "17035",
+        "nombre": "Buccaneer",
+        "categoria": "Party",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/upvtyt1441249023.jpg",
+        "ingredientes": ["Corona", "Bacardi Limon"],
+        "puntuacion": "3"
+    },
+    {
+        "id": "17120",
+        "nombre": "Brain Fart",
+        "categoria": "Clásicos",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/rz5aun1504389701.jpg",
+        "ingredientes": [
+            "Everclear",
+            "Vodka",
+            "Mountain Dew",
+            "Surge",
+            "Jugo de limón",
+            "Ron"
+        ],
+        "puntuacion": "4"
+    },
+    {
+        "id": "11106",
+        "nombre": "Blackthorn",
+        "categoria": "Clásicos",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/dgj92f1616098672.jpg",
+        "ingredientes": ["Vermut dulce", "Gin de endrino", "Cáscara de limón"],
+        "puntuacion": "5"
+    },
+    {
+        "id": "13395",
+        "nombre": "Bob Marley",
+        "categoria": "Clásicos",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/rrqrst1477140664.jpg",
+        "ingredientes": [
+            "Licor de melón Midori",
+            "Jägermeister",
+            "Goldschlager"
+        ],
+        "puntuacion": "4"
+    },
+    {
+        "id": "16986",
+        "nombre": "Bible Belt",
+        "categoria": "Clásicos",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/6bec6v1503563675.jpg",
+        "ingredientes": ["Southern Comfort", "Triple sec", "Lima", "Sour mix"],
+        "puntuacion": "3"
+    },
+    {
+        "id": "14730",
+        "nombre": "Bubble Gum",
+        "categoria": "Cocktail",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/spuurv1468878783.jpg",
+        "ingredientes": [
+            "Vodka",
+            "Licor de plátano",
+            "Jugo de naranja",
+            "Schnapps de durazno"
+        ],
+        "puntuacion": 2
+    },
+    {
+        "id": "14538",
+        "nombre": "Bumble Bee",
+        "categoria": "Cocktail",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/uwqpvv1461866378.jpg",
+        "ingredientes": ["Baileys Irish Cream", "Kahlua", "Sambuca"],
+        "puntuacion": "1"
+    },
+    {
+        "id": "15511",
+        "nombre": "Baby Eskimo",
+        "categoria": "Cocktail",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/wywrtw1472720227.jpg",
+        "ingredientes": ["Kahlua", "Leche", "Helado de vainilla"],
+        "puntuacion": "5"
+    },
+    {
+        "id": "11129",
+        "nombre": "Boston Sour",
+        "categoria": "Clásicos",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/kxlgbi1504366100.jpg",
+        "ingredientes": [
+            "Whisky mezclado",
+            "Limón",
+            "Azúcar en polvo",
+            "Clara de huevo",
+            "Limón",
+            "Guinda"
+        ],
+        "puntuacion": "3"
+    },
+    {
+        "id": "17267",
+        "nombre": "Bahama Mama",
+        "categoria": "Nuevos",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/tyb4a41515793339.jpg",
+        "ingredientes": [
+            "Ron",
+            "Ron oscuro",
+            "Licor de plátano",
+            "Granadina",
+            "Jugo de piña",
+            "Jugo de naranja",
+            "Dulce y agrio"
+        ],
+        "puntuacion": "2"
+    },
+    {
+        "id": "17208",
+        "nombre": "Rose",
+        "categoria": "Nuevos",
+        "instruccionesES": "Agita en una coctelera, luego cuela en un vaso frío. Decora y sirve.",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/8kxbvq1504371462.jpg",
+        "ingredientes": [
+            "Dry Vermouth, Gin, Apricot brandy, Lemon juice, Grenadine, Powdered sugar"
+        ],
+        "puntuacion": "5"
+    },
+    {
+        "id": "16031",
+        "nombre": "Radler",
+        "categoria": "Nuevos",
+        "instruccionesES": "Vierte la cerveza en una jarra grande, luego añade lentamente la 7-Up (o Sprite).",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/xz8igv1504888995.jpg",
+        "ingredientes": ["Beer, 7-Up"],
+        "puntuacion": "3"
+    },
+    {
+        "id": "12093",
+        "nombre": "Rum Sour",
+        "categoria": "Nuevos",
+        "instruccionesES": "En una coctelera medio llena de cubitos de hielo, combina el ron, el jugo de limón y el azúcar. Agita bien. Cuela en un vaso de sour y decora con la rodaja de naranja y la cereza.",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/bylfi21504886323.jpg",
+        "ingredientes": [
+            "Light rum, Lemon juice, Sugar, Orange, Maraschino cherry"
+        ],
+        "puntuacion": "4"
+    },
+    {
+        "id": "11009",
+        "nombre": "Rum Toddy",
+        "categoria": "Party",
+        "instruccionesES": "Poner en una taza 1 cucharada de azúcar y 2 oz de ron caliente. Rellenar con agua caliente y revolver.",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/athdk71504886286.jpg",
+        "ingredientes": [
+            "Sugar, Dark rum, Water, Ground cinnamon, Ground cloves"
+        ],
+        "puntuacion": "4"
+    },
+    {
+        "id": "12688",
+        "nombre": "Old-Fashioned",
+        "categoria": "Nuevos",
+        "instruccionesES": "En un vaso viejo, mezcle el azúcar y el agua. Agregar los cubitos de hielo y el whisky. Remover bien y decorar con la cáscara de naranja y la cereza.",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg",
+        "ingredientes": ["Water, Sugar, Bourbon, Orange, Maraschino cherry"],
+        "puntuacion": "5"
+    },
+    {
+        "id": "17244",
+        "nombre": "Lemon Drop",
+        "categoria": "Cocktail",
+        "instruccionesES": "Agite y cuele todos los ingredientes en una coctelera con hielo. Decore el borde del vaso con azúcar.",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/mtpxgk1504373297.jpg",
+        "ingredientes": ["Absolut Citron, Cointreau, Lemon juice, Sugar"],
+        "puntuacion": "5"
+    },
+    {
+        "id": "11000",
+        "nombre": "Mojito",
+        "categoria": "Cocktail",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/metwgh1606770327.jpg",
+        "ingredientes": ["Ron ligero", "Lima", "Azúcar", "Menta", "Soda"],
+        "puntuacion": "4"
+    },
+    {
+        "id": "15841",
+        "nombre": "Mojito Extra",
+        "categoria": "Cocktail",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/vwxrsw1478251483.jpg",
+        "ingredientes": [
+            "Menta",
+            "Jugo de limón",
+            "Ron oscuro",
+            "Soda",
+            "Angostura"
+        ],
+        "puntuacion": "3"
+    },
+    {
+        "id": "178358",
+        "nombre": "Mango Mojito",
+        "categoria": "Cocktail",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/wfqmgm1630406820.jpg",
+        "ingredientes": [
+            "Lima",
+            "Mango",
+            "Menta",
+            "Ron blanco",
+            "Hielo",
+            "Soda"
+        ],
+        "puntuacion": "4"
+    },
+    {
+        "id": "178336",
+        "nombre": "Blueberry Mojito",
+        "categoria": "Cocktail",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/07iep51598719977.jpg",
+        "ingredientes": [
+            "Ron oscuro",
+            "Jugo de lima",
+            "Azúcar",
+            "Arándanos",
+            "Refresco de lima-limón"
+        ],
+        "puntuacion": "5"
+    },
+    {
+        "id": "11007",
+        "nombre": "Margarita",
+        "categoria": "Simple",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg",
+        "ingredientes": ["Tequila", "Triple sec", "Jugo de lima", "Sal"],
+        "puntuacion": "4"
+    },
+    {
+        "id": "11118",
+        "nombre": "Blue Margarita",
+        "categoria": "Simple",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/bry4qh1582751040.jpg",
+        "ingredientes": ["Tequila", "Curaçao azul", "Jugo de lima", "Sal"],
+        "puntuacion": "4"
+    },
+    {
+        "id": "17216",
+        "nombre": "Margarita de Tommy",
+        "categoria": "Simple",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/loezxn1504373874.jpg",
+        "ingredientes": ["Tequila", "Jugo de lima", "Jarabe de agave"],
+        "puntuacion": "3"
+    },
+    {
+        "id": "16158",
+        "nombre": "Margarita Whitecap",
+        "categoria": "Simple",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/srpxxp1441209622.jpg",
+        "ingredientes": ["Hielo", "Tequila", "Crema de coco", "Jugo de lima"],
+        "puntuacion": "1"
+    },
+    {
+        "id": "12322",
+        "nombre": "Margarita de Fresa",
+        "categoria": "Simple",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/tqyrpw1439905311.jpg",
+        "ingredientes": [
+            "Licor de fresa",
+            "Tequila",
+            "Triple sec",
+            "Jugo de limón",
+            "Fresas",
+            "Sal"
+        ],
+        "puntuacion": "3"
+    },
+    {
+        "id": "178332",
+        "nombre": "Margarita de Sandía Machacada",
+        "categoria": "Cocktail",
+        "imagen": "https://www.thecocktaildb.com/images/media/drink/dztcv51598717861.jpg",
+        "ingredientes": [
+            "Sandía",
+            "Menta",
+            "Jugo de toronja",
+            "Limón",
+            "Tequila",
+            "Hielo"
+        ],
+        "puntuacion": "5"
+    },
+    {
+        "id": "1",
+        "nombre": "Fernet con Coca",
+        "categoria": "Fernet Cordobés",
+        "imagen": "https://firebasestorage.googleapis.com/v0/b/appasados-d7bd8.appspot.com/o/imagenes%2FFernet.jpg?alt=media&token=a10a5814-0a20-4764-9222-deb0085f1706",
+        "ingredientes": ["Fernet Branca", "Coca Cola", "Hielo"],
+        "puntuacion": "54"
+    }
+]

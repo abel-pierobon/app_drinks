@@ -1,7 +1,6 @@
 import { StyleSheet, Text, View, FlatList, Image } from "react-native";
 import React, { useEffect, useState } from "react";
 import category from "../db/category.json";
-import { colors } from "../constants/colors";
 import CategoryItem from "../components/CategoryItem";
 import AllSearch from "../components/AllSearch";
 import bebidas from "../db/bebidas.json";
@@ -9,7 +8,6 @@ import DrinkFilter from "../components/DrinkFilter";
 const Home = ({ navigation }) => {
     const [busquedaGeneral, setBusquedaGeneral] = useState("");
     const [bebidasFiltradas, setBebidasFiltradas] = useState(bebidas);
-
     useEffect(() => {
         const busquedaGeneralFilter = bebidas.filter((item) =>
             item.nombre
@@ -23,7 +21,7 @@ const Home = ({ navigation }) => {
             <Image
                 style={styles.backgroundImage}
                 source={{
-                    uri: "https://firebasestorage.googleapis.com/v0/b/appasados-d7bd8.appspot.com/o/imagenes%2Ffotor-20240504111637.png?alt=media&token=23f53bdf-90dd-4b64-8703-6e5d6c03d6a4",
+                    uri: "https://firebasestorage.googleapis.com/v0/b/appasados-d7bd8.appspot.com/o/imagenes%2Ffotor-20240504132311.png?alt=media&token=d5606bb4-f67e-4307-bd0e-ab26f1bf59c5",
                 }}
                 resizeMode="cover"
             />
@@ -41,10 +39,6 @@ const Home = ({ navigation }) => {
                 />
             ) : (
                 <View>
-                    {/* <Text style={styles.subTitle}>
-                        {" "}
-                        O Elige tu categoria favorita
-                    </Text> */}
                     <FlatList
                         data={category}
                         renderItem={({ item }) => (

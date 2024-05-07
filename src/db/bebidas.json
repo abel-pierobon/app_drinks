@@ -14,7 +14,7 @@
             "Granadina",
             "Clara de huevo"
         ]
-    },
+},
     {
         "id": "13332",
         "nombre": "B-53",
@@ -24,7 +24,7 @@
         "instrucciones": "Coloca el Kahlua, Sambuca y Grand Marnier en capas en un vaso de chupito en ese orden. Mejor que el B-52.",
         "imagen": "https://www.thecocktaildb.com/images/media/drink/rwqxrv1461866023.jpg",
         "ingredientes": ["Kahlua", "Sambuca", "Grand Marnier"]
-    },
+},
     {
         "id": "17254",
         "nombre": "Bijou",
@@ -39,7 +39,7 @@
             "Ginebra",
             "Vermut dulce"
         ]
-    },
+},
     {
         "id": "13222",
         "nombre": "Big Red",
@@ -49,7 +49,7 @@
         "instrucciones": "Vierte los ingredientes en un vaso de chupito de 1 onza.",
         "imagen": "https://www.thecocktaildb.com/images/media/drink/yqwuwu1441248116.jpg",
         "ingredientes": ["Crema de whisky", "Goldschlager"]
-    },
+},
     {
         "id": "17195",
         "nombre": "Bellini",
@@ -59,7 +59,7 @@
         "instrucciones": "Vierte puré de durazno en una flauta enfriada, agrega vino espumoso. Revuelve suavemente.",
         "imagen": "https://www.thecocktaildb.com/images/media/drink/eaag491504367543.jpg",
         "ingredientes": ["Champán", "Schnapps de durazno"]
-    },
+},
     {
         "id": "17210",
         "nombre": "Bramble",
@@ -74,7 +74,7 @@
             "Jarabe de azúcar",
             "Creme de Mure"
         ]
-    },
+},
     {
         "id": "11060",
         "nombre": "Balmoral",
@@ -84,7 +84,7 @@
         "instrucciones": "En un vaso mezclador medio lleno de cubitos de hielo, combina todos los ingredientes. Revuelve bien. Cuela en una copa de cóctel.",
         "imagen": "https://www.thecocktaildb.com/images/media/drink/vysuyq1441206297.jpg",
         "ingredientes": ["Escocés", "Vermut dulce", "Vermut seco", "Bíter"]
-    },
+},
     {
         "id": "11120",
         "nombre": "Bluebird",
@@ -101,7 +101,7 @@
             "Guinda en almíbar",
             "Cáscara de limón"
         ]
-    },
+},
     {
         "id": "178310",
         "nombre": "Brooklyn",
@@ -117,7 +117,7 @@
             "Bíter de Angostura",
             "Cereza Maraschino"
         ]
-    },
+},
     {
         "id": "12572",
         "nombre": "Bora Bora",
@@ -132,7 +132,7 @@
             "Jugo de limón",
             "Granadina"
         ]
-    },
+},
     {
         "id": "11124",
         "nombre": "Boomerang",
@@ -148,7 +148,7 @@
             "Licor Maraschino",
             "Guinda en almíbar"
         ]
-    },
+},
     {
         "id": "17825",
         "nombre": "Brigadier",
@@ -162,7 +162,7 @@
             "Chartreuse verde",
             "Cherry Heering"
         ]
-    },
+},
     {
         "id": "178311",
         "nombre": "Broadside",
@@ -178,7 +178,7 @@
             "Ajenjo",
             "Hielo"
         ]
-    },
+},
     {
         "id": "17035",
         "nombre": "Buccaneer",
@@ -188,7 +188,7 @@
         "instrucciones": "Vierte la Corona en un vaso de cerveza de 18 onzas y luego la Bacardi Limon en la cerveza. Revuelve muy suavemente.",
         "imagen": "https://www.thecocktaildb.com/images/media/drink/upvtyt1441249023.jpg",
         "ingredientes": ["Corona", "Bacardi Limon"]
-    },
+},
     {
         "id": "17120",
         "nombre": "Brain Fart",
@@ -205,7 +205,7 @@
             "Jugo de limón",
             "Ron"
         ]
-    },
+},
     {
         "id": "11106",
         "nombre": "Blackthorn",
@@ -215,7 +215,7 @@
         "instrucciones": "Revuelve el gin de endrino y el vermut con hielo y cuela en un vaso de cóctel. Agrega la cáscara de limón y sirve.",
         "imagen": "https://www.thecocktaildb.com/images/media/drink/dgj92f1616098672.jpg",
         "ingredientes": ["Vermut dulce", "Gin de endrino", "Cáscara de limón"]
-    },
+},
     {
         "id": "13395",
         "nombre": "Bob Marley",
@@ -229,7 +229,7 @@
             "Jägermeister",
             "Goldschlager"
         ]
-    },
+},
     {
         "id": "16986",
         "nombre": "Bible Belt",
@@ -239,7 +239,7 @@
         "instrucciones": "Mezcla todos los ingredientes y vierte sobre hielo.",
         "imagen": "https://www.thecocktaildb.com/images/media/drink/6bec6v1503563675.jpg",
         "ingredientes": ["Southern Comfort", "Triple sec", "Lima", "Sour mix"]
-    },
+},
     {
         "id": "14730",
         "nombre": "Bubble Gum",
@@ -254,7 +254,7 @@
             "Jugo de naranja",
             "Schnapps de durazno"
         ]
-    },
+},
     {
         "id": "14538",
         "nombre": "Bumble Bee",
@@ -264,7 +264,7 @@
         "instrucciones": "Este es un shot en capas. Primero vierte el Bailey's en el vaso de chupito. Luego toma una cuchara boca abajo y tócala en la pared interior del vaso. Agrega con cuidado el Kahlua. Repite este proceso para el Sambuca. Si se hace correctamente, el alcohol se mantendrá separado y se parecerá a una abeja. ¡Disfruta!",
         "imagen": "https://www.thecocktaildb.com/images/media/drink/uwqpvv1461866378.jpg",
         "ingredientes": ["Baileys Irish Cream", "Kahlua", "Sambuca"]
-    },
+},
     {
         "id": "15511",
         "nombre": "Baby Eskimo",
@@ -274,7 +274,7 @@
         "instrucciones": "Deja el helado fuera durante unos 10 minutos. Agrega los ingredientes en orden, revuelve con un palito (también funciona con un cuchillo de mantequilla o una cuchara). Consume inmediatamente y a menudo. Agradable y ligero, ideal para después de una bebida fuerte.",
         "imagen": "https://www.thecocktaildb.com/images/media/drink/wywrtw1472720227.jpg",
         "ingredientes": ["Kahlua", "Leche", "Helado de vainilla"]
-    },
+},
     {
         "id": "11129",
         "nombre": "Boston Sour",
@@ -291,7 +291,7 @@
             "Limón",
             "Guinda"
         ]
-    },
+},
     {
         "id": "17267",
         "nombre": "Bahama Mama",
@@ -309,7 +309,7 @@
             "Jugo de naranja",
             "Dulce y agrio"
         ]
-    },
+},
     {
         "id": "17208",
         "nombre": "Rose",
@@ -320,7 +320,7 @@
         "instruccionesES": "Agita en una coctelera, luego cuela en un vaso frío. Decora y sirve.",
         "imagen": "https://www.thecocktaildb.com/images/media/drink/8kxbvq1504371462.jpg",
         "ingredientes": ["Dry Vermouth, Gin, Apricot brandy, Lemon juice, Grenadine, Powdered sugar"]
-    },
+},
     {
         "id": "16031",
         "nombre": "Radler",
@@ -331,7 +331,7 @@
         "instruccionesES": "Vierte la cerveza en una jarra grande, luego añade lentamente la 7-Up (o Sprite).",
         "imagen": "https://www.thecocktaildb.com/images/media/drink/xz8igv1504888995.jpg",
         "ingredientes": ["Beer, 7-Up"]
-    },
+},
     {
         "id": "12093",
         "nombre": "Rum Sour",
@@ -342,7 +342,7 @@
         "instruccionesES": "En una coctelera medio llena de cubitos de hielo, combina el ron, el jugo de limón y el azúcar. Agita bien. Cuela en un vaso de sour y decora con la rodaja de naranja y la cereza.",
         "imagen": "https://www.thecocktaildb.com/images/media/drink/bylfi21504886323.jpg",
         "ingredientes": ["Light rum, Lemon juice, Sugar, Orange, Maraschino cherry"]
-    },
+},
     {
         "id": "11009",
         "nombre": "Rum Toddy",
@@ -353,7 +353,7 @@
         "instruccionesES": "Poner en una taza 1 cucharada de azúcar y 2 oz de ron caliente. Rellenar con agua caliente y revolver.",
         "imagen": "https://www.thecocktaildb.com/images/media/drink/athdk71504886286.jpg",
         "ingredientes": ["Sugar, Dark rum, Water, Ground cinnamon, Ground cloves"]
-    },
+},
     {
         "id": "12688",
         "nombre": "Old-Fashioned",
@@ -364,7 +364,7 @@
         "instruccionesES": "En un vaso viejo, mezcle el azúcar y el agua. Agregar los cubitos de hielo y el whisky. Remover bien y decorar con la cáscara de naranja y la cereza.",
         "imagen": "https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg",
         "ingredientes": ["Water, Sugar, Bourbon, Orange, Maraschino cherry"]
-    },
+},
     {
         "id": "17244",
         "nombre": "Lemon Drop",
@@ -375,7 +375,7 @@
         "instruccionesES": "Agite y cuele todos los ingredientes en una coctelera con hielo. Decore el borde del vaso con azúcar.",
         "imagen": "https://www.thecocktaildb.com/images/media/drink/mtpxgk1504373297.jpg",
         "ingredientes": ["Absolut Citron, Cointreau, Lemon juice, Sugar"]
-    },
+},
     {
         "id": "11000",
         "nombre": "Mojito",
@@ -385,7 +385,7 @@
         "instrucciones": "Machaca las hojas de menta con azúcar y jugo de lima. Agrega un chorrito de soda y llena el vaso con hielo picado. Vierte el ron y termina con soda. Decora y sirve con pajilla.",
         "imagen": "https://www.thecocktaildb.com/images/media/drink/metwgh1606770327.jpg",
         "ingredientes": ["Ron ligero", "Lima", "Azúcar", "Menta", "Soda"]
-    },
+},
     {
         "id": "15841",
         "nombre": "Mojito Extra",
@@ -401,7 +401,7 @@
             "Soda",
             "Angostura"
         ]
-    },
+},
     {
         "id": "178358",
         "nombre": "Mango Mojito",
@@ -418,7 +418,7 @@
             "Hielo",
             "Soda"
         ]
-    },
+},
     {
         "id": "178336",
         "nombre": "Blueberry Mojito",
@@ -434,7 +434,7 @@
             "Arándanos",
             "Refresco de lima-limón"
         ]
-    },
+},
     {
         "id": "11007",
         "nombre": "Margarita",
@@ -444,7 +444,7 @@
         "instrucciones": "Frota el borde de la copa con la rodaja de lima para que la sal se adhiera. Ten cuidado de humedecer solo el borde exterior y espolvorea la sal. La sal debe presentarse en los labios del bebedor y nunca mezclarse en el cóctel. Agita los otros ingredientes con hielo, luego vierte cuidadosamente en la copa.",
         "imagen": "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg",
         "ingredientes": ["Tequila", "Triple sec", "Jugo de lima", "Sal"]
-    },
+},
     {
         "id": "11118",
         "nombre": "Blue Margarita",
@@ -454,7 +454,7 @@
         "instrucciones": "Frota el borde de la copa de cóctel con jugo de lima. Sumerge el borde en sal gruesa. Agita el tequila, el curaçao azul y el jugo de lima con hielo, cuela en la copa con borde de sal y sirve.",
         "imagen": "https://www.thecocktaildb.com/images/media/drink/bry4qh1582751040.jpg",
         "ingredientes": ["Tequila", "Curaçao azul", "Jugo de lima", "Sal"]
-    },
+},
     {
         "id": "17216",
         "nombre": "Margarita de Tommy",
@@ -464,7 +464,7 @@
         "instrucciones": "Agita y cuela en una copa de cóctel fría.",
         "imagen": "https://www.thecocktaildb.com/images/media/drink/loezxn1504373874.jpg",
         "ingredientes": ["Tequila", "Jugo de lima", "Jarabe de agave"]
-    },
+},
     {
         "id": "16158",
         "nombre": "Margarita Whitecap",
@@ -474,7 +474,7 @@
         "instrucciones": "Coloca todos los ingredientes en una licuadora y mezcla hasta que quede suave. Esto hace una bebida.",
         "imagen": "https://www.thecocktaildb.com/images/media/drink/srpxxp1441209622.jpg",
         "ingredientes": ["Hielo", "Tequila", "Crema de coco", "Jugo de lima"]
-    },
+},
     {
         "id": "12322",
         "nombre": "Margarita de Fresa",
@@ -491,7 +491,7 @@
             "Fresas",
             "Sal"
         ]
-    },
+},
     {
         "id": "178332",
         "nombre": "Margarita de Sandía Machacada",
@@ -508,7 +508,7 @@
             "Tequila",
             "Hielo"
         ]
-    },
+},
     {
         "id": "1",
         "nombre": "Fernet con Coca",
@@ -522,5 +522,5 @@
             "Coca Cola",
             "Hielo"
         ]
-    }
+}
 ]

@@ -9,6 +9,7 @@ import iconoBebida from "../Icons/tequila.png";
 import iconoFavoritos from "../Icons/favorito.png";
 import iconoLogin from "../Icons/perfil.png";
 
+
 const Tab = createBottomTabNavigator();
 
 const BottomTabNavigator = () => {
@@ -39,7 +40,7 @@ const BottomTabNavigator = () => {
                             >
                                 <Image
                                     source={iconoBebida}
-                                    style={{ width: 48, height: 48 }}
+                                    style={{ width: 36, height: 36 }}
                                 />
                             </View>
                         );
