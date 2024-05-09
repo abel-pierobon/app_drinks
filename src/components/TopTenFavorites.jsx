@@ -17,7 +17,7 @@ export default TopTenFavorites;
 const styles = StyleSheet.create({
     container: {
         maxWidth: 500,
-        maxHeight: 400,
+        maxHeight: 500,
         borderColor: "black",
         borderWidth: 1,
         backgroundColor: colors.color2,

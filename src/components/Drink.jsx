@@ -1,40 +1,33 @@
-import {
-    FlatList,
-    StyleSheet,
-    Text,
-    View,
-    Image,
-    Pressable,
-} from "react-native";
+import {FlatList,StyleSheet,Text,View,Image,Pressable} from "react-native";
 import React from "react";
 import Card from "./Card";
 import { Ionicons } from "@expo/vector-icons";
 import iconoFavoritos from "../Icons/favorito.png";
 import { colors } from "../constants/colors";
-
+import like from "../Icons/like.png";
+import { useDispatch } from "react-redux";
+import increment from "../features/counter";
+import Likes from "./Likes";
 const Drink = ({ drink, goBack }) => {
+
     return (
         <Card style={styles.container}>
             <View style={styles.iconos}>
-            <Pressable
-                onPress={() => goBack()}
-            >
-                <Ionicons
-                    name="arrow-back-circle-outline"
-                    size={36}
-                    color="black"
-                />
-            </Pressable>
-            <Pressable
-                onPress={() => goBack()}
-            >
-                <Image
-                                    source={iconoFavoritos}
-                                    style={{ width: 36, height: 36 }}
-                                />
-            </Pressable>
+                <Pressable onPress={() => goBack()}>
+                    <Ionicons
+                        name="arrow-back-circle-outline"
+                        size={36}
+                        color="black"
+                    />
+                </Pressable>
+                <Pressable onPress={() => goBack()}>
+                    <Image
+                        source={iconoFavoritos}
+                        style={{ width: 36, height: 36 }}
+                    />
+                </Pressable>
             </View>
-            
+
             <Image source={{ uri: drink.imagen }} style={styles.imagen} />
             <View style={{ padding: 10 }}>
                 <Text style={styles.titulo}>Nombre de bebida: </Text>
@@ -50,6 +43,15 @@ const Drink = ({ drink, goBack }) => {
                     Instrucciones de preparación:{" "}
                 </Text>
                 <Text style={styles.instrucciones}>{drink.instrucciones}</Text>
+                <Likes/>
+                {/* <Pressable 
+                onPress={() => dispatch(increment())}
+                style={{ justifyContent: "flex-end", alignItems: "flex-end" }}>
+                    <Image
+                        source={like}
+                        style={{ width: 36, height: 36 }}
+                    />
+                </Pressable> */}
             </View>
         </Card>
     );

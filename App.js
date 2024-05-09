@@ -1,22 +1,32 @@
 import React, { useState } from "react";
-import { StatusBar, Image, StyleSheet, Platform} from "react-native";
+import { StatusBar, Image, StyleSheet, Platform } from "react-native";
 import { colors } from "./src/constants/colors";
 import { SafeAreaView } from "react-native";
 import Navigator from "./src/navigation/Navigator";
+import { Provider } from "react-redux";
+import store from "./src/store";
 export default function App() {
     return (
-        <SafeAreaView style={styles.container}>
-            <Navigator style={styles.navigator}/>
-        </SafeAreaView>
+        <Provider store={store}>
+            {/* <SafeAreaView style={styles.container}> */}
+                <Navigator />
+                <StatusBar barStyle="light-content" />
+            {/* </SafeAreaView> */}
+        </Provider>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        marginBottom: 1,
-        marginTop: Platform.OS === "android" ? StatusBar.currentHeight : "auto",
-        borderRadius: 5,
-        borderWidth: 1,
+        //descomentar luego y comentar <StatusBar/>
+        // marginTop: Platform.OS === "android" ? StatusBar.currentHeight : "auto",
+    },
+    backgroundImage: {
+        width: "100%",
+        height: "100%",
+        position: "absolute",
+        zIndex: -1,
+        opacity: 0.7,
     },
 });
