@@ -3,10 +3,12 @@ import React from "react";
 import bebidas from "../db/bebidas.json";
 import Drink from "../components/Drink";
 import { colors } from "../constants/colors";
+import { useGetDrinksByIdQuery } from "../services/services";
 
 const ItemSelected = ({ setItemIdSelected = () => {}, route, navigation }) => {
     const { itemIdSelected } = route.params;
-
+    const {data , error, isLoading} = useGetDrinksByIdQuery(itemIdSelected);
+    
     return (
         <View style={styles.container}>
             <Image
@@ -16,13 +18,17 @@ const ItemSelected = ({ setItemIdSelected = () => {}, route, navigation }) => {
                 }}
                 resizeMode="cover"
             />
-            <FlatList
-                data={bebidas.filter((item) => item.id === itemIdSelected)}
+            {!data ? <Text>Cargando Receta...</Text> : 
+            (
+                <FlatList
+                data={data ? [data] : null}
                 renderItem={({ item }) => (
                     <Drink drink={item} setItemIdSelected={setItemIdSelected} 
                     goBack={() => navigation.goBack()}/>
                 )}
             />
+            )}
+            
         </View>
     );
 };

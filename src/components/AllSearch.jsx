@@ -1,7 +1,15 @@
 import { useState } from "react";
-import { StyleSheet, Text, View, TextInput, Pressable } from "react-native";
+import {
+    StyleSheet,
+    Text,
+    View,
+    TextInput,
+    Pressable,
+    Image,
+} from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import { colors } from "../constants/colors";
+import { iconoCerrar } from "../Icons/cerrar.png";
 
 const AllSearch = ({ busquedaGeneral, setBusquedaGeneral }) => {
     return (
@@ -17,7 +25,7 @@ const AllSearch = ({ busquedaGeneral, setBusquedaGeneral }) => {
             />
             {busquedaGeneral ? (
                 <Pressable onPress={() => setBusquedaGeneral("")}>
-                    <MaterialIcons name="cancel" size={36} color="black" />
+                    <Text>borrar</Text>
                 </Pressable>
             ) : null}
         </View>

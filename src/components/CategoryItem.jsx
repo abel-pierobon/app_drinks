@@ -9,9 +9,9 @@ const CategoryItem = ({ category, navigation }) => {
     const dispatch =useDispatch()
 
     const handleNavigate = () => {
-        dispatch(setCategorySelected(category.name))
+        dispatch(setCategorySelected(category))
         navigation.navigate("ItemListCategories", {
-            category: category.name,
+            category: category,
         })
     }
     return (
@@ -19,7 +19,7 @@ const CategoryItem = ({ category, navigation }) => {
             <Pressable
                 onPress={handleNavigate}
             >
-                <Text style={styles.title}>{category.name}</Text>
+                <Text style={styles.title}>{category}</Text>
             </Pressable>
         </Card>
     );

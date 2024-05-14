@@ -1,21 +1,33 @@
 import { StyleSheet, Text, View, FlatList, Image } from "react-native";
 import React, { useEffect, useState } from "react";
-import category from "../db/category.json";
 import CategoryItem from "../components/CategoryItem";
 import AllSearch from "../components/AllSearch";
-import bebidas from "../db/bebidas.json";
 import DrinkFilter from "../components/DrinkFilter";
+import { useGetCategoriesQuery, useGetDrinksQuery } from "../services/services";
+
 const Home = ({ navigation }) => {
+    const { data: categorias, error: errorCategorias, isLoading: isLoadingCategorias } = useGetCategoriesQuery();
+    const { data: bebidas, error: errorBebidas, isLoading: isLoadingBebidas } = useGetDrinksQuery();
     const [busquedaGeneral, setBusquedaGeneral] = useState("");
-    const [bebidasFiltradas, setBebidasFiltradas] = useState(bebidas);
+    const [bebidasFiltradas, setBebidasFiltradas] = useState([]);
+
     useEffect(() => {
-        const busquedaGeneralFilter = bebidas.filter((item) =>
-            item.nombre
-                .toLocaleLowerCase()
-                .includes(busquedaGeneral.toLowerCase())
-        );
-        setBebidasFiltradas(busquedaGeneralFilter);
-    }, [busquedaGeneral]);
+        if (bebidas) {
+            const busquedaGeneralFilter = bebidas.filter((item) =>
+                item.nombre.toLowerCase().includes(busquedaGeneral.toLowerCase())
+            );
+            setBebidasFiltradas(busquedaGeneralFilter);
+        }
+    }, [busquedaGeneral, bebidas]);
+
+    // if (isLoadingCategorias || isLoadingBebidas) {
+    //     return <Text>Cargando...</Text>;
+    // }
+
+    // if (errorCategorias || errorBebidas) {
+    //     return <Text>Error: {errorCategorias?.message || errorBebidas?.message}</Text>;
+    // }
+
     return (
         <View style={styles.container}>
             <Image
@@ -33,23 +45,22 @@ const Home = ({ navigation }) => {
             {busquedaGeneral ? (
                 <FlatList
                     data={bebidasFiltradas}
+                    keyExtractor={(item) => item.id.toString()}
                     renderItem={({ item }) => (
                         <DrinkFilter drink={item} navigation={navigation} />
                     )}
                 />
             ) : (
-                <View>
-                    <FlatList
-                        data={category}
-                        renderItem={({ item }) => (
-                            <CategoryItem
-                                navigation={navigation}
-                                category={item}
-                            />
-                        )}
-                        keyExtractor={(item, index) => index.toString()}
-                    />
-                </View>
+                <FlatList
+                    data={categorias}
+                    keyExtractor={(item, index) => index.toString()}
+                    renderItem={({ item }) => (
+                        <CategoryItem
+                            navigation={navigation}
+                            category={item}
+                        />
+                    )}
+                />
             )}
         </View>
     );
@@ -61,8 +72,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: "center",
-        
-        
     },
     subTitle: {
         fontSize: 24,
