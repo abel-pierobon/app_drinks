@@ -13,7 +13,14 @@ import iconoAtras from "../Icons/flecha-hacia-atras.png"
 import iconoFavoritos from "../Icons/favorito.png";
 import { colors } from "../constants/colors";
 import Likes from "./Likes";
+import { usePostFavoriteMutation } from "../services/services";
 const Drink = ({ drink, goBack }) => {
+    const [triggerPostFavorite,result]= usePostFavoriteMutation()
+
+    const addFavorite = () => {
+        triggerPostFavorite({favorite: drink,user:'all',})
+        console.log(result)
+    }
     return (
         <Card style={styles.container}>
             <View style={styles.iconos}>
@@ -23,7 +30,7 @@ const Drink = ({ drink, goBack }) => {
                         style={{ width: 36, height: 36 }}
                     />
                 </Pressable>
-                <Pressable onPress={() => goBack()}>
+                <Pressable onPress={() => {addFavorite()}}>
                     <Image
                         source={iconoFavoritos}
                         style={{ width: 36, height: 36 }}

@@ -8,11 +8,14 @@ import {
 } from "react-native";
 import React from "react";
 import { colors } from "../constants/colors";
-import UserFavorites from "../components/UserFavorites";
-import bebidas from "../db/bebidas.json";
+import { useGetFavoritesQuery } from "../services/services";
 import TopTenFavorites from "../components/TopTenFavorites";
-import Puntuaciones from "../db/Puntuaciones.json";
 const FavoritosGral = ({ navigation }) => {
+    const[data,error,isLoading] =useGetFavoritesQuery()
+    
+    // useEffect(() => {
+    //     console.log(data)
+    // })
     return (
         <View
             style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
@@ -24,16 +27,15 @@ const FavoritosGral = ({ navigation }) => {
                 }}
                 resizeMode="cover"
             />
-            <Text style={styles.text}>Los más votados</Text>
+            <Text style={styles.text}>Tus favoritos</Text>
+{/* 
             <FlatList
-                data={Puntuaciones
-                    .sort((a, b) => b.puntuacion - a.puntuacion)
-                    .slice(0, 10)}
+                data={{data?data:null}}
                 renderItem={({ item }) => (
                     <TopTenFavorites favorites={item} navigation={navigation} />
                 )}
                 keyExtractor={(item, index) => index.toString()}
-            />
+            /> */}
             {/* <Pressable
                 onPress={() => navigation.navigate("UserFavorites")}
                 style={{

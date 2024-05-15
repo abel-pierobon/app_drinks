@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import { colors } from "../constants/colors";
-import { iconoCerrar } from "../Icons/cerrar.png";
+import iconoCerrar from "../Icons/cerrar.png";
 
 const AllSearch = ({ busquedaGeneral, setBusquedaGeneral }) => {
     return (
@@ -25,7 +25,7 @@ const AllSearch = ({ busquedaGeneral, setBusquedaGeneral }) => {
             />
             {busquedaGeneral ? (
                 <Pressable onPress={() => setBusquedaGeneral("")}>
-                    <Text>borrar</Text>
+                    <Image  onPress= {() => setBusquedaGeneral("")} source={iconoCerrar} style={{ width: 24, height: 24 }} />
                 </Pressable>
             ) : null}
         </View>

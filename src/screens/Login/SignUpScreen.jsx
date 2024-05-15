@@ -1,10 +1,22 @@
 import { StyleSheet, Text, View, Image, Pressable } from "react-native";
 import InputForm from "../../components/InputForm";
-import {colors} from "../../constants/colors";
 import SubmitButton from "../../components/SubmitButton";
-import tequila from "../../Icons/tequila.png";
-const PrincipalLogin = ({ navigation, route }) => {
-    const onSubmit = () => {};
+import { useSignUpMutation } from "../../services/authServices";
+import { useState } from "react";
+
+const SignUpScreen = ({ navigation, route,goBack }) => {
+    const [email, setEmail] = useState("");
+    const [errorEmail, setErrorEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [errorPassword, setErrorPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+    const [errorConfirmPassword, setErrorConfirmPassword] = useState("");
+    const [triggerSignup,result]=useSignUpMutation()
+    const onSubmit = () => {
+        triggerSignup({email,password,returnSecureToken:true})
+    };
+    console.log(email)
+    console.log(password)
     return (
         <View style={styles.container}>
             <Image
@@ -14,30 +26,28 @@ const PrincipalLogin = ({ navigation, route }) => {
                 }}
                 resizeMode="cover"
             />
-            <View style={styles.header}>
-                <Image source={tequila} style={{ width: 50, height: 50 }} />
-                <Text style={styles.title}>Make your Drinks</Text>
-                <Image source={tequila} style={{ width: 50, height: 50 }} />
-            </View>
+            <Text>SignUpScreen</Text>
             <View style={styles.login}>
-                <InputForm label="Email" onchange={() => {}} error={""} />
-                <InputForm label="Password" onchange={() => {}} error={""} />
-                <SubmitButton onPress={onSubmit} title="Iniciar Sesion" />
+                <InputForm label="Email" onchange={() => {setEmail()}} error={""} />
+                <InputForm label="Password" onchange={() => {setPassword()}} error={""} />
+                <InputForm label="Confirma Password" onchange={() => {setConfirmPassword()}} error={""} />
+
+                <SubmitButton onPress={onSubmit} title="Crear cuenta" />
                 <Pressable style={styles.linkRegistro}>
                     <Text
-                        onPress={() => {
-                            navigation.navigate("signUpScreen");
-                        }}
+                        onPress={() => navigation.goBack()}
                         style={styles.linkRegistroText}
                     >
-                        Si no estás registrado, ingresa aqui
+                        Volver al inicio
                     </Text>
                 </Pressable>
             </View>
         </View>
-    );
-};
-export default PrincipalLogin;
+    )
+}
+
+export default SignUpScreen
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -51,21 +61,6 @@ const styles = StyleSheet.create({
         zIndex: -1,
         opacity: 0.7,
     },
-    header: {
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: colors.color2,
-        width: "100%",
-    },
-    title: {
-        fontFamily: "serif",
-        fontSize: 30,
-        fontWeight: "800",
-        textAlign: "center",
-        marginTop: 20,
-        color: "black",
-    },
     login: {
         width: "90%",
         height: "auto",
@@ -75,7 +70,7 @@ const styles = StyleSheet.create({
         padding: 10,
         borderColor: "black",
         borderWidth: 1,
-        marginTop: 10,
+        marginTop: 40,
     },
     linkRegistro: {
         marginTop: 20,
@@ -86,6 +81,6 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         fontSize: 16,
         textDecorationLine: "underline",
-        textAlign: "center",
+        marginHorizontal: 10,
     },
-});
+})

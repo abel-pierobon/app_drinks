@@ -12,7 +12,7 @@ import iconoLogin from "../Icons/perfil.png";
 
 const Tab = createBottomTabNavigator();
 
-const BottomTabNavigator = () => {
+const BottomTabNavigator = ({user}) => {
     return (
         <Tab.Navigator
             screenOptions={{
@@ -20,59 +20,6 @@ const BottomTabNavigator = () => {
                 tabBarStyle: { backgroundColor: colors.color3 },
             }}
         >
-            
-            <Tab.Screen
-                name="drinks"
-                component={HomeStackNavigator}
-                options={{
-                    tabBarShowLabel: false,
-
-                    tabBarIcon: ({ focused }) => {
-                        return (
-                            <View
-                                style={
-                                    focused
-                                        ? {
-                                            ...styles.icons,
-                                        }
-                                        : { color: "gray" }
-                                }
-                            >
-                                <Image
-                                    source={iconoBebida}
-                                    style={{ width: 36, height: 36 }}
-                                />
-                            </View>
-                        );
-                    },
-                }}
-            />
-            <Tab.Screen
-                name="favorites"
-                component={FavoritesNavigation}
-                options={{
-                    tabBarShowLabel: false,
-
-                    tabBarIcon: ({ focused }) => {
-                        return (
-                            <View
-                                style={
-                                    focused
-                                        ? {
-                                            ...styles.icons,
-                                        }
-                                        : { color: "gray" }
-                                }
-                            >
-                                <Image
-                                    source={iconoFavoritos}
-                                    style={{ width: 36, height: 36 }}
-                                />
-                            </View>
-                        );
-                    },
-                }}
-            />
             <Tab.Screen
                 name="Login"
                 component={LoginNavigator}
@@ -99,6 +46,62 @@ const BottomTabNavigator = () => {
                     },
                 }}
             />
+            <Tab.Screen
+                name="drinks"
+                component={HomeStackNavigator}
+                options={{
+                    tabBarShowLabel: false,
+
+                    tabBarIcon: ({ focused }) => {
+                        return (
+                            <View
+                                style={
+                                    focused
+                                        ? {
+                                            ...styles.icons,
+                                        }
+                                        : { color: "gray" }
+                                }
+                            >
+                                <Image
+                                    source={iconoBebida}
+                                    style={{ width: 36, height: 36 }}
+                                />
+                            </View>
+                        );
+                    },
+                }}
+            />
+            {user ?(
+                <Tab.Screen
+                name="favorites"
+                component={FavoritesNavigation}
+                options={{
+                    tabBarShowLabel: false,
+
+                    tabBarIcon: ({ focused }) => {
+                        return (
+                            <View
+                                style={
+                                    focused
+                                        ? {
+                                            ...styles.icons,
+                                        }
+                                        : { color: "gray" }
+                                }
+                            >
+                                <Image
+                                    source={iconoFavoritos}
+                                    style={{ width: 36, height: 36 }}
+                                />
+                            </View>
+                        );
+                    },
+                }}
+            />
+            ) : null}
+            
+            
         </Tab.Navigator>
     );
 };
