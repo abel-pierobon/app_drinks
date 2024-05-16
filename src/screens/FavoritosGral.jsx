@@ -1,15 +1,7 @@
-import {
-    StyleSheet,
-    Text,
-    View,
-    Image,
-    Pressable,
-    FlatList,
-} from "react-native";
+import { StyleSheet, Text, View, Image, Pressable, FlatList } from "react-native";
 import React from "react";
 import { colors } from "../constants/colors";
 import { useGetFavoritesQuery } from "../services/services";
-import TopTenFavorites from "../components/TopTenFavorites";
 const FavoritosGral = ({ navigation }) => {
     const[data,error,isLoading] =useGetFavoritesQuery()
     

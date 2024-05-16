@@ -16,7 +16,11 @@ const PrincipalLogin = ({ navigation, route }) => {
             />
             <View style={styles.header}>
                 <Image source={tequila} style={{ width: 50, height: 50 }} />
-                <Text style={styles.title}>Make your Drinks</Text>
+                <View style={{ flexDirection: "row" }}>
+                    {/* <Text style={{...styles.title,color:colors.color3}}>Bart</Text> */}
+                    <Text style={{...styles.title,color:"#faa022"}}>Bart</Text>
+                    <Text style={{...styles.title,color:colors.color3}}>ender</Text>
+                </View>
                 <Image source={tequila} style={{ width: 50, height: 50 }} />
             </View>
             <View style={styles.login}>
@@ -49,25 +53,27 @@ const styles = StyleSheet.create({
         height: "100%",
         position: "absolute",
         zIndex: -1,
-        opacity: 0.7,
+        opacity: 0.99,
     },
     header: {
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: colors.color2,
+
+        // backgroundColor: colors.color2,
         width: "100%",
     },
     title: {
         fontFamily: "serif",
-        fontSize: 30,
+        fontSize: 40,
         fontWeight: "800",
         textAlign: "center",
         marginTop: 20,
         color: "black",
+        // borde de letra
     },
     login: {
-        width: "90%",
+        width: "80%",
         height: "auto",
         backgroundColor: "#f0c08b",
         opacity: 0.95,

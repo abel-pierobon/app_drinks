@@ -52,7 +52,7 @@ const Drink = ({ drink, goBack }) => {
                 <Text style={styles.titulo}>
                     Instrucciones de preparación:{" "}
                 </Text>
-                <Text style={styles.instrucciones}>{drink.instrucciones}</Text>
+                <Text style={styles.instrucciones}>{drink.instrucciones ?drink.instrucciones:drink.instruccionesIngles}</Text>
                 <Likes />
                 {/* <Pressable 
                 onPress={() => dispatch(increment())}

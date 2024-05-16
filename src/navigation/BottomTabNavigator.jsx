@@ -8,19 +8,22 @@ import LoginNavigator from "./LoginNavigator";
 import iconoBebida from "../Icons/tequila.png";
 import iconoFavoritos from "../Icons/favorito.png";
 import iconoLogin from "../Icons/perfil.png";
+import { useSelector } from "react-redux";
 
 
 const Tab = createBottomTabNavigator();
 
-const BottomTabNavigator = ({user}) => {
+const BottomTabNavigator = () => {
+    const user = useSelector(state => state.auth.value);
+    console.log(user)
     return (
         <Tab.Navigator
             screenOptions={{
                 headerShown: false,
                 tabBarStyle: { backgroundColor: colors.color3 },
             }}
-        >
-            <Tab.Screen
+        > 
+            {/* <Tab.Screen
                 name="Login"
                 component={LoginNavigator}
                 options={{
@@ -45,7 +48,7 @@ const BottomTabNavigator = ({user}) => {
                         );
                     },
                 }}
-            />
+            /> */}
             <Tab.Screen
                 name="drinks"
                 component={HomeStackNavigator}
@@ -72,7 +75,6 @@ const BottomTabNavigator = ({user}) => {
                     },
                 }}
             />
-            {user ?(
                 <Tab.Screen
                 name="favorites"
                 component={FavoritesNavigation}
@@ -99,9 +101,6 @@ const BottomTabNavigator = ({user}) => {
                     },
                 }}
             />
-            ) : null}
-            
-            
         </Tab.Navigator>
     );
 };

@@ -1,6 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { baseUrl } from "../databases/realTimeDatabases";
-import { get } from "react-native/Libraries/TurboModule/TurboModuleRegistry";
 
 export const api = createApi({
     reducerPath: "api",

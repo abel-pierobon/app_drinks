@@ -6,13 +6,14 @@ export const authApi=createApi({
     baseQuery: fetchBaseQuery({baseUrl:baseAuthUrl}),
     endpoints: (builder) => ({
         signUp: builder.mutation({
-            query: ({...auth}) => ({
-                url:  `/accounts:signUp?key=${apiKey}`,
+            query: ({ ...auth }) => ({
+                url: `/accounts:signUp?key=${apiKey}`,
                 method: "POST",
-                body: auth
+                body: auth,
             }),
         }),
         // add login
     })
 })
 export const {useSignUpMutation}=authApi
+

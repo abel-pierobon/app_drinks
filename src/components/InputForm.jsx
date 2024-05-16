@@ -27,16 +27,15 @@ const styles = StyleSheet.create({
     container: {
         alignItems: "center",
         justifyContent: "center",
-        margin: 10,
-        gap: 10,
+        marginTop: 5,
+        gap: 5,
     },
     input: {
         borderWidth: 1,
         borderColor: "black",
         borderRadius: 5,
         padding: 10,
-        marginBottom: 10,
-        width: "80%",
+        width: "70%",
         fontWeight: "bold",
     },
 });

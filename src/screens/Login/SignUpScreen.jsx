@@ -2,21 +2,36 @@ import { StyleSheet, Text, View, Image, Pressable } from "react-native";
 import InputForm from "../../components/InputForm";
 import SubmitButton from "../../components/SubmitButton";
 import { useSignUpMutation } from "../../services/authServices";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../features/authSlice";
+import { useSelector } from "react-redux";
 
-const SignUpScreen = ({ navigation, route,goBack }) => {
+const SignUpScreen = ({ navigation, route, goBack }) => {
     const [email, setEmail] = useState("");
     const [errorEmail, setErrorEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errorPassword, setErrorPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [errorConfirmPassword, setErrorConfirmPassword] = useState("");
-    const [triggerSignup,result]=useSignUpMutation()
+    const [triggerSignup, result] = useSignUpMutation();
+    const user = useSelector(state => state.auth.value);
     const onSubmit = () => {
-        triggerSignup({email,password,returnSecureToken:true})
+        triggerSignup({ email, password, returnSecureToken: true });
+
     };
-    console.log(email)
-    console.log(password)
+    const dispatch = useDispatch();
+    useEffect(() => {
+        if (result.isSuccess) {
+            dispatch(
+                setUser({
+                    email: result.data.email,
+                    idToken: result.data.idToken,
+                })
+            );
+            console.log(result.data.email, result.data.idToken); // Para verificar los datos
+        }
+    }, [result, dispatch]);
     return (
         <View style={styles.container}>
             <Image
@@ -28,9 +43,21 @@ const SignUpScreen = ({ navigation, route,goBack }) => {
             />
             <Text>SignUpScreen</Text>
             <View style={styles.login}>
-                <InputForm label="Email" onchange={() => {setEmail()}} error={""} />
-                <InputForm label="Password" onchange={() => {setPassword()}} error={""} />
-                <InputForm label="Confirma Password" onchange={() => {setConfirmPassword()}} error={""} />
+                <InputForm
+                    label="Email"
+                    onchange={setEmail}
+                    error={setErrorEmail}
+                />
+                <InputForm
+                    label="Password"
+                    onchange={setPassword}
+                    error={setErrorPassword}
+                />
+                <InputForm
+                    label="Confirma Password"
+                    onchange={setConfirmPassword}
+                    error={setErrorConfirmPassword}
+                />
 
                 <SubmitButton onPress={onSubmit} title="Crear cuenta" />
                 <Pressable style={styles.linkRegistro}>
@@ -43,10 +70,10 @@ const SignUpScreen = ({ navigation, route,goBack }) => {
                 </Pressable>
             </View>
         </View>
-    )
-}
+    );
+};
 
-export default SignUpScreen
+export default SignUpScreen;
 
 const styles = StyleSheet.create({
     container: {
@@ -63,17 +90,16 @@ const styles = StyleSheet.create({
     },
     login: {
         width: "90%",
-        height: "auto",
         backgroundColor: "#f0c08b",
         opacity: 0.95,
         borderRadius: 10,
         padding: 10,
         borderColor: "black",
         borderWidth: 1,
-        marginTop: 40,
+        marginTop: 5,
     },
     linkRegistro: {
-        marginTop: 20,
+        marginTop: 10,
         fontWeight: "extraBold",
     },
     linkRegistroText: {
@@ -83,4 +109,4 @@ const styles = StyleSheet.create({
         textDecorationLine: "underline",
         marginHorizontal: 10,
     },
-})
+});
