@@ -1,10 +1,30 @@
 import { StyleSheet, Text, View, Image, Pressable } from "react-native";
 import InputForm from "../../components/InputForm";
-import {colors} from "../../constants/colors";
+import { colors } from "../../constants/colors";
 import SubmitButton from "../../components/SubmitButton";
 import tequila from "../../Icons/tequila.png";
+import { useSignInMutation } from "../../services/authServices";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../features/authSlice";
 const PrincipalLogin = ({ navigation, route }) => {
-    const onSubmit = () => {};
+    const [triggerSignIn, result] = useSignInMutation();
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const dispatch = useDispatch()
+    useEffect(() => {
+        if (result.isSuccess) {
+            dispatch(
+                setUser({
+                    email: result.data.email,
+                    idToken: result.data.idToken,
+                })
+            );
+        }
+    }, [result]);
+    const onSubmit = () => {
+        triggerSignIn({ email, password });
+    };
     return (
         <View style={styles.container}>
             <Image
@@ -18,14 +38,18 @@ const PrincipalLogin = ({ navigation, route }) => {
                 <Image source={tequila} style={{ width: 50, height: 50 }} />
                 <View style={{ flexDirection: "row" }}>
                     {/* <Text style={{...styles.title,color:colors.color3}}>Bart</Text> */}
-                    <Text style={{...styles.title,color:"#faa022"}}>Bart</Text>
-                    <Text style={{...styles.title,color:colors.color3}}>ender</Text>
+                    <Text style={{ ...styles.title, color: "#faa022" }}>
+                        Bart
+                    </Text>
+                    <Text style={{ ...styles.title, color: colors.color3 }}>
+                        ender
+                    </Text>
                 </View>
                 <Image source={tequila} style={{ width: 50, height: 50 }} />
             </View>
             <View style={styles.login}>
-                <InputForm label="Email" onchange={() => {}} error={""} />
-                <InputForm label="Password" onchange={() => {}} error={""} />
+                <InputForm label="Email" onchange={setEmail} error={""} />
+                <InputForm label="Password" onchange={setPassword} error={""} />
                 <SubmitButton onPress={onSubmit} title="Iniciar Sesion" />
                 <Pressable style={styles.linkRegistro}>
                     <Text

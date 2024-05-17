@@ -6,7 +6,8 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../features/authSlice";
 import { useSelector } from "react-redux";
-
+import { signupSchema } from "../../validations/authSchema";
+import {expressions} from "../../validations/expressions"
 const SignUpScreen = ({ navigation, route, goBack }) => {
     const [email, setEmail] = useState("");
     const [errorEmail, setErrorEmail] = useState("");
@@ -15,11 +16,7 @@ const SignUpScreen = ({ navigation, route, goBack }) => {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [errorConfirmPassword, setErrorConfirmPassword] = useState("");
     const [triggerSignup, result] = useSignUpMutation();
-    const user = useSelector(state => state.auth.value);
-    const onSubmit = () => {
-        triggerSignup({ email, password, returnSecureToken: true });
 
-    };
     const dispatch = useDispatch();
     useEffect(() => {
         if (result.isSuccess) {
@@ -29,9 +26,36 @@ const SignUpScreen = ({ navigation, route, goBack }) => {
                     idToken: result.data.idToken,
                 })
             );
-            console.log(result.data.email, result.data.idToken); // Para verificar los datos
         }
     }, [result, dispatch]);
+
+    const onSubmit = () => {
+        try {
+            setErrorEmail("");
+            setErrorPassword("");
+            setErrorConfirmPassword("");
+            const validation = signupSchema.validateSync({ email, password, confirmPassword });
+            triggerSignup({ email, password, returnSecureToken: true });
+        } catch (err) {
+            // console.log("Error durante la validación de registro:");
+            // console.log(err.path);
+            // console.log(err.message);
+            switch (err.path) {
+                case 'email':
+                    setErrorEmail(err.message);
+                    break;
+                case 'password':
+                    setErrorPassword(err.message);
+                    break;
+                case 'confirmPassword':
+                    setErrorConfirmPassword(err.message);
+                    break;
+                default:
+                    break;
+            }
+        }
+    };
+
     return (
         <View style={styles.container}>
             <Image
@@ -46,20 +70,21 @@ const SignUpScreen = ({ navigation, route, goBack }) => {
                 <InputForm
                     label="Email"
                     onchange={setEmail}
-                    error={setErrorEmail}
+                    error={errorEmail}
                 />
                 <InputForm
                     label="Password"
                     onchange={setPassword}
-                    error={setErrorPassword}
+                    error={errorPassword}
                 />
                 <InputForm
                     label="Confirma Password"
                     onchange={setConfirmPassword}
-                    error={setErrorConfirmPassword}
+                    error={errorConfirmPassword}
                 />
 
                 <SubmitButton onPress={onSubmit} title="Crear cuenta" />
+                
                 <Pressable style={styles.linkRegistro}>
                     <Text
                         onPress={() => navigation.goBack()}
