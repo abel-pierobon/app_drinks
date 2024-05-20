@@ -1,17 +1,32 @@
-import { StyleSheet, Text, View, Image, Pressable, FlatList } from "react-native";
 import React from "react";
-import { colors } from "../constants/colors";
+import { StyleSheet, Text, View, Image, FlatList } from "react-native";
+import { useSelector } from "react-redux"; 
 import { useGetFavoritesQuery } from "../services/services";
+import { colors } from "../constants/colors";
+
 const FavoritosGral = ({ navigation }) => {
-    const[data,error,isLoading] =useGetFavoritesQuery()
-    
-    // useEffect(() => {
-    //     console.log(data)
-    // })
+    const userEmail = useSelector((state) => state.auth.value.user); 
+    const { data, error, isLoading } = useGetFavoritesQuery(userEmail);
+    console.log(userEmail)
+
+    if (isLoading) {
+        return (
+            <View style={styles.center}>
+                <Text>Loading...</Text>
+            </View>
+        );
+    }
+
+    if (error) {
+        return (
+            <View style={styles.center}>
+                <Text>Error: {error.message}</Text>
+            </View>
+        );
+    }
+
     return (
-        <View
-            style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
-        >
+        <View style={styles.container}>
             <Image
                 style={styles.backgroundImage}
                 source={{
@@ -20,25 +35,13 @@ const FavoritosGral = ({ navigation }) => {
                 resizeMode="cover"
             />
             <Text style={styles.text}>Tus favoritos</Text>
-{/* 
-            <FlatList
-                data={{data?data:null}}
+            {/* <FlatList
+                data={data || []}
                 renderItem={({ item }) => (
                     <TopTenFavorites favorites={item} navigation={navigation} />
                 )}
                 keyExtractor={(item, index) => index.toString()}
             /> */}
-            {/* <Pressable
-                onPress={() => navigation.navigate("UserFavorites")}
-                style={{
-                    marginBottom: 20,
-                    marginTop: 20,
-                    backgroundColor: colors.color1,
-                    padding: 10,
-                }}
-            >
-                <Text>Tus Favoritos</Text>
-            </Pressable> */}
         </View>
     );
 };
@@ -46,6 +49,11 @@ const FavoritosGral = ({ navigation }) => {
 export default FavoritosGral;
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center",
+    },
     backgroundImage: {
         width: "100%",
         height: "100%",
@@ -59,5 +67,10 @@ const styles = StyleSheet.create({
         backgroundColor: colors.color2,
         width: "100%",
         textAlign: "center",
+    },
+    center: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
     },
 });

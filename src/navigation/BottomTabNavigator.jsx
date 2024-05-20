@@ -9,13 +9,13 @@ import iconoBebida from "../Icons/tequila.png";
 import iconoFavoritos from "../Icons/favorito.png";
 import iconoLogin from "../Icons/perfil.png";
 import { useSelector } from "react-redux";
+import UserNavigator from "./UserNavigator";
 
 
 const Tab = createBottomTabNavigator();
 
 const BottomTabNavigator = () => {
-    const user = useSelector(state => state.auth.value);
-    console.log(user)
+    // const user = useSelector(state => state.auth.value);
     return (
         <Tab.Navigator
             screenOptions={{
@@ -23,9 +23,9 @@ const BottomTabNavigator = () => {
                 tabBarStyle: { backgroundColor: colors.color3 },
             }}
         > 
-            {/* <Tab.Screen
-                name="Login"
-                component={LoginNavigator}
+            <Tab.Screen
+                name="user"
+                component={UserNavigator}
                 options={{
                     tabBarShowLabel: false,
 
@@ -48,7 +48,7 @@ const BottomTabNavigator = () => {
                         );
                     },
                 }}
-            /> */}
+            />
             <Tab.Screen
                 name="drinks"
                 component={HomeStackNavigator}

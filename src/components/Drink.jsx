@@ -14,11 +14,12 @@ import iconoFavoritos from "../Icons/favorito.png";
 import { colors } from "../constants/colors";
 import Likes from "./Likes";
 import { usePostFavoriteMutation } from "../services/services";
+import { useSelector } from "react-redux";
 const Drink = ({ drink, goBack }) => {
     const [triggerPostFavorite,result]= usePostFavoriteMutation()
-
+    const {user}=useSelector(state=>state.auth.value)
     const addFavorite = () => {
-        triggerPostFavorite({favorite: drink,user:'all',})
+        triggerPostFavorite({favorite: {drink,user}})
         console.log(result)
     }
     return (

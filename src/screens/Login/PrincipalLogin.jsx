@@ -1,12 +1,11 @@
 import { StyleSheet, Text, View, Image, Pressable } from "react-native";
 import InputForm from "../../components/InputForm";
-import { colors } from "../../constants/colors";
 import SubmitButton from "../../components/SubmitButton";
-import tequila from "../../Icons/tequila.png";
 import { useSignInMutation } from "../../services/authServices";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../features/authSlice";
+import Title from "../../components/Title";
 const PrincipalLogin = ({ navigation, route }) => {
     const [triggerSignIn, result] = useSignInMutation();
     const [email, setEmail] = useState("");
@@ -34,23 +33,11 @@ const PrincipalLogin = ({ navigation, route }) => {
                 }}
                 resizeMode="cover"
             />
-            <View style={styles.header}>
-                <Image source={tequila} style={{ width: 50, height: 50 }} />
-                <View style={{ flexDirection: "row" }}>
-                    {/* <Text style={{...styles.title,color:colors.color3}}>Bart</Text> */}
-                    <Text style={{ ...styles.title, color: "#faa022" }}>
-                        Bart
-                    </Text>
-                    <Text style={{ ...styles.title, color: colors.color3 }}>
-                        ender
-                    </Text>
-                </View>
-                <Image source={tequila} style={{ width: 50, height: 50 }} />
-            </View>
+            <Title />
             <View style={styles.login}>
                 <InputForm label="Email" onchange={setEmail} error={""} />
                 <InputForm label="Password" onchange={setPassword} error={""} />
-                <SubmitButton onPress={onSubmit} title="Iniciar Sesion" />
+                <SubmitButton onPress={onSubmit} title="Iniciar Sesion"/>
                 <Pressable style={styles.linkRegistro}>
                     <Text
                         onPress={() => {
@@ -79,23 +66,23 @@ const styles = StyleSheet.create({
         zIndex: -1,
         opacity: 0.99,
     },
-    header: {
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "center",
+    // header: {
+    //     flexDirection: "row",
+    //     alignItems: "center",
+    //     justifyContent: "center",
 
-        // backgroundColor: colors.color2,
-        width: "100%",
-    },
-    title: {
-        fontFamily: "serif",
-        fontSize: 40,
-        fontWeight: "800",
-        textAlign: "center",
-        marginTop: 20,
-        color: "black",
-        // borde de letra
-    },
+    //     // backgroundColor: colors.color2,
+    //     width: "100%",
+    // },
+    // title: {
+    //     fontFamily: "serif",
+    //     fontSize: 40,
+    //     fontWeight: "800",
+    //     textAlign: "center",
+    //     marginTop: 20,
+    //     color: "black",
+    //     // borde de letra
+    // },
     login: {
         width: "80%",
         height: "auto",
