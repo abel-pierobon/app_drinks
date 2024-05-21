@@ -8,8 +8,8 @@ const InputForm = ({ label, onchange, error = "", isSecure = false }) => {
         onchange(text);
     };
     return (
-        <View style={styles.container}>
-            <Text style={{ fontWeight: "bold" }}>{label}</Text>
+        <View style={{...styles.container, ...styles}}>
+            <Text style={{ fontWeight: "900", fontSize: 20, }}>{label}</Text>
             <TextInput
                 style={styles.input}
                 value={input}
@@ -29,6 +29,14 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         marginTop: 5,
         gap: 5,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 55,
     },
     input: {
         borderWidth: 1,
@@ -37,6 +45,7 @@ const styles = StyleSheet.create({
         padding: 10,
         width: "70%",
         fontWeight: "bold",
+        fontSize: 20,
     },
     error: {
         color: "red",

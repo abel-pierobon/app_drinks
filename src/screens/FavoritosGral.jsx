@@ -7,7 +7,6 @@ import { colors } from "../constants/colors";
 const FavoritosGral = ({ navigation }) => {
     const userEmail = useSelector((state) => state.auth.value.user); 
     const { data, error, isLoading } = useGetFavoritesQuery(userEmail);
-    console.log(userEmail)
 
     if (isLoading) {
         return (
@@ -34,7 +33,7 @@ const FavoritosGral = ({ navigation }) => {
                 }}
                 resizeMode="cover"
             />
-            <Text style={styles.text}>Tus favoritos</Text>
+            {userEmail ? <Text style={styles.text}>Tus favoritos</Text> : <Text style={styles.text} onPress={() => navigation.navigate("PrincipalLogin")}>Inicia sesion para ver tus favoritos</Text>}
             {/* <FlatList
                 data={data || []}
                 renderItem={({ item }) => (

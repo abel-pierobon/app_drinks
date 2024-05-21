@@ -29,20 +29,17 @@ export default CategoryItem;
 
 const styles = StyleSheet.create({
     container: {
-        minWidth: 250,
+        flex: 1,
+        minWidth: 20,
         marginTop: 10,
         borderColor: "black",
-        borderWidth: 2,
-        borderRadius: 10,
-        opacity: 0.9,
-        backgroundColor: colors.color5,
+        borderBottomWidth: 2,
+        // backgroundColor: colors.color5,
     },
     title: {
-        fontSize: 28,
+        fontSize: 20,
         fontWeight: "900",
-        textAlign: "center",
-        marginTop: 5,
-        color: "black",
-        
+        textAlign: "start",
+        color: "black"
     },
 });

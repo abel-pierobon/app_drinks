@@ -7,13 +7,13 @@ import LoginNavigator from "./LoginNavigator";
 
 
 const Navigator = () => {
-    const {user} =useSelector(state=>state.auth.value) 
-    console.log(user)
+
 ; 
 
     return (
             <NavigationContainer style={styles.container}>
-                {user ? <BottomTabNavigator /> : <LoginNavigator/>}
+                {/* {user ? <BottomTabNavigator /> : <LoginNavigator/>} */}
+                <BottomTabNavigator/>
             </NavigationContainer> 
     );
 };

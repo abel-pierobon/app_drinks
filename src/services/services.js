@@ -49,8 +49,15 @@ export const api = createApi({
             transformResponse: (response) => {
                 const responseTransformed = Object.values(response);
                 return responseTransformed;
-            }
-        })
+            },
+        }),
+        postNewDrink: builder.mutation({
+            query: (drink) => ({
+                url: `newDrinks.json`,
+                method: "POST",
+                body: drink,
+            }),
+        }),
     }),
 });
 export const {
@@ -60,5 +67,6 @@ export const {
     useGetDrinksByIdQuery,
     useGetDrinksByNameQuery,
     usePostFavoriteMutation,
-    useGetFavoritesQuery
+    useGetFavoritesQuery,
+    usePostNewDrinkMutation
 } = api;

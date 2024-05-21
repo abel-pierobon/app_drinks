@@ -10,6 +10,7 @@ const PrincipalLogin = ({ navigation, route }) => {
     const [triggerSignIn, result] = useSignInMutation();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [errorLogin, setErrorLogin] = useState("");
     const dispatch = useDispatch()
     useEffect(() => {
         if (result.isSuccess) {
@@ -19,9 +20,15 @@ const PrincipalLogin = ({ navigation, route }) => {
                     idToken: result.data.idToken,
                 })
             );
+            setErrorLogin(""); 
+        } else if (result.isError) {
+            const errorMessage = result.error?.data?.error?.message || "Error desconocido";
+            setErrorLogin(errorMessage);
+            setTimeout(() => {
+                setErrorLogin("");
+            }, 3000);
         }
-    }, [result]);
-    const onSubmit = () => {
+    }, [result, dispatch]);    const onSubmit = () => {
         triggerSignIn({ email, password });
     };
     return (
@@ -38,14 +45,16 @@ const PrincipalLogin = ({ navigation, route }) => {
                 <InputForm label="Email" onchange={setEmail} error={""} />
                 <InputForm label="Password" onchange={setPassword} error={""} />
                 <SubmitButton onPress={onSubmit} title="Iniciar Sesion"/>
+                {errorLogin ? <Text style={styles.error}>Usuario y/o contraseña inválidos</Text> : null}
                 <Pressable style={styles.linkRegistro}>
+                    <Text style={styles.linkRegistroText}>¿No tienes cuenta?</Text>
                     <Text
                         onPress={() => {
                             navigation.navigate("signUpScreen");
                         }}
-                        style={styles.linkRegistroText}
+                        style={{...styles.linkRegistroText, textDecorationLine: "underline"}}
                     >
-                        Si no estás registrado, ingresa aqui
+                        ingresa aqui
                     </Text>
                 </Pressable>
             </View>
@@ -66,23 +75,12 @@ const styles = StyleSheet.create({
         zIndex: -1,
         opacity: 0.99,
     },
-    // header: {
-    //     flexDirection: "row",
-    //     alignItems: "center",
-    //     justifyContent: "center",
-
-    //     // backgroundColor: colors.color2,
-    //     width: "100%",
-    // },
-    // title: {
-    //     fontFamily: "serif",
-    //     fontSize: 40,
-    //     fontWeight: "800",
-    //     textAlign: "center",
-    //     marginTop: 20,
-    //     color: "black",
-    //     // borde de letra
-    // },
+    error: {
+        color: "red",
+        textAlign: "center",
+        marginTop: 10,
+        fontWeight: "bold",
+    },
     login: {
         width: "80%",
         height: "auto",
@@ -97,12 +95,14 @@ const styles = StyleSheet.create({
     linkRegistro: {
         marginTop: 20,
         fontWeight: "extraBold",
+        flexDirection: "row",
     },
     linkRegistroText: {
         color: "black",
         fontWeight: "bold",
         fontSize: 16,
-        textDecorationLine: "underline",
         textAlign: "center",
+        marginHorizontal: 5,
     },
+    
 });

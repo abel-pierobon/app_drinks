@@ -8,7 +8,6 @@ import {
 } from "react-native";
 import React from "react";
 import Card from "./Card";
-import { Ionicons } from "@expo/vector-icons";
 import iconoAtras from "../Icons/flecha-hacia-atras.png"
 import iconoFavoritos from "../Icons/favorito.png";
 import { colors } from "../constants/colors";
@@ -54,7 +53,7 @@ const Drink = ({ drink, goBack }) => {
                     Instrucciones de preparación:{" "}
                 </Text>
                 <Text style={styles.instrucciones}>{drink.instrucciones ?drink.instrucciones:drink.instruccionesIngles}</Text>
-                <Likes />
+                {/* <Likes /> */}
                 {/* <Pressable 
                 onPress={() => dispatch(increment())}
                 style={{ justifyContent: "flex-end", alignItems: "flex-end" }}>

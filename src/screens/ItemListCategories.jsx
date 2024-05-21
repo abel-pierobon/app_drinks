@@ -1,16 +1,23 @@
-import { StyleSheet, View, Image,Text, Pressable } from "react-native";
+import { StyleSheet, View, Image, Text, Pressable } from "react-native";
 import { FlatList } from "react-native";
 import DrinkItem from "../components/DrinkItem";
 import { useGetDrinksByCategoryQuery } from "../services/services";
 import { colors } from "../constants/colors";
+import iconoAtras from "../Icons/flecha-hacia-atras.png"
+
 const ItemListCategories = ({
     setItemIdSelected,
     setCategorySelected,
-    route,navigation 
+    route,
+    navigation,
 }) => {
-    const {category: categorySelected}=route.params
+    const { category: categorySelected } = route.params;
 
-    const { data: bebidasCategories,error: errorBebidas, isLoading: isLoadingBebidas } = useGetDrinksByCategoryQuery(categorySelected);
+    const {
+        data: bebidasCategories,
+        error: errorBebidas,
+        isLoading: isLoadingBebidas,
+    } = useGetDrinksByCategoryQuery(categorySelected);
 
     return (
         <View style={styles.container}>
@@ -21,8 +28,11 @@ const ItemListCategories = ({
                 }}
                 resizeMode="cover"
             />
-                <Text onPress={() => navigation.navigate("Home")} style={styles.volverCategorias}>Volver a categorías</Text>
-                <FlatList
+            <Pressable onPress={() => navigation.navigate("Home")} style={styles.volver}>
+                <Image source={iconoAtras} style={{ width: 36, height: 36 }} />
+                <Text style={styles.volverCategorias}>Go back</Text>
+            </Pressable>
+            <FlatList
                 data={bebidasCategories}
                 renderItem={({ item }) => (
                     <DrinkItem
@@ -50,7 +60,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         width: "100%",
     },
-    
+
     backgroundImage: {
         width: "100%",
         height: "100%",
@@ -58,14 +68,20 @@ const styles = StyleSheet.create({
         zIndex: -1,
         opacity: 0.95,
     },
+
+    volver: {
+        flexDirection: "row",
+        alignItems: "center",
+        width: "100%",
+        justifyContent: "center",
+        backgroundColor: colors.color2,
+
+    },
     volverCategorias: {
         fontSize: 20,
         fontWeight: "bold",
-
-        backgroundColor: colors.color2,
-        width: "100%",
         justifyContent: "center",
         textAlign: "center",
-        padding: 10
-    }
+        padding: 10,
+    },
 });

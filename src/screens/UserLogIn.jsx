@@ -1,7 +1,6 @@
 import { Pressable, StyleSheet, Text, View, Image } from "react-native";
 import { useSelector } from "react-redux";
 import { colors } from "../constants/colors";
-import { useSignUpMutation } from "../services/authServices";
 import { useDispatch } from "react-redux";
 import { clearUser } from "../features/authSlice";
 import Title from "../components/Title";
@@ -12,12 +11,6 @@ const UserLogIn = ({ navigation, route }) => {
 
     const logOf = () => {
         dispatch(clearUser());
-    };
-    const getUserName = (email) => {
-        if (email) {
-            return email.split("@")[0];
-        }
-        return "";
     };
 
     return (
@@ -38,9 +31,6 @@ const UserLogIn = ({ navigation, route }) => {
                 <Text style={{ fontWeight: "bold", fontSize: 25, margin: 10 }}>
                     Bienvenido
                 </Text>
-                <Text style={{ fontWeight: "bold", fontSize: 25, margin: 10,textTransform:"uppercase" }}>
-                    {getUserName(user)}
-                </Text>
             </View>
                 <Pressable
                     onPress={() => navigation.navigate("drinks")}
@@ -49,7 +39,7 @@ const UserLogIn = ({ navigation, route }) => {
                     <Text
                         style={styles.button}
                     >
-                        Ver recetas
+                        Ver categorías
                     </Text>
                 </Pressable>
                 <Pressable
@@ -98,9 +88,9 @@ const styles = StyleSheet.create({
         opacity: 0.9,
     },
     greting: {
-        flexDirection: "row",
+        // flexDirection: "row",
         justifyContent: "center",
-        alignItems: "start",
+        alignItems: "center",
         padding: 2,
         borderRadius: 10,
         backgroundColor: colors.color2,
@@ -112,6 +102,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
         elevation: 15,
+        minWidth: 300,
     },
     button: {
         fontWeight: "bold",

@@ -11,19 +11,20 @@ import iconoLogin from "../Icons/perfil.png";
 import { useSelector } from "react-redux";
 import UserNavigator from "./UserNavigator";
 
-
 const Tab = createBottomTabNavigator();
 
 const BottomTabNavigator = () => {
-    // const user = useSelector(state => state.auth.value);
+    const {user} =useSelector(state=>state.auth.value)
     return (
         <Tab.Navigator
             screenOptions={{
                 headerShown: false,
                 tabBarStyle: { backgroundColor: colors.color3 },
             }}
-        > 
-            <Tab.Screen
+        >
+            {user ? 
+            (
+                <Tab.Screen
                 name="user"
                 component={UserNavigator}
                 options={{
@@ -35,7 +36,7 @@ const BottomTabNavigator = () => {
                                 style={
                                     focused
                                         ? {
-                                            ...styles.icons    
+                                            ...styles.icons,
                                         }
                                         : null
                                 }
@@ -49,6 +50,34 @@ const BottomTabNavigator = () => {
                     },
                 }}
             />
+            ):(
+                <Tab.Screen
+                name="login"
+                component={LoginNavigator}
+                options={{
+                    tabBarShowLabel: false,
+
+                    tabBarIcon: ({ focused }) => {
+                        return (
+                            <View
+                                style={
+                                    focused
+                                        ? {
+                                            ...styles.icons,
+                                        }
+                                        : null
+                                }
+                            >
+                                <Image
+                                    source={iconoLogin}
+                                    style={{ width: 36, height: 36 }}
+                                />
+                            </View>
+                        );
+                    },
+                }}
+            />
+            )}
             <Tab.Screen
                 name="drinks"
                 component={HomeStackNavigator}
@@ -75,7 +104,7 @@ const BottomTabNavigator = () => {
                     },
                 }}
             />
-                <Tab.Screen
+            <Tab.Screen
                 name="favorites"
                 component={FavoritesNavigation}
                 options={{

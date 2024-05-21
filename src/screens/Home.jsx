@@ -4,22 +4,35 @@ import CategoryItem from "../components/CategoryItem";
 import AllSearch from "../components/AllSearch";
 import DrinkFilter from "../components/DrinkFilter";
 import { useGetCategoriesQuery, useGetDrinksQuery } from "../services/services";
+import { colors } from "../constants/colors";
+import { useSelector } from "react-redux";
 
 const Home = ({ navigation }) => {
-    const { data: categorias, error: errorCategorias, isLoading: isLoadingCategorias } = useGetCategoriesQuery();
-    const { data: bebidas, error: errorBebidas, isLoading: isLoadingBebidas } = useGetDrinksQuery();
+    const {user} =useSelector(state=>state.auth.value)
+
+    const {
+        data: categorias,
+        error: errorCategorias,
+        isLoading: isLoadingCategorias,
+    } = useGetCategoriesQuery();
+    const {
+        data: bebidas,
+        error: errorBebidas,
+        isLoading: isLoadingBebidas,
+    } = useGetDrinksQuery();
     const [busquedaGeneral, setBusquedaGeneral] = useState("");
     const [bebidasFiltradas, setBebidasFiltradas] = useState([]);
 
     useEffect(() => {
         if (bebidas) {
             const busquedaGeneralFilter = bebidas.filter((item) =>
-                item.nombre.toLowerCase().includes(busquedaGeneral.toLowerCase())
+                item.nombre
+                    .toLowerCase()
+                    .includes(busquedaGeneral.toLowerCase())
             );
             setBebidasFiltradas(busquedaGeneralFilter);
         }
     }, [busquedaGeneral, bebidas]);
-
     // if (isLoadingCategorias || isLoadingBebidas) {
     //     return <Text>Cargando...</Text>;
     // }
@@ -27,6 +40,10 @@ const Home = ({ navigation }) => {
     // if (errorCategorias || errorBebidas) {
     //     return <Text>Error: {errorCategorias?.message || errorBebidas?.message}</Text>;
     // }
+    const [flatListKey, setFlatListKey] = useState(0);
+    useEffect(() => {
+        setFlatListKey(prevKey => prevKey + 1);
+    }, [busquedaGeneral]);
 
     return (
         <View style={styles.container}>
@@ -41,14 +58,16 @@ const Home = ({ navigation }) => {
                 busquedaGeneral={busquedaGeneral}
                 setBusquedaGeneral={setBusquedaGeneral}
             />
-
+            
             {busquedaGeneral ? (
                 <FlatList
+                    key={flatListKey}
                     data={bebidasFiltradas}
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={({ item }) => (
                         <DrinkFilter drink={item} navigation={navigation} />
                     )}
+                    numColumns={2}
                 />
             ) : (
                 <FlatList
@@ -60,8 +79,10 @@ const Home = ({ navigation }) => {
                             category={item}
                         />
                     )}
+                    style={styles.categories}
                 />
             )}
+            
         </View>
     );
 };
@@ -71,15 +92,8 @@ export default Home;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: "center",
-    },
-    subTitle: {
-        fontSize: 24,
-        fontWeight: "800",
-        textAlign: "center",
-        marginTop: 10,
-        marginBottom: 10,
-        color: "white",
+        alignItems: "start",
+        backgroundColor: colors.color2,
     },
     backgroundImage: {
         width: "100%",
@@ -87,5 +101,16 @@ const styles = StyleSheet.create({
         position: "absolute",
         zIndex: -1,
         opacity: 0.7,
+    },
+    categories: {
+        backgroundColor: colors.color2,
+        opacity: 0.8,
+        maxHeight: "80%",
+        maxWidth: "80%",
+        marginTop: "10%",
+        marginBottom: "10%",
+        marginLeft: "10%",
+        marginRight: "10%",
+        borderRadius: 10,
     },
 });

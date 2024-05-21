@@ -6,8 +6,8 @@ const DrinkFilter = ({drink,navigation}) => {
         
         <Card style={styles.container}>
             <Pressable onPress={() => {navigation.navigate('ItemSelected',{itemIdSelected:drink.id})}}>
-                <Image source={{ uri: drink.imagen }} style={styles.imagen} />
-                <Text style={styles.titulo}>{drink.nombre}</Text>
+                <Image source={{ uri: drink.imagen }} style={styles.imagen} resizeMode="cover" />
+                <Text  style={styles.titulo} >{drink.nombre}</Text>
             </Pressable>
         </Card>
     );
@@ -15,24 +15,28 @@ const DrinkFilter = ({drink,navigation}) => {
 export default DrinkFilter;
 const styles = StyleSheet.create({
     container: {
-        maxWidth: 500,
-        maxHeight: 400,
+        flex: 1,
+        minWidth: 20,
+        maxWidth: 180,
         borderColor: "black",
         borderWidth: 1,
         backgroundColor: colors.color2,
+        
     },
     titulo: {
-        fontSize: 24,
+        fontSize: 20,
         fontWeight: "bold",
-        textAlign: "center",
-        marginTop: 5,
+        textAlign: "start",
+        marginTop: 10,
         color: "black",
         justifyContent: "center",
+        marginLeft: 15,
+        flexShrink: 1
     },
     imagen: {
-        width: 300,
-        height: 300,
-        marginHorizontal: 10,
+        width: 150,
+        height: 150,
         borderRadius: 10,
+        margin: 8,
     },
 });

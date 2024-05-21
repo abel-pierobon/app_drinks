@@ -31,15 +31,12 @@ const SignUpScreen = ({ navigation, route, goBack }) => {
 
     const onSubmit = () => {
         try {
-            setErrorEmail("");
-            setErrorPassword("");
-            setErrorConfirmPassword("");
+            // setErrorEmail("");
+            // setErrorPassword("");
+            // setErrorConfirmPassword("");
             const validation = signupSchema.validateSync({ email, password, confirmPassword });
             triggerSignup({ email, password, returnSecureToken: true });
         } catch (err) {
-            // console.log("Error durante la validación de registro:");
-            // console.log(err.path);
-            // console.log(err.message);
             switch (err.path) {
                 case 'email':
                     setErrorEmail(err.message);
@@ -53,6 +50,11 @@ const SignUpScreen = ({ navigation, route, goBack }) => {
                 default:
                     break;
             }
+            setTimeout(() => {
+                setErrorEmail("");
+                setErrorPassword("");
+                setErrorConfirmPassword("");
+            }, 5000);
         }
     };
 
