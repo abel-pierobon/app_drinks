@@ -58,7 +58,6 @@ const Home = ({ navigation }) => {
                 busquedaGeneral={busquedaGeneral}
                 setBusquedaGeneral={setBusquedaGeneral}
             />
-            
             {busquedaGeneral ? (
                 <FlatList
                     key={flatListKey}

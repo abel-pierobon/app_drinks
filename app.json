@@ -4,12 +4,12 @@
     "slug": "app_eventos",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./src/icons/tequila.png", 
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./src/icons/tequila.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#f0c08b"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -19,12 +19,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./src/icons/tequila.png",
+        "backgroundColor": "#f0c08b"
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./src/icons/tequila.png"
     }
   }
 }

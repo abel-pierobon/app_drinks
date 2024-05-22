@@ -8,6 +8,7 @@ import UserLogIn from "../screens/UserLogIn";
 import { useSelector } from "react-redux";
 import UserDrinks from "../screens/UserDrinks";
 import ImageSelector from "../screens/ImageSelector";
+import ImageSelectorLibrary from "../screens/ImageSelectorLibrary";
 
 
 const Stack = createNativeStackNavigator()
@@ -46,6 +47,10 @@ const UserNavigator = () => {
                 <Stack.Screen
                     name="AddImage"
                     component={ImageSelector}
+                />
+                <Stack.Screen
+                    name="AddImageLibrary"
+                    component={ImageSelectorLibrary}
                 />
                 <Stack.Screen
                     name="UserDrinks"

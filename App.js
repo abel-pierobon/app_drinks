@@ -1,12 +1,20 @@
-import React, { useState } from "react";
-import { StatusBar, Image, StyleSheet, Platform } from "react-native";
-
-import { colors } from "./src/constants/colors";
+import React from "react";
+import { StatusBar, StyleSheet, Platform } from "react-native";
 import { SafeAreaView } from "react-native";
 import Navigator from "./src/navigation/Navigator";
 import { Provider } from "react-redux";
 import store from "./src/store";
-export default function App() {
+import {initSQLiteDB}  from "./src/persistence";
+
+(async ()=> {
+    try {
+        const response = await initSQLiteDB()
+        console.log(response)
+    } catch (error) {
+        console.log(error)
+    }
+})()
+const App = () => {
     return (
         <Provider store={store}>
             <SafeAreaView style={styles.container}>
@@ -16,7 +24,7 @@ export default function App() {
         </Provider>
     );
 }
-
+export default App;
 const styles = StyleSheet.create({
     container: {
         flex: 1,

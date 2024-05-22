@@ -11,29 +11,18 @@ const Stack = createNativeStackNavigator();
 
 const HomeStackNavigator = () => {
     return (
-        <View
-            style={{
-                flex: 1,
-                backgroundColor: colors.color1,
-                justifyContent: "center",
-                alignContent: "center",
-            }}
-        >
+        <View style={styles.container}>
             <Stack.Navigator
                 initialRouteName="Home"
                 screenOptions={({ route }) => ({
-                    header: ({ navigation }) => (
+                    header: () => (
                         <Header
                             title={
-                                route.name === "Home" ? (
-                                    <Text style={{}}>Categorias</Text>
-                                ) : route.name === "ItemListCategories" ? (
-                                    <Text style={{}}>
-                                        {route.params.category}
-                                    </Text>
-                                ) : (
-                                    "Preparación"
-                                )
+                                route.name === "Home"
+                                    ? "Categorías"
+                                    : route.name === "ItemListCategories"
+                                    ? route.params.category
+                                    : "Preparación"
                             }
                         />
                     ),
@@ -49,6 +38,14 @@ const HomeStackNavigator = () => {
         </View>
     );
 };
+
 export default HomeStackNavigator;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: colors.color1,
+        justifyContent: "center",
+        alignContent: "center",
+    },
+});

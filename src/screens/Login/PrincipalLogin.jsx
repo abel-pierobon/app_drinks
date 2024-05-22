@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, Pressable } from "react-native";
+import { StyleSheet, Text, View, Image, Pressable, Modal } from "react-native";
 import InputForm from "../../components/InputForm";
 import SubmitButton from "../../components/SubmitButton";
 import { useSignInMutation } from "../../services/authServices";
@@ -6,12 +6,14 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../features/authSlice";
 import Title from "../../components/Title";
+
 const PrincipalLogin = ({ navigation, route }) => {
     const [triggerSignIn, result] = useSignInMutation();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errorLogin, setErrorLogin] = useState("");
-    const dispatch = useDispatch()
+    const [modalVisible, setModalVisible] = useState(false);
+    const dispatch = useDispatch();
     useEffect(() => {
         if (result.isSuccess) {
             dispatch(
@@ -20,15 +22,18 @@ const PrincipalLogin = ({ navigation, route }) => {
                     idToken: result.data.idToken,
                 })
             );
-            setErrorLogin(""); 
+            setErrorLogin("");
+            setModalVisible(true);
         } else if (result.isError) {
-            const errorMessage = result.error?.data?.error?.message || "Error desconocido";
+            const errorMessage =
+                result.error?.data?.error?.message || "Error desconocido";
             setErrorLogin(errorMessage);
             setTimeout(() => {
                 setErrorLogin("");
             }, 3000);
         }
-    }, [result, dispatch]);    const onSubmit = () => {
+    }, [result, dispatch]);
+    const onSubmit = () => {
         triggerSignIn({ email, password });
     };
     return (
@@ -43,21 +48,38 @@ const PrincipalLogin = ({ navigation, route }) => {
             <Title />
             <View style={styles.login}>
                 <InputForm label="Email" onchange={setEmail} error={""} />
-                <InputForm label="Password" onchange={setPassword} error={""} />
-                <SubmitButton onPress={onSubmit} title="Iniciar Sesion"/>
-                {errorLogin ? <Text style={styles.error}>Usuario y/o contraseña inválidos</Text> : null}
+                <InputForm
+                    label="Password"
+                    onchange={setPassword}
+                    error={""}
+                    isSecure={true}
+                />
+                <SubmitButton onPress={onSubmit} title="Iniciar Sesion" />
+                {errorLogin ? (
+                    <Text style={styles.error}>
+                        Usuario y/o contraseña inválidos
+                    </Text>
+                ) : null}
                 <Pressable style={styles.linkRegistro}>
-                    <Text style={styles.linkRegistroText}>¿No tienes cuenta?</Text>
+                    <Text style={styles.linkRegistroText}>
+                        ¿No tienes cuenta?
+                    </Text>
                     <Text
                         onPress={() => {
                             navigation.navigate("signUpScreen");
                         }}
-                        style={{...styles.linkRegistroText, textDecorationLine: "underline"}}
+                        style={{
+                            ...styles.linkRegistroText,
+                            textDecorationLine: "underline",
+                        }}
                     >
                         ingresa aqui
                     </Text>
                 </Pressable>
             </View>
+            <Modal visible={modalVisible} animationType="slide" transparent={true}>
+                <Text>Inicio de sesion exitoso</Text>
+            </Modal>
         </View>
     );
 };
@@ -104,5 +126,18 @@ const styles = StyleSheet.create({
         textAlign: "center",
         marginHorizontal: 5,
     },
-    
+    modalStyles: {
+        backgroundColor: "#cccccc88",
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center"
+    },
+    modalContainer: {
+        backgroundColor: "white",
+        width: "80%",
+        alignItems: "center",
+        gap: 20,
+        paddingVertical: 20,
+        borderRadius: 7
+    },
 });

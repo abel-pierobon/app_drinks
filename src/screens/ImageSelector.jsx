@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Image, Pressable } from "react-native";
-import { useDispatch } from "react-redux";
 import * as imagePicker from "expo-image-picker";
 import { colors } from "../constants/colors";
+import camara from "../Icons/camara.png";
 
 const ImageSelector = ({ setImage,navigation,title }) => {
 
@@ -37,7 +37,7 @@ const ImageSelector = ({ setImage,navigation,title }) => {
     return (
         <View style={styles.container}>
                 <Pressable onPress={pickImage} style={styles.button}>
-                    <Text style={{ color: "black", fontWeight: "bold" }}>{title}</Text>
+                    <Image source={camara} style={{ width: 30, height: 30 }}/>
                 </Pressable>
         
         </View>
@@ -51,11 +51,10 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     button: {
-        backgroundColor: colors.color1,
         padding: 10,
         borderRadius: 5,
         alignItems: "center",
         margin: 10,
-        borderWidth: 1,
+        borderWidth: 2,
     },
 });

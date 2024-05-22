@@ -31,9 +31,6 @@ const SignUpScreen = ({ navigation, route, goBack }) => {
 
     const onSubmit = () => {
         try {
-            // setErrorEmail("");
-            // setErrorPassword("");
-            // setErrorConfirmPassword("");
             const validation = signupSchema.validateSync({ email, password, confirmPassword });
             triggerSignup({ email, password, returnSecureToken: true });
         } catch (err) {
@@ -78,11 +75,13 @@ const SignUpScreen = ({ navigation, route, goBack }) => {
                     label="Password"
                     onchange={setPassword}
                     error={errorPassword}
+                    isSecure={true}
                 />
                 <InputForm
                     label="Confirma Password"
                     onchange={setConfirmPassword}
                     error={errorConfirmPassword}
+                    isSecure={true}
                 />
 
                 <SubmitButton onPress={onSubmit} title="Crear cuenta" />

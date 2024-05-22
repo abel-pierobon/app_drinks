@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, Image, Pressable } from "react-native";
 import * as imagePicker from "expo-image-picker";
 import { colors } from "../constants/colors";
+import carpeta from "../Icons/carpeta.png";
 
 const ImageSelectorLibrary = ({ setImage,navigation,title }) => {
 
@@ -12,9 +13,9 @@ const ImageSelectorLibrary = ({ setImage,navigation,title }) => {
     const pickImage = async () => {
 
         try {
-            const permissionLibrary = await verifyPermission;
-        if (permissionCamera) {
-            let result = await imagePicker.launchCameraAsync({
+            const permissionLibrary = await verifyPermission();
+        if (permissionLibrary) {
+            let result = await imagePicker.launchImageLibraryAsync({
                 mediaTypes: imagePicker.MediaTypeOptions.All,
                 allowsEditing: true,
                 base64: true,
@@ -36,7 +37,7 @@ const ImageSelectorLibrary = ({ setImage,navigation,title }) => {
     return (
         <View style={styles.container}>
                 <Pressable onPress={pickImage} style={styles.button}>
-                    <Text style={{ color: "black", fontWeight: "bold" }}>{title}</Text>
+                <Image source={carpeta} style={{ width: 30, height: 30 }}/>
                 </Pressable>
         
         </View>
@@ -50,11 +51,10 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     button: {
-        backgroundColor: colors.color1,
         padding: 10,
         borderRadius: 5,
         alignItems: "center",
         margin: 10,
-        borderWidth: 1,
+        borderWidth: 2,
     },
 });
