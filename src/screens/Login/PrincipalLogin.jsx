@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, Pressable, Modal } from "react-native";
+import { StyleSheet, Text, View, Image, Pressable } from "react-native";
 import InputForm from "../../components/InputForm";
 import SubmitButton from "../../components/SubmitButton";
 import { useSignInMutation } from "../../services/authServices";
@@ -6,24 +6,35 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../features/authSlice";
 import Title from "../../components/Title";
+import { insertSession } from "../../persistence";
 
 const PrincipalLogin = ({ navigation, route }) => {
     const [triggerSignIn, result] = useSignInMutation();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errorLogin, setErrorLogin] = useState("");
-    const [modalVisible, setModalVisible] = useState(false);
     const dispatch = useDispatch();
     useEffect(() => {
-        if (result.isSuccess) {
-            dispatch(
-                setUser({
-                    email: result.data.email,
-                    idToken: result.data.idToken,
-                })
-            );
-            setErrorLogin("");
-            setModalVisible(true);
+        if (result?.data && result.isSuccess) {
+            console.log("SignIn successful:", result.data);
+            insertSession({
+                email: result.data.email,
+                idToken: result.data.idToken,
+                localId: result.data.localId,
+            })
+            .then((response) => {
+                console.log("Session inserted:", response);
+                dispatch(
+                    setUser({
+                        email: result.data.email,
+                        idToken: result.data.idToken,
+                        localId: result.data.localId,
+                    })
+                );
+            })
+            .catch((error) => {
+                console.log("Error inserting session:", error);
+            });
         } else if (result.isError) {
             const errorMessage =
                 result.error?.data?.error?.message || "Error desconocido";
@@ -33,9 +44,12 @@ const PrincipalLogin = ({ navigation, route }) => {
             }, 3000);
         }
     }, [result, dispatch]);
+
     const onSubmit = () => {
+        console.log("Trigger signIn:", email, password);
         triggerSignIn({ email, password });
     };
+
     return (
         <View style={styles.container}>
             <Image
@@ -77,13 +91,12 @@ const PrincipalLogin = ({ navigation, route }) => {
                     </Text>
                 </Pressable>
             </View>
-            <Modal visible={modalVisible} animationType="slide" transparent={true}>
-                <Text>Inicio de sesion exitoso</Text>
-            </Modal>
         </View>
     );
 };
+
 export default PrincipalLogin;
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -125,19 +138,5 @@ const styles = StyleSheet.create({
         fontSize: 16,
         textAlign: "center",
         marginHorizontal: 5,
-    },
-    modalStyles: {
-        backgroundColor: "#cccccc88",
-        flex: 1,
-        alignItems: "center",
-        justifyContent: "center"
-    },
-    modalContainer: {
-        backgroundColor: "white",
-        width: "80%",
-        alignItems: "center",
-        gap: 20,
-        paddingVertical: 20,
-        borderRadius: 7
     },
 });

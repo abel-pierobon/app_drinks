@@ -108,7 +108,6 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         fontSize: 20,
         margin: 2,
-        textAlign: "start",
         padding: 5,
         color: "black",
         borderBottomWidth: 1,

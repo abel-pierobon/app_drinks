@@ -10,6 +10,7 @@ import {initSQLiteDB}  from "./src/persistence";
     try {
         const response = await initSQLiteDB()
         console.log(response)
+        console.log("Database created")
     } catch (error) {
         console.log(error)
     }

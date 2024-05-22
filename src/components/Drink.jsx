@@ -8,10 +8,9 @@ import {
 } from "react-native";
 import React from "react";
 import Card from "./Card";
-import iconoAtras from "../Icons/flecha-hacia-atras.png"
 import iconoFavoritos from "../Icons/favorito.png";
+import atras from "../Icons/flecha-hacia-atras.png"
 import { colors } from "../constants/colors";
-import Likes from "./Likes";
 import { usePostFavoriteMutation } from "../services/services";
 import { useSelector } from "react-redux";
 const Drink = ({ drink, goBack }) => {
@@ -26,7 +25,7 @@ const Drink = ({ drink, goBack }) => {
             <View style={styles.iconos}>
                 <Pressable onPress={() => goBack()}>
                     <Image
-                        source={iconoAtras}
+                        source={atras}
                         style={{ width: 36, height: 36 }}
                     />
                 </Pressable>
