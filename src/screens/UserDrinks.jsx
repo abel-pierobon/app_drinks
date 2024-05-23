@@ -1,20 +1,20 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, FlatList } from "react-native";
 import { useGetNewDrinksQuery } from "../services/services";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import Recets from "../components/Recets";
 
-const UserDrinks = () => {
+const UserDrinks = ({navigator}) => {
     const {user}=useSelector(state=>state.auth.value.user)
     const {data,isSuccess}=useGetNewDrinksQuery();
     const [drinksFiltered,setDrinksFiltered]=useState([])
-    // useEffect(()=>{
-    //     // if(isSuccess){
-    //         const responseTransformed=Object.values(data)
-    //         const drinksFiltered=responseTransformed.filter(drink=>drink[1]===user)
-    //         setDrinksFiltered(drinksFiltered)
-    //         console.log(drinksFiltered)
-    //     }
-    // })
+    useEffect(()=>{
+        if(isSuccess){
+            const responseTransformed=Object.values(data)
+            const drinksFiltered=responseTransformed.filter(drink=>data.user===user)
+            setDrinksFiltered(drinksFiltered)
+        }
+    },[data,isSuccess,user]);
     return (
         <View style={styles.container}>
             <Image
@@ -24,6 +24,13 @@ const UserDrinks = () => {
                 }}
                 resizeMode="cover"
             />
+            {drinksFiltered.length>0 ? (
+                <FlatList 
+                data={drinksFiltered}
+                renderItem={({item})=><Recets drink={item}/>}
+                keyExtractor={(item,index)=>index.toString()}
+                horizontal={true}/>
+            ): <Text>Todavia cargaste recetas de bebidas</Text>}
         </View>
     );
 };

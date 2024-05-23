@@ -5,6 +5,7 @@ export const api = createApi({
     reducerPath: "api",
     baseQuery: fetchBaseQuery({ baseUrl: baseUrl }),
     tagTypes: ['Favorite'], 
+    tagTypes: ['NewDrink'],
     endpoints: (builder) => ({
         getCategories: builder.query({
             query: () => `categories.json`,
