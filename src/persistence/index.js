@@ -55,21 +55,21 @@ export const sessionesIniciadas = () => {
     })
     return promise
 }
-export const dropSessionsTable = () => {
-    console.log("Will drop table")
-    const promise = new Promise((resolve, reject) => {
-        db.transaction((tx) => {
-            //Define SQL statement. BEWARE of PARENTHESIS
-            tx.executeSql(
-                "DROP TABLE IF EXISTS sessionUser",
-                (_, result) => resolve(result), //Resolve trasaction
-                (_, error) => reject(error) //Transaction error
-            )
-        })
-    })
-    console.log("will return promise")
-    return promise
-}
+// export const dropSessionsTable = () => {
+//     console.log("Will drop table")
+//     const promise = new Promise((resolve, reject) => {
+//         db.transaction((tx) => {
+//             //Define SQL statement. BEWARE of PARENTHESIS
+//             tx.executeSql(
+//                 "DROP TABLE IF EXISTS sessionUser",
+//                 (_, result) => resolve(result), //Resolve trasaction
+//                 (_, error) => reject(error) //Transaction error
+//             )
+//         })
+//     })
+//     console.log("will return promise")
+//     return promise
+// }
 
 export const truncateSessionsTable = () => {
     console.log("Will truncate table")

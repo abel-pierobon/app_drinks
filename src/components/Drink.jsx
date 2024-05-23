@@ -17,8 +17,7 @@ const Drink = ({ drink, goBack }) => {
     const [triggerPostFavorite,result]= usePostFavoriteMutation()
     const {user}=useSelector(state=>state.auth.value)
     const addFavorite = () => {
-        triggerPostFavorite({favorite: {drink,user}})
-        console.log(result)
+        triggerPostFavorite([drink,user])
     }
     return (
         <Card style={styles.container}>

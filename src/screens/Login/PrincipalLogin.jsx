@@ -22,7 +22,6 @@ const PrincipalLogin = ({ navigation, route }) => {
                 email: result.data.email,
             })
             .then((response) => {
-                console.log("Session inserted:", result);
                 dispatch(
                     setUser({
                         localId: result.data.localId,
@@ -32,7 +31,7 @@ const PrincipalLogin = ({ navigation, route }) => {
                 );
             })
             .catch((error) => {
-                console.log("Error inserting session:", error);
+                // console.log("Error inserting session:", error);
             });
         } 
     }, [result, dispatch]);

@@ -38,7 +38,7 @@ export const api = createApi({
             },
         }),
         postFavorite: builder.mutation({
-            query: (...drink) => ({
+            query: (drink) => ({
                 url: `favorites.json`,
                 method: "POST",
                 body: drink,
@@ -46,10 +46,6 @@ export const api = createApi({
         }),
         getFavorites: builder.query({
             query: () => `favorites.json`,
-            transformResponse: (response) => {
-                const responseTransformed = Object.values(response);
-                return responseTransformed;
-            },
         }),
         postNewDrink: builder.mutation({
             query: (drink) => ({
