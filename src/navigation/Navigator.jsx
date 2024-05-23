@@ -8,7 +8,7 @@ import LoginNavigator from "./LoginNavigator";
 
 const Navigator = () => {
 
-; 
+
 
     return (
             <NavigationContainer style={styles.container}>

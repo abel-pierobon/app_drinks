@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: "bold",
         justifyContent: "center",
-        textAlign: "center",
         padding: 10,
+        alignItems: "center",
     },
 });

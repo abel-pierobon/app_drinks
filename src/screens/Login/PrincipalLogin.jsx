@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../features/authSlice";
 import Title from "../../components/Title";
-import { insertSession } from "../../persistence";
+import { insertSessions } from "../../persistence";
 
 const PrincipalLogin = ({ navigation, route }) => {
     const [triggerSignIn, result] = useSignInMutation();
@@ -15,38 +15,29 @@ const PrincipalLogin = ({ navigation, route }) => {
     const [errorLogin, setErrorLogin] = useState("");
     const dispatch = useDispatch();
     useEffect(() => {
-        if (result?.data && result.isSuccess) {
-            console.log("SignIn successful:", result.data);
-            insertSession({
-                email: result.data.email,
-                idToken: result.data.idToken,
+        if (result?.data?.idToken) {
+            insertSessions({
                 localId: result.data.localId,
+                idToken: result.data.idToken,
+                email: result.data.email,
             })
             .then((response) => {
-                console.log("Session inserted:", response);
+                console.log("Session inserted:", result);
                 dispatch(
                     setUser({
+                        localId: result.data.localId,
                         email: result.data.email,
                         idToken: result.data.idToken,
-                        localId: result.data.localId,
                     })
                 );
             })
             .catch((error) => {
                 console.log("Error inserting session:", error);
             });
-        } else if (result.isError) {
-            const errorMessage =
-                result.error?.data?.error?.message || "Error desconocido";
-            setErrorLogin(errorMessage);
-            setTimeout(() => {
-                setErrorLogin("");
-            }, 3000);
-        }
+        } 
     }, [result, dispatch]);
 
     const onSubmit = () => {
-        console.log("Trigger signIn:", email, password);
         triggerSignIn({ email, password });
     };
 

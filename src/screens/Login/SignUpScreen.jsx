@@ -22,9 +22,9 @@ const SignUpScreen = ({ navigation, route, goBack }) => {
         if (result.isSuccess) {
             dispatch(
                 setUser({
+                    localId: result.data.localId,
                     email: result.data.email,
                     idToken: result.data.idToken,
-                    localId: result.data.localId,
                 })
             );
         }

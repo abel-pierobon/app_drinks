@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, Image } from "react-native";
-import React from "react";
+import React, { useEffect } from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeStackNavigator from "./HomeStackNavigator";
 import FavoritesNavigation from "./FavoritesNavigation";
@@ -8,13 +8,32 @@ import LoginNavigator from "./LoginNavigator";
 import iconoBebida from "../Icons/tequila.png";
 import iconoFavoritos from "../Icons/favorito.png";
 import iconoLogin from "../Icons/perfil.png";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import UserNavigator from "./UserNavigator";
-
+import { sessionesIniciadas } from "../persistence/index.js";
+import { setUser } from "../features/authSlice.js";
 const Tab = createBottomTabNavigator();
 
 const BottomTabNavigator = () => {
     const {user} =useSelector(state=>state.auth.value)
+    const dispatch = useDispatch();
+    useEffect(() => {
+        (async () => {
+            try {
+                const response = await sessionesIniciadas();
+                if (response.rows._array.length) {
+                    const user = response.rows._array[0];
+                    console.log("user", user)
+                    dispatch(setUser({
+                        email: user.email,
+                        idToken: user.idToken,
+                    }))
+                }
+            } catch (error) {
+                console.log("error en navigator",error)
+            }
+        })();
+    }, [])
     return (
         <Tab.Navigator
             screenOptions={{

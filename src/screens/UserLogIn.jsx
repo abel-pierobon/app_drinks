@@ -4,13 +4,20 @@ import { colors } from "../constants/colors";
 import { useDispatch } from "react-redux";
 import { clearUser } from "../features/authSlice";
 import Title from "../components/Title";
+import { truncateSessionsTable } from "../persistence";
 const UserLogIn = ({ navigation, route }) => {
     const { user } = useSelector((state) => state.auth.value);
 
     const dispatch = useDispatch();
 
-    const logOf = () => {
-        dispatch(clearUser());
+    const logOf = async() => {
+        try {
+            const response= await truncateSessionsTable()
+            console.log(response)
+            dispatch(clearUser());
+        } catch (error) {
+            console.log('error cerrar sesion',error)
+        }
     };
 
     return (
