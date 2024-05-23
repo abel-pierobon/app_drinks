@@ -9,6 +9,7 @@ import {
 import React, { useState, useEffect } from "react";
 import Card from "./Card";
 import iconoFavoritos from "../Icons/favorito.png";
+import estrella from "../Icons/estrella.png";
 import atras from "../Icons/flecha-hacia-atras.png";
 import { colors } from "../constants/colors";
 import { usePostFavoriteMutation } from "../services/services";
@@ -59,10 +60,15 @@ const Drink = ({ drink, goBack }) => {
                         style={{ width: 36, height: 36 }}
                     />
                 </Pressable>
-                {!inFavoritos && (
+                {inFavoritos ? (
+                    <Image
+                    source={iconoFavoritos}
+                    style={{ width: 36, height: 36 }}
+                />
+                ):(
                     <Pressable onPress={addFavorite}>
                         <Image
-                            source={iconoFavoritos}
+                            source={estrella}
                             style={{ width: 36, height: 36 }}
                         />
                     </Pressable>

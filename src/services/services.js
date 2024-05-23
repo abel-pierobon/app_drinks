@@ -49,8 +49,7 @@ export const api = createApi({
         getFavorites: builder.query({
             query: () => `favorites.json`,
             providesTags: ['Favorite'],
-        })
-        ,
+        }),
         deleteFavorite: builder.mutation({
             query: (id) => ({
                 url: `favorites/${id}.json`,
@@ -65,6 +64,10 @@ export const api = createApi({
                 body: drink,
             }),
         }),
+        getNewDrinks: builder.query({
+            query: () => `newDrinks.json`,
+            providesTags: ['NewDrink'],
+        }),
     }),
 });
 export const {
@@ -76,5 +79,6 @@ export const {
     usePostFavoriteMutation,
     useGetFavoritesQuery,
     useDeleteFavoriteMutation,
-    usePostNewDrinkMutation
+    usePostNewDrinkMutation,
+    useGetNewDrinksQuery,
 } = api;

@@ -34,6 +34,7 @@ const FavoritosGral = ({ navigation,route }) => {
                     <TopTenFavorites favorites={item} navigation={navigation} route={route} />
                 )}
                 keyExtractor={(item, index) => index.toString()}
+                horizontal={true}
             />
         </View>
     );
