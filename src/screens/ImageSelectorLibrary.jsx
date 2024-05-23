@@ -22,7 +22,6 @@ const ImageSelectorLibrary = ({ setImage,navigation,title }) => {
                 aspect: [1, 1],
                 quality: 0.2,
             });
-            // console.log(result.assets[0].base64.length);
 
             if (!result.canceled) {
                 const imagen=  `data:image/jpeg;base64,${result.assets[0].base64}`

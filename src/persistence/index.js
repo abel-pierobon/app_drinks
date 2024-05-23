@@ -3,7 +3,6 @@ import * as ExpoSQLite from "expo-sqlite";
 const db = ExpoSQLite.openDatabase("sessionUser.db")
 
 export const initSQLiteDB = () => {
-    console.log("Will create table")
     const promise = new Promise((resolve, reject) => {
         db.transaction((tx) => {
             tx.executeSql(
@@ -29,7 +28,6 @@ export const insertSessions = ({
                 'INSERT INTO sessionUser (localId,idtoken, email) VALUES (?,?,?);',
                 [localId,idToken, email], 
                 (_, result) => {
-                    console.log("Insert result:", result);
                     resolve(result); 
                 },
                 (_, error) => {
@@ -55,24 +53,21 @@ export const sessionesIniciadas = () => {
     })
     return promise
 }
-// export const dropSessionsTable = () => {
-//     console.log("Will drop table")
-//     const promise = new Promise((resolve, reject) => {
-//         db.transaction((tx) => {
-//             //Define SQL statement. BEWARE of PARENTHESIS
-//             tx.executeSql(
-//                 "DROP TABLE IF EXISTS sessionUser",
-//                 (_, result) => resolve(result), //Resolve trasaction
-//                 (_, error) => reject(error) //Transaction error
-//             )
-//         })
-//     })
-//     console.log("will return promise")
-//     return promise
-// }
+export const dropSessionsTable = () => {
+    const promise = new Promise((resolve, reject) => {
+        db.transaction((tx) => {
+            //Define SQL statement. BEWARE of PARENTHESIS
+            tx.executeSql(
+                "DROP TABLE IF EXISTS sessionUser",
+                (_, result) => resolve(result), //Resolve trasaction
+                (_, error) => reject(error) //Transaction error
+            )
+        })
+    })
+    return promise
+}
 
 export const truncateSessionsTable = () => {
-    console.log("Will truncate table")
     const promise = new Promise((resolve, reject) => {
         db.transaction((tx) => {
             //Define SQL statement. BEWARE of PARENTHESIS
@@ -84,6 +79,5 @@ export const truncateSessionsTable = () => {
             )
         })
     })
-    console.log("will return promise")
     return promise
 }

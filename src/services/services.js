@@ -4,6 +4,7 @@ import { baseUrl } from "../databases/realTimeDatabases";
 export const api = createApi({
     reducerPath: "api",
     baseQuery: fetchBaseQuery({ baseUrl: baseUrl }),
+    tagTypes: ['Favorite'], 
     endpoints: (builder) => ({
         getCategories: builder.query({
             query: () => `categories.json`,
@@ -43,9 +44,19 @@ export const api = createApi({
                 method: "POST",
                 body: drink,
             }),
+            invalidatesTags: ['Favorite'],
         }),
         getFavorites: builder.query({
             query: () => `favorites.json`,
+            providesTags: ['Favorite'],
+        })
+        ,
+        deleteFavorite: builder.mutation({
+            query: (id) => ({
+                url: `favorites/${id}.json`,
+                method: "DELETE",
+            }),
+            invalidatesTags: ['Favorite'],
         }),
         postNewDrink: builder.mutation({
             query: (drink) => ({
@@ -64,5 +75,6 @@ export const {
     useGetDrinksByNameQuery,
     usePostFavoriteMutation,
     useGetFavoritesQuery,
+    useDeleteFavoriteMutation,
     usePostNewDrinkMutation
 } = api;

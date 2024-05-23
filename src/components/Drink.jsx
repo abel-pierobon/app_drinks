@@ -6,19 +6,50 @@ import {
     Image,
     Pressable,
 } from "react-native";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Card from "./Card";
 import iconoFavoritos from "../Icons/favorito.png";
-import atras from "../Icons/flecha-hacia-atras.png"
+import atras from "../Icons/flecha-hacia-atras.png";
 import { colors } from "../constants/colors";
 import { usePostFavoriteMutation } from "../services/services";
 import { useSelector } from "react-redux";
+import { useGetFavoritesQuery } from "../services/services";
+
 const Drink = ({ drink, goBack }) => {
-    const [triggerPostFavorite,result]= usePostFavoriteMutation()
-    const {user}=useSelector(state=>state.auth.value)
-    const addFavorite = () => {
-        triggerPostFavorite([drink,user])
-    }
+    const [triggerPostFavorite, result] = usePostFavoriteMutation();
+    const { user } = useSelector(state => state.auth.value);
+    const { data, isSuccess } = useGetFavoritesQuery(user);
+    const [favoritesFiltered, setFavoritesFiltered] = useState([]);
+    const [isFavorite, setIsFavorite] = useState(false);
+    const [inFavoritos, setInFavoritos] = useState(false);
+
+    useEffect(() => {
+        if (isSuccess) {
+            const responseTransformed = Object.values(data);
+            const favoritesFiltered = responseTransformed.filter(
+                (favorite) => favorite[1] === user
+            );
+            setFavoritesFiltered(favoritesFiltered);
+        }
+    }, [data, isSuccess, user]);
+
+    useEffect(() => {
+        const favoriteIds = favoritesFiltered.map(favorite => favorite[0].id);
+        if (favoriteIds.includes(drink.id)) {
+            setInFavoritos(true);
+        } else {
+            setInFavoritos(false);
+        }
+    }, [favoritesFiltered, drink.id]);
+
+    const addFavorite = async () => {
+        await triggerPostFavorite([drink, user]);
+        setIsFavorite(`${drink.nombre} agregado a favoritos`);
+        setTimeout(() => {
+            setIsFavorite(false);
+        }, 2000);
+    };
+
     return (
         <Card style={styles.container}>
             <View style={styles.iconos}>
@@ -28,14 +59,18 @@ const Drink = ({ drink, goBack }) => {
                         style={{ width: 36, height: 36 }}
                     />
                 </Pressable>
-                <Pressable onPress={() => {addFavorite()}}>
-                    <Image
-                        source={iconoFavoritos}
-                        style={{ width: 36, height: 36 }}
-                    />
-                </Pressable>
+                {!inFavoritos && (
+                    <Pressable onPress={addFavorite}>
+                        <Image
+                            source={iconoFavoritos}
+                            style={{ width: 36, height: 36 }}
+                        />
+                    </Pressable>
+                )}
             </View>
-
+            {isFavorite && (
+                <Text style={styles.isFavorite}>{isFavorite}</Text>
+            )}
             <Image source={{ uri: drink.imagen }} style={styles.imagen} />
             <View style={{ padding: 10 }}>
                 <Text style={styles.titulo}>Nombre de bebida: </Text>
@@ -50,16 +85,9 @@ const Drink = ({ drink, goBack }) => {
                 <Text style={styles.titulo}>
                     Instrucciones de preparación:{" "}
                 </Text>
-                <Text style={styles.instrucciones}>{drink.instrucciones ?drink.instrucciones:drink.instruccionesIngles}</Text>
-                {/* <Likes /> */}
-                {/* <Pressable 
-                onPress={() => dispatch(increment())}
-                style={{ justifyContent: "flex-end", alignItems: "flex-end" }}>
-                    <Image
-                        source={like}
-                        style={{ width: 36, height: 36 }}
-                    />
-                </Pressable> */}
+                <Text style={styles.instrucciones}>
+                    {drink.instrucciones ? drink.instrucciones : drink.instruccionesIngles}
+                </Text>
             </View>
         </Card>
     );
@@ -99,5 +127,10 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         width: "100%",
         marginTop: 10,
+    },
+    isFavorite: {
+        fontSize: 15,
+        fontWeight: "bold",
+        color: "red",
     },
 });

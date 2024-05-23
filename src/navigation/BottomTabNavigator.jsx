@@ -23,7 +23,6 @@ const BottomTabNavigator = () => {
                 const response = await sessionesIniciadas();
                 if (response.rows._array.length) {
                     const user = response.rows._array[0];
-                    console.log("user", user)
                     dispatch(setUser({
                         email: user.email,
                         idToken: user.idToken,
