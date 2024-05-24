@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View, Image } from "react-native";
+import { Pressable, StyleSheet, Text, View, Image, Platform } from "react-native";
 import { useSelector } from "react-redux";
 import { colors } from "../constants/colors";
 import { useDispatch } from "react-redux";
@@ -12,8 +12,10 @@ const UserLogIn = ({ navigation, route }) => {
 
     const logOf = async() => {
         try {
-            const response= await truncateSessionsTable()
-            dispatch(clearUser());
+            if (Platform.OS !== "web") {
+                await truncateSessionsTable()
+                dispatch(clearUser());
+            }
         } catch (error) {
         }
     };
