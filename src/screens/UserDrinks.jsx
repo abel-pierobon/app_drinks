@@ -1,20 +1,23 @@
-import { StyleSheet, Text, View, Image, FlatList } from "react-native";
+import { StyleSheet, Text, View, Image, FlatList, Pressable } from "react-native";
 import { useGetNewDrinksQuery } from "../services/services";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Recets from "../components/Recets";
+import { colors } from "../constants/colors";
 
-const UserDrinks = ({navigator}) => {
-    const {user}=useSelector(state=>state.auth.value.user)
-    const {data,isSuccess}=useGetNewDrinksQuery();
-    const [drinksFiltered,setDrinksFiltered]=useState([])
-    useEffect(()=>{
-        if(isSuccess){
-            const responseTransformed=Object.values(data)
-            const drinksFiltered=responseTransformed.filter(drink=>data.user===user)
-            setDrinksFiltered(drinksFiltered)
+const UserDrinks = ({ navigation }) => {
+    const { user } = useSelector((state) => state.auth.value);
+    const { data, isSuccess } = useGetNewDrinksQuery();
+    const [drinksFiltered, setDrinksFiltered] = useState([]);
+    useEffect(() => {
+        if (isSuccess) {
+            const responseTransformed = Object.values(data);
+            const drinksFiltered = responseTransformed.filter(
+                (drink) => drink.user === user
+            );
+            setDrinksFiltered(drinksFiltered);
         }
-    },[data,isSuccess,user]);
+    }, [data, isSuccess, user]);
     return (
         <View style={styles.container}>
             <Image
@@ -24,13 +27,25 @@ const UserDrinks = ({navigator}) => {
                 }}
                 resizeMode="cover"
             />
-            {drinksFiltered.length>0 ? (
-                <FlatList 
-                data={drinksFiltered}
-                renderItem={({item})=><Recets drink={item}/>}
-                keyExtractor={(item,index)=>index.toString()}
-                horizontal={true}/>
-            ): <Text>Todavia cargaste recetas de bebidas</Text>}
+            {drinksFiltered.length > 0 ? (
+                <FlatList
+                    data={drinksFiltered}
+                    renderItem={({ item }) => <Recets drink={item} />}
+                    keyExtractor={(item, index) => index.toString()}
+                    horizontal={true}
+                />
+            ) : (
+                <View style={styles.nodrink}>
+                    <Text style={{...styles.text,fontSize:25}}>
+                        Todavia cargaste tus tragos 
+                    </Text>
+                    <Pressable onPress={() => navigation.navigate("AddDrink")}>
+                        <Text style={{...styles.text,fontFamily:"serif",textDecorationLine:"underline"}}>
+                            ingresa aqui para comenzar
+                        </Text>
+                    </Pressable>
+                </View>
+            )}
         </View>
     );
 };
@@ -45,5 +60,21 @@ const styles = StyleSheet.create({
         position: "absolute",
         zIndex: -1,
         opacity: 0.95,
+    },
+    text: {
+        fontSize: 20,
+        fontWeight: "500",
+    },
+    nodrink: {
+        justifyContent: "center",
+        backgroundColor: colors.color2,
+        width: "80%",
+        textAlign: "center",
+        marginHorizontal: "10%",
+        marginTop: 25,
+        borderRadius: 10,
+        borderWidth: 1,
+        opacity: 0.95,
+        padding: 5,
     },
 });

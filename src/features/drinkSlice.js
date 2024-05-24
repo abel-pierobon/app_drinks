@@ -6,6 +6,7 @@ export const drinkSlice= createSlice({
         value: {
             categorySelected:"",
             itemIdSelected:"",
+            userId:"",
         }
     },
     reducers: {
@@ -14,8 +15,11 @@ export const drinkSlice= createSlice({
         },
         setItemIdSelected: (state, {payload}) => {
             state.value.itemIdSelected = payload
+        },
+        setDrinkId: (state, {payload}) => {
+            state.value.drinkId = payload
         }
     }
 })
-export const { setCategorySelected, setItemIdSelected } = drinkSlice.actions
+export const { setCategorySelected, setItemIdSelected, setDrinkId } = drinkSlice.actions
 export default drinkSlice.reducer

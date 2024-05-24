@@ -9,7 +9,7 @@ import Title from "../../components/Title";
 import { insertSessions } from "../../persistence";
 
 const PrincipalLogin = ({ navigation, route }) => {
-    const [triggerSignIn, result] = useSignInMutation();
+    const [triggerSignIn, result,isSuccess] = useSignInMutation();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errorLogin, setErrorLogin] = useState("");
@@ -37,6 +37,12 @@ const PrincipalLogin = ({ navigation, route }) => {
     }, [result, dispatch]);
 
     const onSubmit = () => {
+        if (!isSuccess) {
+            setErrorLogin("Usuario y/o contraseña inválidos");
+            setTimeout(() => {
+                setErrorLogin("");
+            }, 4000);
+        }
         triggerSignIn({ email, password });
     };
 

@@ -7,7 +7,11 @@ import { useDeleteFavoriteMutation } from "../services/services";
 
 const TopTenFavorites = ({
     favorites,
+    setDrinkId=()=>{},
+    navigation,
+    route
 }) => {
+
     const [triggerDeleteFavorite, response] = useDeleteFavoriteMutation();
     const dispatch = useDispatch();
 

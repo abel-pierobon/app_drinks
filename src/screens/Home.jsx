@@ -6,9 +6,10 @@ import DrinkFilter from "../components/DrinkFilter";
 import { useGetCategoriesQuery, useGetDrinksQuery } from "../services/services";
 import { colors } from "../constants/colors";
 import { useSelector } from "react-redux";
+import ShortList from "../components/ShortList";
 
 const Home = ({ navigation }) => {
-    const {user} =useSelector(state=>state.auth.value)
+    const { user } = useSelector((state) => state.auth.value);
 
     const {
         data: categorias,
@@ -33,18 +34,12 @@ const Home = ({ navigation }) => {
             setBebidasFiltradas(busquedaGeneralFilter);
         }
     }, [busquedaGeneral, bebidas]);
-    // if (isLoadingCategorias || isLoadingBebidas) {
-    //     return <Text>Cargando...</Text>;
-    // }
-
-    // if (errorCategorias || errorBebidas) {
-    //     return <Text>Error: {errorCategorias?.message || errorBebidas?.message}</Text>;
-    // }
     const [flatListKey, setFlatListKey] = useState(0);
     useEffect(() => {
-        setFlatListKey(prevKey => prevKey + 1);
+        setFlatListKey((prevKey) => prevKey + 1);
     }, [busquedaGeneral]);
 
+    const bebidasFiltradasNoUser = bebidas ? bebidas.slice(0, 5) : null;
     return (
         <View style={styles.container}>
             <Image
@@ -54,7 +49,23 @@ const Home = ({ navigation }) => {
                 }}
                 resizeMode="cover"
             />
-            <AllSearch
+
+            {!user ? (
+                <View>
+                <Text style={styles.text}>
+                    Inicia sesión para ver las categorías de bebidas
+                </Text>
+                <FlatList
+                    data={bebidasFiltradasNoUser}
+                    keyExtractor={(item) => item.id.toString()}
+                    renderItem={({ item }) => (
+                        <ShortList drink={item} navigation={navigation} />
+                    )}
+                />
+            </View>
+            ): (
+            <View>
+                <AllSearch
                 busquedaGeneral={busquedaGeneral}
                 setBusquedaGeneral={setBusquedaGeneral}
             />
@@ -81,6 +92,9 @@ const Home = ({ navigation }) => {
                     style={styles.categories}
                 />
             )}
+            </View>
+            )}
+            
             
         </View>
     );
@@ -111,5 +125,11 @@ const styles = StyleSheet.create({
         marginLeft: "10%",
         marginRight: "10%",
         borderRadius: 10,
+    },
+    text: {
+        fontSize: 20,
+        fontWeight: "500",
+        textAlign: "center",
+        backgroundColor: colors.color2,
     },
 });

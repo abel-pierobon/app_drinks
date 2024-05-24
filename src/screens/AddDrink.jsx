@@ -12,8 +12,8 @@ import ImageSelector from "./ImageSelector";
 import { colors } from "../constants/colors";
 import { usePostNewDrinkMutation } from "../services/services";
 import { useSelector } from "react-redux";
-import Card from "../components/Card";
 import ImageSelectorLibrary from "./ImageSelectorLibrary";
+import atras from "../Icons/flecha-hacia-atras.png";
 const AddDrink = ({ navigation }) => {
     const { user, token } = useSelector((state) => state.auth.value);
     const [modalVisible, setModalVisible] = useState(false);
@@ -61,6 +61,9 @@ const AddDrink = ({ navigation }) => {
             />
             <ScrollView contentContainerStyle={styles.scrollViewContent}>
                 <View style={styles.options}>
+                    <Pressable onPress={Cancel}>
+                        <Image source={atras} style={{ width: 30, height: 30 }}/>
+                    </Pressable>
                     <Text style={styles.title}>Agrega tu trago</Text>
                     {image ? (
                         <Image source={{ uri: image }} style={styles.imagen} />

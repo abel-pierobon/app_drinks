@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View, Image, Pressable } from "react-native";
 import * as imagePicker from "expo-image-picker";
-import { colors } from "../constants/colors";
 import camara from "../Icons/camara.png";
 
 const ImageSelector = ({ setImage,navigation,title }) => {
