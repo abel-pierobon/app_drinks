@@ -5,19 +5,23 @@ import { useGetFavoritesQuery } from "../services/services";
 import { colors } from "../constants/colors";
 import TopTenFavorites from "../components/TopTenFavorites";
 
-const FavoritosGral = ({ navigation,route }) => {
+const FavoritosGral = ({ navigation, route }) => {
     const { user } = useSelector((state) => state.auth.value); 
     const { data, error, isLoading, isSuccess } = useGetFavoritesQuery(user);
     const [favoritesFiltered, setFavoritesFiltered] = useState([]);
+    
     useEffect(() => {
         if (isSuccess) {
-            const responseTransformed = Object.values(data);
-                const favoritesFiltered = responseTransformed.filter(
-                    (favorite) => favorite[1] === user
-                )
-                setFavoritesFiltered(favoritesFiltered);
+            const responseTransformed = Object.entries(data).map(([key, value]) => ({
+                key,
+                ...value,
+            }));
+            const favoritesFiltered = responseTransformed.filter(
+                (favorite) => favorite[1] === user
+            );
+            setFavoritesFiltered(favoritesFiltered);
         }
-    }, [data,isSuccess,user]);
+    }, [data, isSuccess, user]);
     return (
         <View style={styles.container}>
             <Image
@@ -31,9 +35,9 @@ const FavoritosGral = ({ navigation,route }) => {
             <FlatList
                 data={favoritesFiltered}
                 renderItem={({ item }) => (
-                    <TopTenFavorites favorites={item} navigation={navigation} route={route} />
+                    <TopTenFavorites favorite={item} navigation={navigation} route={route} />
                 )}
-                keyExtractor={(item, index) => index.toString()}
+                keyExtractor={(item) => item.key}
                 horizontal={true}
             />
         </View>

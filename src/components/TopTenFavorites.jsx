@@ -1,41 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, View, Pressable, Image, FlatList } from "react-native";
 import Card from "./Card";
 import { colors } from "../constants/colors";
-import { useDispatch } from "react-redux";
+import cerrar from "../Icons/cerrar.png";
 import { useDeleteFavoriteMutation } from "../services/services";
 
-const TopTenFavorites = ({
-    favorites,
-    setDrinkId=()=>{},
-    navigation,
-    route
-}) => {
-
+const TopTenFavorites = ({ favorite, navigation, route }) => {
     const [triggerDeleteFavorite, response] = useDeleteFavoriteMutation();
-    const dispatch = useDispatch();
+    const [message, setMessage] = useState("");
 
-    // const deleteFavorite = async (key) => {
-    //     console.log("Deleting favorite with ID:", key);
-    //     try {
-    //         await triggerDeleteFavorite(id);
-    //         console.log("Deleted favorite with ID:", key);
-    //     } catch (error) {
-    //         console.log("Error deleting favorite:", error);
-    //     }
-    // };
+    const deleteFavorite = async (key) => {
+        try {
+            setMessage("Favorito eliminado con éxito");
+            setTimeout(() => {
+                setMessage("");
+            },3000)
+            await triggerDeleteFavorite(key);
+        } catch (error) {
+            console.log("Error deleting favorite:", error);
+        }
+    };
 
     return (
         <Card style={styles.container}>
+            <Pressable
+                style={styles.eliminar}
+                onPress={() => deleteFavorite(favorite.key)}
+            >
+                <Image
+                        source={cerrar}
+                        style={{ width: 30, height: 30 }}
+                    />
+            </Pressable>
             <Image
-                source={{ uri: favorites[0].imagen }}
+                source={{ uri: favorite[0].imagen }}
                 style={styles.imagen}
             />
-            <Text style={styles.tituloPrincipal}>{favorites[0].nombre}</Text>
+            <Text style={styles.tituloPrincipal}>{favorite[0].nombre}</Text>
             <View style={{ padding: 10 }}>
                 <Text style={styles.titulo}>Ingredientes:</Text>
                 <FlatList
-                    data={favorites[0].ingredientes}
+                    data={favorite[0].ingredientes}
                     renderItem={({ item }) => (
                         <Text style={styles.descripcion}>{item}</Text>
                     )}
@@ -44,9 +49,9 @@ const TopTenFavorites = ({
                     Instrucciones de preparación:{" "}
                 </Text>
                 <Text style={styles.instrucciones}>
-                    {favorites[0].instrucciones
-                        ? favorites[0].instrucciones
-                        : favorites[0].instruccionesIngles}
+                    {favorite[0].instrucciones
+                        ? favorite[0].instrucciones
+                        : favorite[0].instruccionesIngles}
                 </Text>
             </View>
         </Card>
@@ -57,18 +62,18 @@ export default TopTenFavorites;
 
 const styles = StyleSheet.create({
     container: {
-        maxWidth: 350,
+        width: 300,
         borderColor: "black",
         borderWidth: 1,
         backgroundColor: colors.color2,
-        marginTop: 25,
+        marginTop: 10,
         opacity: 0.95,
     },
     tituloPrincipal: {
-        fontSize: 30,
+        fontSize: 25,
         fontWeight: "900",
         textAlign: "center",
-        marginTop: 5,
+        marginTop: 1,
         color: "black",
         justifyContent: "center",
     },
@@ -80,18 +85,21 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
     imagen: {
-        width: 300,
-        height: 300,
+        width: 250,
+        height: 250,
         marginHorizontal: 10,
         borderRadius: 10,
     },
     eliminar: {
-        backgroundColor: colors.color2,
-        borderRadius: 10,
-        borderWidth: 1,
-        borderColor: "black",
-        width: 200,
-        fontWeight: "900",
-        marginHorizontal: 10,
+        alignItems: "flex-end",
+        marginRight: 10,
+        marginBottom: 5,
+    },
+    instrucciones: {
+        fontSize: 12,
+        textTransform: "capitalize",
+    },
+    descripcion: {
+        fontSize: 16,
     },
 });

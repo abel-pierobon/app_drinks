@@ -50,16 +50,6 @@ export const api = createApi({
             query: () => `favorites.json`,
             providesTags: ['Favorite'],
         }),
-        getFavoriteDrinkId: builder.query({
-            query: (drimkId) => `Favorites.json?orderBy="key"&equalTo="${drimkId}"`,
-            transformResponse: (response) => {
-                const responseTransformed = Object.values(response);
-                if (responseTransformed.length > 0) {
-                    return responseTransformed[0];
-                }
-                return null;
-            },
-        }),
         deleteFavorite: builder.mutation({
             query: (id) => ({
                 url: `favorites/${id}.json`,
@@ -88,7 +78,6 @@ export const {
     useGetDrinksByNameQuery,
     usePostFavoriteMutation,
     useGetFavoritesQuery,
-    useGetFavoriteDrinkIdQuery,
     useDeleteFavoriteMutation,
     usePostNewDrinkMutation,
     useGetNewDrinksQuery,
