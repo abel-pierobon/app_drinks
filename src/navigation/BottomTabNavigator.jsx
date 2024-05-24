@@ -8,10 +8,12 @@ import LoginNavigator from "./LoginNavigator";
 import iconoBebida from "../Icons/tequila.png";
 import iconoFavoritos from "../Icons/favorito.png";
 import iconoLogin from "../Icons/perfil.png";
+import usuarios from "../Icons/usuarios.png";
 import { useSelector, useDispatch } from "react-redux";
 import UserNavigator from "./UserNavigator";
 import { sessionesIniciadas } from "../persistence/index.js";
 import { setUser } from "../features/authSlice.js";
+import CommunityStackNavigator from "./CommunityStackNavigator.jsx";
 const Tab = createBottomTabNavigator();
 
 const BottomTabNavigator = () => {
@@ -68,6 +70,8 @@ const BottomTabNavigator = () => {
                     },
                 }}
             />
+            
+            
             ):(
                 <Tab.Screen
                 name="login"
@@ -115,6 +119,32 @@ const BottomTabNavigator = () => {
                             >
                                 <Image
                                     source={iconoBebida}
+                                    style={{ width: 36, height: 36 }}
+                                />
+                            </View>
+                        );
+                    },
+                }}
+            />
+            <Tab.Screen
+                name="community"
+                component={CommunityStackNavigator}
+                options={{
+                    tabBarShowLabel: false,
+
+                    tabBarIcon: ({ focused }) => {
+                        return (
+                            <View
+                                style={
+                                    focused
+                                        ? {
+                                            ...styles.icons,
+                                        }
+                                        : { color: "gray" }
+                                }
+                            >
+                                <Image
+                                    source={usuarios}
                                     style={{ width: 36, height: 36 }}
                                 />
                             </View>
