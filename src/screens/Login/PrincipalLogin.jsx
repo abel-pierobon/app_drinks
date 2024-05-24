@@ -1,4 +1,11 @@
-import { StyleSheet, Text, View, Image, Pressable } from "react-native";
+import {
+    StyleSheet,
+    Text,
+    View,
+    Image,
+    Pressable,
+    Platform,
+} from "react-native";
 import InputForm from "../../components/InputForm";
 import SubmitButton from "../../components/SubmitButton";
 import { useSignInMutation } from "../../services/authServices";
@@ -7,35 +14,34 @@ import { useDispatch } from "react-redux";
 import { setUser } from "../../features/authSlice";
 import Title from "../../components/Title";
 import { insertSessions } from "../../persistence";
-
-const PrincipalLogin = ({ navigation, route }) => {
-    const [triggerSignIn, result,isSuccess] = useSignInMutation();
+const PrincipalLogin = ({ navigation }) => {
+    const [triggerSignIn, result, isSuccess] = useSignInMutation();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errorLogin, setErrorLogin] = useState("");
     const dispatch = useDispatch();
     useEffect(() => {
         if (result?.data?.idToken) {
-            insertSessions({
-                localId: result.data.localId,
-                idToken: result.data.idToken,
-                email: result.data.email,
-            })
-            .then((response) => {
-                dispatch(
-                    setUser({
-                        localId: result.data.localId,
-                        email: result.data.email,
-                        idToken: result.data.idToken,
-                    })
-                );
-            })
-            .catch((error) => {
-                // console.log("Error inserting session:", error);
-            });
-        } 
+            (async () => {
+                try {
+                    if (Platform.OS !== "web") {
+                        const response = await insertSessions({
+                            localId: result.data.localId,
+                            idToken: result.data.idToken,
+                            email: result.data.email,
+                        });
+                    }
+                    dispatch(
+                        setUser({
+                            localId: result.data.localId,
+                            email: result.data.email,
+                            idToken: result.data.idToken,
+                        })
+                    );
+                } catch (error) {}
+            })();
+        }
     }, [result, dispatch]);
-
     const onSubmit = () => {
         if (!isSuccess) {
             setErrorLogin("Usuario y/o contraseña inválidos");
@@ -45,7 +51,6 @@ const PrincipalLogin = ({ navigation, route }) => {
         }
         triggerSignIn({ email, password });
     };
-
     return (
         <View style={styles.container}>
             <Image
@@ -90,7 +95,6 @@ const PrincipalLogin = ({ navigation, route }) => {
         </View>
     );
 };
-
 export default PrincipalLogin;
 
 const styles = StyleSheet.create({

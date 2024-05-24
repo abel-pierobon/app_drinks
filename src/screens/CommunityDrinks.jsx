@@ -11,15 +11,16 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { colors } from "../constants/colors";
 import RecetsCommunity from "../components/RecetsCommunity";
-
-const CommunityDrinks = () => {
+const CommunityDrinks = ({ navigation }) => {
     const { user } = useSelector((state) => state.auth.value);
     const { data, isSuccess } = useGetNewDrinksQuery();
     const [drinks, setDrinks] = useState([]);
     useEffect(() => {
         if (isSuccess) {
-            const responseTransformed = Object.values(data);
-            setDrinks(responseTransformed);
+            if (data) {
+                const responseTransformed = Object.values(data);
+                setDrinks(responseTransformed);
+            }
         }
     }, [data, isSuccess]);
     return (
@@ -33,30 +34,42 @@ const CommunityDrinks = () => {
             />
             {!user ? (
                 <View style={styles.nodrink}>
-                <Text style={{ ...styles.text, fontSize: 25 }}>
-                    Todavia cargaste tus tragos
-                </Text>
-                {/* <Pressable onPress={() => navigation.navigate("AddDrink")}>
-                            <Text style={{...styles.text,fontFamily:"serif",textDecorationLine:"underline"}}>
-                                ingresa aqui para comenzar
-                            </Text>
-                        </Pressable> */}
-            </View>
-            ):(
+                    <Text style={{ ...styles.text, fontSize: 25 }}>
+                        Inicia sesión para ver los tragos de la comunidad
+                    </Text>
+                    <Pressable
+                        onPress={() => navigation.navigate("PrincipalLogin")}
+                    >
+                        <Text
+                            style={{
+                                ...styles.text,
+                                fontFamily: "serif",
+                                textDecorationLine: "underline",
+                            }}
+                        >
+                            iniciar sesión
+                        </Text>
+                    </Pressable>
+                </View>
+            ) : (
                 <View>
-                    <Text style={styles.title}> Tragos subidos por la Comunidad</Text>
-                <FlatList
-                    data={drinks ? drinks : null}
-                    renderItem={({ item }) => <RecetsCommunity drink={item} />}
-                    keyExtractor={(item, index) => index.toString()}
-                    horizontal={true}
-                />
+                    <Text style={styles.title}>
+                        {" "}
+                        Tragos subidos por la Comunidad
+                    </Text>
+                    <FlatList
+                        data={drinks ? drinks : null}
+                        renderItem={({ item }) => (
+                            <RecetsCommunity drink={item} />
+                        )}
+                        keyExtractor={(item, index) => index.toString()}
+                        horizontal={true}
+                    />
                 </View>
             )}
         </View>
     );
 };
-
 export default CommunityDrinks;
 
 const styles = StyleSheet.create({
@@ -73,15 +86,15 @@ const styles = StyleSheet.create({
     title: {
         fontWeight: "bold",
         fontSize: 25,
-        fontFamily:"serif",
+        fontFamily: "serif",
         textAlign: "center",
         backgroundColor: colors.color2,
         width: "100%",
-
     },
     text: {
         fontSize: 20,
         fontWeight: "500",
+        textAlign: "center",
     },
     nodrink: {
         justifyContent: "center",

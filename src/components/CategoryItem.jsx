@@ -1,30 +1,25 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { colors } from "../constants/colors";
 import Card from "./Card";
 import { useDispatch, useSelector } from "react-redux";
 import { setCategorySelected } from "../features/drinkSlice";
-
 const CategoryItem = ({ category, navigation }) => {
-    const dispatch =useDispatch()
+    const dispatch = useDispatch();
 
     const handleNavigate = () => {
-        dispatch(setCategorySelected(category))
+        dispatch(setCategorySelected(category));
         navigation.navigate("ItemListCategories", {
             category: category,
-        })
-    }
+        });
+    };
     return (
         <Card style={styles.container}>
-            <Pressable
-                onPress={handleNavigate}
-            >
+            <Pressable onPress={handleNavigate}>
                 <Text style={styles.title}>{category}</Text>
             </Pressable>
         </Card>
     );
 };
-
 export default CategoryItem;
 
 const styles = StyleSheet.create({
@@ -34,12 +29,10 @@ const styles = StyleSheet.create({
         marginTop: 10,
         borderColor: "black",
         borderBottomWidth: 2,
-        // backgroundColor: colors.color5,
     },
     title: {
         fontSize: 20,
         fontWeight: "900",
-        
-        color: "black"
+        color: "black",
     },
 });

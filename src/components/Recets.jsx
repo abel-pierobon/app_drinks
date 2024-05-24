@@ -1,12 +1,31 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, Pressable } from "react-native";
 import React from "react";
 import Card from "./Card";
 import { colors } from "../constants/colors";
+import cerrar from "../Icons/cerrar.png";
+import { useDeleteNewDrinkMutation } from "../services/services";
 
 const Recets = ({ drink }) => {
+    const [triggerDeleteNewDrink,response]=useDeleteNewDrinkMutation()
+    
+    const deleteNewDrink = async (key) => {
+        try {
+            await triggerDeleteNewDrink(key)
+        } catch (error) {
+        }
+    };
     return (
         <View style={styles.container}>
             <Card style={styles.card}>
+            <Pressable
+                style={styles.eliminar}
+                onPress={() => deleteNewDrink(drink.key)}
+            >
+                <Image
+                        source={cerrar}
+                        style={{ width: 30, height: 30 }}
+                    />
+            </Pressable>
                 <Image source={{ uri: drink.image }} style={styles.imagen} />
                 <Text style={{ fontWeight: "bold", fontSize: 25, margin: 10 }}>
                     {drink.nombre}
@@ -52,7 +71,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         backgroundColor: colors.color2,
         width: "100%",
-        textAlign: "start",
+        textAlign: "left",
     },
     text: {
         color: "black",

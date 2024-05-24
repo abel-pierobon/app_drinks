@@ -63,10 +63,18 @@ export const api = createApi({
                 method: "POST",
                 body: drink,
             }),
+            invalidatesTags: ['NewDrink'],
         }),
         getNewDrinks: builder.query({
             query: () => `newDrinks.json`,
             providesTags: ['NewDrink'],
+        }),
+        deleteNewDrink: builder.mutation({
+            query: (id) => ({
+                url: `newDrinks/${id}.json`,
+                method: "DELETE",
+            }),
+            invalidatesTags: ['NewDrink'],
         }),
     }),
 });
@@ -81,4 +89,5 @@ export const {
     useDeleteFavoriteMutation,
     usePostNewDrinkMutation,
     useGetNewDrinksQuery,
+    useDeleteNewDrinkMutation,
 } = api;

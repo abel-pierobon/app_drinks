@@ -19,7 +19,6 @@ const RecetsCommunity = ({ drink }) => {
         </View>
     );
 };
-
 export default RecetsCommunity;
 
 const styles = StyleSheet.create({
@@ -37,7 +36,7 @@ const styles = StyleSheet.create({
     },
     card: {
         width: 250,
-        height: '80%',
+        height: "80%",
         margin: 10,
         alignSelf: "center",
         borderRadius: 10,
@@ -50,7 +49,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         backgroundColor: colors.color2,
         width: "100%",
-        textAlign: "start",
+        textAlign: "left",
     },
     text: {
         color: "black",

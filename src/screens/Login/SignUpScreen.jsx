@@ -5,9 +5,8 @@ import { useSignUpMutation } from "../../services/authServices";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../features/authSlice";
-import { useSelector } from "react-redux";
 import { signupSchema } from "../../validations/authSchema";
-import {expressions} from "../../validations/expressions"
+import Title from "../../components/Title";
 const SignUpScreen = ({ navigation, route, goBack }) => {
     const [email, setEmail] = useState("");
     const [errorEmail, setErrorEmail] = useState("");
@@ -32,17 +31,21 @@ const SignUpScreen = ({ navigation, route, goBack }) => {
 
     const onSubmit = () => {
         try {
-            const validation = signupSchema.validateSync({ email, password, confirmPassword });
+            const validation = signupSchema.validateSync({
+                email,
+                password,
+                confirmPassword,
+            });
             triggerSignup({ email, password, returnSecureToken: true });
         } catch (err) {
             switch (err.path) {
-                case 'email':
+                case "email":
                     setErrorEmail(err.message);
                     break;
-                case 'password':
+                case "password":
                     setErrorPassword(err.message);
                     break;
-                case 'confirmPassword':
+                case "confirmPassword":
                     setErrorConfirmPassword(err.message);
                     break;
                 default:
@@ -65,7 +68,7 @@ const SignUpScreen = ({ navigation, route, goBack }) => {
                 }}
                 resizeMode="cover"
             />
-            <Text>SignUpScreen</Text>
+            <Title />
             <View style={styles.login}>
                 <InputForm
                     label="Email"
@@ -86,7 +89,7 @@ const SignUpScreen = ({ navigation, route, goBack }) => {
                 />
 
                 <SubmitButton onPress={onSubmit} title="Crear cuenta" />
-                
+
                 <Pressable style={styles.linkRegistro}>
                     <Text
                         onPress={() => navigation.goBack()}

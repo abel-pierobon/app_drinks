@@ -1,22 +1,16 @@
 import { Pressable, StyleSheet, Text, View, Image } from "react-native";
-import { useSelector } from "react-redux";
 import { colors } from "../constants/colors";
 import { useDispatch } from "react-redux";
 import { clearUser } from "../features/authSlice";
 import Title from "../components/Title";
 import { truncateSessionsTable } from "../persistence";
-const UserLogIn = ({ navigation, route }) => {
-    const { user } = useSelector((state) => state.auth.value);
-
+const UserLogIn = ({ navigation }) => {
     const dispatch = useDispatch();
-
-    const logOf = async() => {
+    const logOf = async () => {
         try {
-            const response= await truncateSessionsTable()
+            const response = await truncateSessionsTable();
             dispatch(clearUser());
-        } catch (error) {
-            console.log('error cerrar sesion',error)
-        }
+        } catch (error) {}
     };
 
     return (
@@ -28,41 +22,27 @@ const UserLogIn = ({ navigation, route }) => {
                 }}
                 resizeMode="cover"
             />
-            
-            <View
-                style={styles.options}
-            >
-            <Title />
-            <View style={styles.greting}>
-                <Text style={{ fontWeight: "bold", fontSize: 25, margin: 10 }}>
-                    Bienvenido
-                </Text>
-            </View>
+
+            <View style={styles.options}>
+                <Title />
+                <View style={styles.greting}>
+                    <Text
+                        style={{ fontWeight: "bold", fontSize: 25, margin: 10 }}
+                    >
+                        Bienvenido
+                    </Text>
+                </View>
                 <Pressable
                     onPress={() => navigation.navigate("drinks")}
-                    hitSlop={10}>
-                        
-                    <Text
-                        style={styles.button}
-                    >
-                        Ver categorías
-                    </Text>
+                    hitSlop={10}
+                >
+                    <Text style={styles.button}>Ver categorías</Text>
                 </Pressable>
-                <Pressable
-                onPress={() => navigation.navigate("AddDrink")}>
-                    <Text
-                        style={styles.button}
-                    >
-                        Agregar receta
-                    </Text>
+                <Pressable onPress={() => navigation.navigate("AddDrink")}>
+                    <Text style={styles.button}>Agregar receta</Text>
                 </Pressable>
-                <Pressable
-                onPress={() => navigation.navigate("UserDrinks")}>
-                    <Text
-                        style={styles.button}
-                        >
-                        Tus recetas
-                    </Text>
+                <Pressable onPress={() => navigation.navigate("UserDrinks")}>
+                    <Text style={styles.button}>Tus recetas</Text>
                 </Pressable>
                 <Pressable>
                     <Text style={styles.button} onPress={logOf}>
@@ -73,7 +53,6 @@ const UserLogIn = ({ navigation, route }) => {
         </View>
     );
 };
-
 export default UserLogIn;
 
 const styles = StyleSheet.create({
@@ -90,11 +69,10 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         padding: 10,
         borderRadius: 10,
-        width:"90%",
+        width: "90%",
         opacity: 0.9,
     },
     greting: {
-        // flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
         padding: 2,

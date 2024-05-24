@@ -5,22 +5,21 @@ import Header from "../components/Header";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { colors } from "../constants/colors";
 
-
 const Stack = createNativeStackNavigator();
 const FavoritesNavigation = () => {
     return (
-        <View style={{ flex: 1, justifyContent: "center",backgroundColor: colors.color1 }}>
+        <View
+            style={{
+                flex: 1,
+                justifyContent: "center",
+                backgroundColor: colors.color1,
+            }}
+        >
             <Stack.Navigator
                 initialRouteName="FavoritosGral"
                 screenOptions={({ route }) => ({
                     header: ({ navigation }) => (
-                        <Header
-                            title={
-                                    <Text style={{}}>
-                                        Favoritos
-                                    </Text>
-                            }
-                        />
+                        <Header title={<Text style={{}}>Favoritos</Text>} />
                     ),
                 })}
             >

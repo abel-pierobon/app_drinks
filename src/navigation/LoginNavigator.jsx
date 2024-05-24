@@ -6,21 +6,21 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Header from "../components/Header";
 import { colors } from "../constants/colors";
 
-const Stack = createNativeStackNavigator()
+const Stack = createNativeStackNavigator();
 const LoginNavigator = () => {
     return (
-        <View style={{ flex: 1, justifyContent: "center",backgroundColor: colors.color1 }}>
+        <View
+            style={{
+                flex: 1,
+                justifyContent: "center",
+                backgroundColor: colors.color1,
+            }}
+        >
             <Stack.Navigator
                 initialRouteName="PrincipalLogin"
                 screenOptions={({ route }) => ({
                     header: ({ navigation }) => (
-                        <Header
-                            title={
-                                    <Text style={{}}>
-                                        Login
-                                    </Text>
-                            }
-                        />
+                        <Header title={<Text style={{}}>Login</Text>} />
                     ),
                 })}
             >
@@ -28,10 +28,7 @@ const LoginNavigator = () => {
                     name="PrincipalLogin"
                     component={PrincipalLogin}
                 />
-                <Stack.Screen
-                    name="signUpScreen"
-                    component={SignUpScreen}
-                />
+                <Stack.Screen name="signUpScreen" component={SignUpScreen} />
             </Stack.Navigator>
         </View>
     );

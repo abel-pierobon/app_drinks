@@ -11,12 +11,17 @@ const UserDrinks = ({ navigation }) => {
     const [drinksFiltered, setDrinksFiltered] = useState([]);
     useEffect(() => {
         if (isSuccess) {
-            const responseTransformed = Object.values(data);
-            const drinksFiltered = responseTransformed.filter(
-                (drink) => drink.user === user
-            );
-            setDrinksFiltered(drinksFiltered);
-        }
+            if (data){
+                const responseTransformed = Object.entries(data).map(([key, value]) => ({
+                    key,
+                    ...value,
+                }));
+                const drinksFiltered = responseTransformed.filter(
+                    (drink) => drink.user === user
+                );
+                setDrinksFiltered(drinksFiltered);
+            }
+            }
     }, [data, isSuccess, user]);
     return (
         <View style={styles.container}>
@@ -31,13 +36,13 @@ const UserDrinks = ({ navigation }) => {
                 <FlatList
                     data={drinksFiltered}
                     renderItem={({ item }) => <Recets drink={item} />}
-                    keyExtractor={(item, index) => index.toString()}
+                    keyExtractor={(item) => item.key}
                     horizontal={true}
                 />
             ) : (
                 <View style={styles.nodrink}>
                     <Text style={{...styles.text,fontSize:25}}>
-                        Todavia cargaste tus tragos 
+                        Tu lista de tragos está vacía 
                     </Text>
                     <Pressable onPress={() => navigation.navigate("AddDrink")}>
                         <Text style={{...styles.text,fontFamily:"serif",textDecorationLine:"underline"}}>
@@ -64,6 +69,7 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 20,
         fontWeight: "500",
+        textAlign: "center",
     },
     nodrink: {
         justifyContent: "center",

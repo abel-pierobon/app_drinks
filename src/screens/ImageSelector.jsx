@@ -1,52 +1,43 @@
-import { StyleSheet, Text, View, Image, Pressable } from "react-native";
+import { StyleSheet, View, Image, Pressable } from "react-native";
 import * as imagePicker from "expo-image-picker";
 import camara from "../Icons/camara.png";
 
-const ImageSelector = ({ setImage,navigation,title }) => {
-
+const ImageSelector = ({ setImage, navigation, title }) => {
     const verifyCameraPermission = async () => {
         const { granted } = await imagePicker.requestCameraPermissionsAsync();
         return granted;
     };
-
     const pickImage = async () => {
-
         try {
             const permissionCamera = await verifyCameraPermission();
-        if (permissionCamera) {
-            let result = await imagePicker.launchCameraAsync({
-                mediaTypes: imagePicker.MediaTypeOptions.All,
-                allowsEditing: true,
-                base64: true,
-                aspect: [1, 1],
-                quality: 0.2,
-            });
-
-            if (!result.canceled) {
-                const imagen=  `data:image/jpeg;base64,${result.assets[0].base64}`
-                setImage(imagen);
+            if (permissionCamera) {
+                let result = await imagePicker.launchCameraAsync({
+                    mediaTypes: imagePicker.MediaTypeOptions.All,
+                    allowsEditing: true,
+                    base64: true,
+                    aspect: [1, 1],
+                    quality: 0.2,
+                });
+                if (!result.canceled) {
+                    const imagen = `data:image/jpeg;base64,${result.assets[0].base64}`;
+                    setImage(imagen);
+                }
             }
-        }
-        } catch (error) {
-            console.log(error);
-        }
+        } catch (error) {}
     };
-
     return (
         <View style={styles.container}>
-                <Pressable onPress={pickImage} style={styles.button}>
-                    <Image source={camara} style={{ width: 30, height: 30 }}/>
-                </Pressable>
-        
+            <Pressable onPress={pickImage} style={styles.button}>
+                <Image source={camara} style={{ width: 30, height: 30 }} />
+            </Pressable>
         </View>
     );
 };
-
 export default ImageSelector;
 
 const styles = StyleSheet.create({
     container: {
-        alignItems: "center"
+        alignItems: "center",
     },
     button: {
         padding: 10,

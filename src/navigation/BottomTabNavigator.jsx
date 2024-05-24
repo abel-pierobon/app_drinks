@@ -14,10 +14,10 @@ import UserNavigator from "./UserNavigator";
 import { sessionesIniciadas } from "../persistence/index.js";
 import { setUser } from "../features/authSlice.js";
 import CommunityStackNavigator from "./CommunityStackNavigator.jsx";
-const Tab = createBottomTabNavigator();
 
+const Tab = createBottomTabNavigator();
 const BottomTabNavigator = () => {
-    const {user} =useSelector(state=>state.auth.value)
+    const { user } = useSelector((state) => state.auth.value);
     const dispatch = useDispatch();
     useEffect(() => {
         (async () => {
@@ -25,16 +25,16 @@ const BottomTabNavigator = () => {
                 const response = await sessionesIniciadas();
                 if (response.rows._array.length) {
                     const user = response.rows._array[0];
-                    dispatch(setUser({
-                        email: user.email,
-                        idToken: user.idToken,
-                    }))
+                    dispatch(
+                        setUser({
+                            email: user.email,
+                            idToken: user.idToken,
+                        })
+                    );
                 }
-            } catch (error) {
-                console.log("error en navigator",error)
-            }
+            } catch (error) {}
         })();
-    }, [])
+    }, []);
     return (
         <Tab.Navigator
             screenOptions={{
@@ -42,63 +42,60 @@ const BottomTabNavigator = () => {
                 tabBarStyle: { backgroundColor: colors.color3 },
             }}
         >
-            {user ? 
-            (
+            {user ? (
                 <Tab.Screen
-                name="user"
-                component={UserNavigator}
-                options={{
-                    tabBarShowLabel: false,
+                    name="user"
+                    component={UserNavigator}
+                    options={{
+                        tabBarShowLabel: false,
 
-                    tabBarIcon: ({ focused }) => {
-                        return (
-                            <View
-                                style={
-                                    focused
-                                        ? {
-                                            ...styles.icons,
-                                        }
-                                        : null
-                                }
-                            >
-                                <Image
-                                    source={iconoLogin}
-                                    style={{ width: 36, height: 36 }}
-                                />
-                            </View>
-                        );
-                    },
-                }}
-            />
-            
-            
-            ):(
+                        tabBarIcon: ({ focused }) => {
+                            return (
+                                <View
+                                    style={
+                                        focused
+                                            ? {
+                                                  ...styles.icons,
+                                              }
+                                            : null
+                                    }
+                                >
+                                    <Image
+                                        source={iconoLogin}
+                                        style={{ width: 36, height: 36 }}
+                                    />
+                                </View>
+                            );
+                        },
+                    }}
+                />
+            ) : (
                 <Tab.Screen
-                name="login"
-                component={LoginNavigator}
-                options={{
-                    tabBarShowLabel: false,
+                    name="login"
+                    component={LoginNavigator}
+                    options={{
+                        tabBarShowLabel: false,
 
-                    tabBarIcon: ({ focused }) => {
-                        return (
-                            <View
-                                style={
-                                    focused
-                                        ? {
-                                            ...styles.icons,
-                                        }
-                                        : null
-                                }
-                            >
-                                <Image
-                                    source={iconoLogin}
-                                    style={{ width: 36, height: 36 }}
-                                />
-                            </View>
-                        );
-                    },
-                }}
-            />
+                        tabBarIcon: ({ focused }) => {
+                            return (
+                                <View
+                                    style={
+                                        focused
+                                            ? {
+                                                  ...styles.icons,
+                                              }
+                                            : null
+                                    }
+                                >
+                                    <Image
+                                        source={iconoLogin}
+                                        style={{ width: 36, height: 36 }}
+                                    />
+                                </View>
+                            );
+                        },
+                    }}
+                />
             )}
             <Tab.Screen
                 name="drinks"
@@ -112,8 +109,8 @@ const BottomTabNavigator = () => {
                                 style={
                                     focused
                                         ? {
-                                            ...styles.icons,
-                                        }
+                                              ...styles.icons,
+                                          }
                                         : { color: "gray" }
                                 }
                             >
@@ -131,15 +128,14 @@ const BottomTabNavigator = () => {
                 component={CommunityStackNavigator}
                 options={{
                     tabBarShowLabel: false,
-
                     tabBarIcon: ({ focused }) => {
                         return (
                             <View
                                 style={
                                     focused
                                         ? {
-                                            ...styles.icons,
-                                        }
+                                              ...styles.icons,
+                                          }
                                         : { color: "gray" }
                                 }
                             >
@@ -164,8 +160,8 @@ const BottomTabNavigator = () => {
                                 style={
                                     focused
                                         ? {
-                                            ...styles.icons,
-                                        }
+                                              ...styles.icons,
+                                          }
                                         : { color: "gray" }
                                 }
                             >

@@ -3,7 +3,7 @@ import { FlatList } from "react-native";
 import DrinkItem from "../components/DrinkItem";
 import { useGetDrinksByCategoryQuery } from "../services/services";
 import { colors } from "../constants/colors";
-import iconoAtras from "../Icons/flecha-hacia-atras.png"
+import iconoAtras from "../Icons/flecha-hacia-atras.png";
 
 const ItemListCategories = ({
     setItemIdSelected,
@@ -12,13 +12,8 @@ const ItemListCategories = ({
     navigation,
 }) => {
     const { category: categorySelected } = route.params;
-
-    const {
-        data: bebidasCategories,
-        error: errorBebidas,
-        isLoading: isLoadingBebidas,
-    } = useGetDrinksByCategoryQuery(categorySelected);
-
+    const { data: bebidasCategories } =
+        useGetDrinksByCategoryQuery(categorySelected);
     return (
         <View style={styles.container}>
             <Image
@@ -28,7 +23,10 @@ const ItemListCategories = ({
                 }}
                 resizeMode="cover"
             />
-            <Pressable onPress={() => navigation.navigate("Home")} style={styles.volver}>
+            <Pressable
+                onPress={() => navigation.navigate("Home")}
+                style={styles.volver}
+            >
                 <Image source={iconoAtras} style={{ width: 36, height: 36 }} />
                 <Text style={styles.volverCategorias}>Go back</Text>
             </Pressable>
@@ -45,13 +43,10 @@ const ItemListCategories = ({
                 )}
                 keyExtractor={(item, index) => index.toString()}
                 showsVerticalScrollIndicator={false}
-                // horizontal= {true}
-                // style={{ marginTop: 75, marginBottom: 25 }}
             />
         </View>
     );
 };
-
 export default ItemListCategories;
 
 const styles = StyleSheet.create({
@@ -60,7 +55,6 @@ const styles = StyleSheet.create({
         alignItems: "center",
         width: "100%",
     },
-
     backgroundImage: {
         width: "100%",
         height: "100%",
@@ -68,14 +62,12 @@ const styles = StyleSheet.create({
         zIndex: -1,
         opacity: 0.95,
     },
-
     volver: {
         flexDirection: "row",
         alignItems: "center",
         width: "100%",
-        justifyContent: "center",
+        justifyContent: "left",
         backgroundColor: colors.color2,
-
     },
     volverCategorias: {
         fontSize: 20,

@@ -1,26 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import { StyleSheet, Text, View, Pressable, Image, FlatList } from "react-native";
 import Card from "./Card";
 import { colors } from "../constants/colors";
 import cerrar from "../Icons/cerrar.png";
 import { useDeleteFavoriteMutation } from "../services/services";
-
 const TopTenFavorites = ({ favorite, navigation, route }) => {
     const [triggerDeleteFavorite, response] = useDeleteFavoriteMutation();
-    const [message, setMessage] = useState("");
-
     const deleteFavorite = async (key) => {
         try {
-            setMessage("Favorito eliminado con éxito");
-            setTimeout(() => {
-                setMessage("");
-            },3000)
             await triggerDeleteFavorite(key);
         } catch (error) {
-            console.log("Error deleting favorite:", error);
         }
     };
-
     return (
         <Card style={styles.container}>
             <Pressable
@@ -57,7 +48,6 @@ const TopTenFavorites = ({ favorite, navigation, route }) => {
         </Card>
     );
 };
-
 export default TopTenFavorites;
 
 const styles = StyleSheet.create({

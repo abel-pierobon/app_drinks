@@ -7,7 +7,6 @@ import { useDispatch } from "react-redux";
 import { setItemIdSelected } from "../features/drinkSlice";
 const DrinkItem = ({ drink,navigation }) => {
     const dispatch =useDispatch()
-
     const handleItemSelected = () => {
         {navigation.navigate('ItemSelected',{itemIdSelected:drink.id})}
         dispatch(setItemIdSelected(drink.id))
@@ -21,7 +20,6 @@ const DrinkItem = ({ drink,navigation }) => {
         </Card>
     );
 };
-
 export default DrinkItem;
 
 const styles = StyleSheet.create({

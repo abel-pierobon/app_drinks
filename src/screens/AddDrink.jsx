@@ -21,7 +21,7 @@ const AddDrink = ({ navigation }) => {
     const [instruciones, setInstrucciones] = useState("");
     const [ingredientes, setIngredientes] = useState([]);
     const [image, setImage] = useState(null);
-    const [triggerPostNewDrink, result] = usePostNewDrinkMutation();
+    const [triggerPostNewDrink] = usePostNewDrinkMutation();
 
     const addDrink = () => {
         triggerPostNewDrink({
@@ -37,7 +37,6 @@ const AddDrink = ({ navigation }) => {
         setIngredientes([]);
         setImage(null);
     };
-
     const Cancel = () => {
         navigation.navigate("userLogin");
         setNombre("");
@@ -45,11 +44,6 @@ const AddDrink = ({ navigation }) => {
         setIngredientes([]);
         setImage(null);
     };
-
-    const handleModal = () => {
-        setModalVisible(!modalVisible);
-    };
-
     return (
         <View style={styles.container}>
             <Image
@@ -62,7 +56,10 @@ const AddDrink = ({ navigation }) => {
             <ScrollView contentContainerStyle={styles.scrollViewContent}>
                 <View style={styles.options}>
                     <Pressable onPress={Cancel}>
-                        <Image source={atras} style={{ width: 30, height: 30 }}/>
+                        <Image
+                            source={atras}
+                            style={{ width: 30, height: 30 }}
+                        />
                     </Pressable>
                     <Text style={styles.title}>Agrega tu trago</Text>
                     {image ? (
@@ -73,7 +70,6 @@ const AddDrink = ({ navigation }) => {
                         style={styles.form}
                         onchange={setNombre}
                     />
-
                     <InputForm
                         label="Ingredientes"
                         style={styles.form}
@@ -105,7 +101,10 @@ const AddDrink = ({ navigation }) => {
                                 title="Subir imagen"
                             />
                         </View>
-                        {image && nombre.length > 0 && instruciones.length > 0 && ingredientes.length > 0 ? (
+                        {image &&
+                        nombre.length > 0 &&
+                        instruciones.length > 0 &&
+                        ingredientes.length > 0 ? (
                             <View
                                 style={{
                                     flexDirection: "row",
@@ -135,7 +134,6 @@ const AddDrink = ({ navigation }) => {
         </View>
     );
 };
-
 export default AddDrink;
 
 const styles = StyleSheet.create({

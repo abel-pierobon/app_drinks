@@ -8,22 +8,25 @@ import Header from "../components/Header";
 const Stack = createNativeStackNavigator();
 const CommunityStackNavigator = () => {
     return (
-        <View style={{ flex: 1, justifyContent: "center",backgroundColor: colors.color1 }}>
+        <View
+            style={{
+                flex: 1,
+                justifyContent: "center",
+                backgroundColor: colors.color1,
+            }}
+        >
             <Stack.Navigator
                 initialRouteName="CommunityDrinks"
                 screenOptions={({ route }) => ({
                     header: ({ navigation }) => (
-                        <Header
-                            title={
-                                    <Text style={{}}>
-                                        COMMUNITY
-                                    </Text>
-                            }
-                        />
+                        <Header title={<Text style={{}}>COMMUNITY</Text>} />
                     ),
                 })}
             >
-                <Stack.Screen name="CommunityDrinks" component={CommunityDrinks} />
+                <Stack.Screen
+                    name="CommunityDrinks"
+                    component={CommunityDrinks}
+                />
             </Stack.Navigator>
         </View>
     );

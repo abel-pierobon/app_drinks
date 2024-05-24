@@ -4,37 +4,29 @@ import { SafeAreaView } from "react-native";
 import Navigator from "./src/navigation/Navigator";
 import { Provider } from "react-redux";
 import store from "./src/store";
-import {initSQLiteDB}  from "./src/persistence";
+import { initSQLiteDB } from "./src/persistence";
 
-(async ()=> {
+(async () => {
     try {
-        const response = await initSQLiteDB()
+        if (Platform.OS !== "web"){
+            const response = await initSQLiteDB();
+        }
     } catch (error) {
-        console.log(error)
     }
-})()
+})();
 const App = () => {
     return (
-        <Provider store={store}>
-            <SafeAreaView style={styles.container}>
+        <SafeAreaView style={styles.container}>
+            <Provider store={store}>
                 <Navigator />
-                {/* <StatusBar barStyle="auto" /> */}
-            </SafeAreaView>
-        </Provider>
+            </Provider>
+        </SafeAreaView>
     );
-}
+};
 export default App;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        //descomentar luego y comentar <StatusBar/>
-        marginTop: Platform.OS === "android" ? StatusBar.currentHeight : "auto",
-    },
-    backgroundImage: {
-        width: "100%",
-        height: "100%",
-        position: "absolute",
-        zIndex: -1,
-        opacity: 0.7,
+        marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
     },
 });

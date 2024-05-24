@@ -10,10 +10,9 @@ import UserDrinks from "../screens/UserDrinks";
 import ImageSelector from "../screens/ImageSelector";
 import ImageSelectorLibrary from "../screens/ImageSelectorLibrary";
 
-
-const Stack = createNativeStackNavigator()
+const Stack = createNativeStackNavigator();
 const UserNavigator = () => {
-    const {user} =useSelector(state=>state.auth.value)
+    const { user } = useSelector((state) => state.auth.value);
     const getUserName = (user) => {
         if (user) {
             return user.split("@")[0];
@@ -21,41 +20,35 @@ const UserNavigator = () => {
         return "";
     };
     return (
-        <View style={{ flex: 1, justifyContent: "center",backgroundColor: colors.color1 }}>
+        <View
+            style={{
+                flex: 1,
+                justifyContent: "center",
+                backgroundColor: colors.color1,
+            }}
+        >
             <Stack.Navigator
                 initialRouteName="userLogin"
                 screenOptions={({ route }) => ({
                     header: ({ navigation }) => (
                         <Header
                             title={
-                                    <Text style={{}}>
-                                        Usuario: {getUserName(user)}
-                                    </Text>
+                                <Text style={{}}>
+                                    Usuario: {getUserName(user)}
+                                </Text>
                             }
                         />
                     ),
                 })}
             >
-                <Stack.Screen
-                    name="userLogin"
-                    component={UserLogIn}
-                />
-                <Stack.Screen
-                    name="AddDrink"
-                    component={AddDrink}
-                />
-                <Stack.Screen
-                    name="AddImage"
-                    component={ImageSelector}
-                />
+                <Stack.Screen name="userLogin" component={UserLogIn} />
+                <Stack.Screen name="AddDrink" component={AddDrink} />
+                <Stack.Screen name="AddImage" component={ImageSelector} />
                 <Stack.Screen
                     name="AddImageLibrary"
                     component={ImageSelectorLibrary}
                 />
-                <Stack.Screen
-                    name="UserDrinks"
-                    component={UserDrinks}
-                />
+                <Stack.Screen name="UserDrinks" component={UserDrinks} />
             </Stack.Navigator>
         </View>
     );

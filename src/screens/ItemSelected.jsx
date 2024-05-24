@@ -1,14 +1,11 @@
 import { StyleSheet, Text, View, FlatList, Image } from "react-native";
 import React from "react";
-import bebidas from "../db/bebidas.json";
 import Drink from "../components/Drink";
 import { colors } from "../constants/colors";
 import { useGetDrinksByIdQuery } from "../services/services";
-
 const ItemSelected = ({ setItemIdSelected = () => {}, route, navigation }) => {
     const { itemIdSelected } = route.params;
-    const {data , error, isLoading} = useGetDrinksByIdQuery(itemIdSelected);
-    
+    const { data } = useGetDrinksByIdQuery(itemIdSelected);
     return (
         <View style={styles.container}>
             <Image
@@ -18,21 +15,23 @@ const ItemSelected = ({ setItemIdSelected = () => {}, route, navigation }) => {
                 }}
                 resizeMode="cover"
             />
-            {!data ? <Text>Cargando Receta...</Text> : 
-            (
+            {!data ? (
+                <Text>Cargando Receta...</Text>
+            ) : (
                 <FlatList
-                data={data ? [data] : null}
-                renderItem={({ item }) => (
-                    <Drink drink={item} setItemIdSelected={setItemIdSelected} 
-                    goBack={() => navigation.goBack()}/>
-                )}
-            />
+                    data={data ? [data] : null}
+                    renderItem={({ item }) => (
+                        <Drink
+                            drink={item}
+                            setItemIdSelected={setItemIdSelected}
+                            goBack={() => navigation.goBack()}
+                        />
+                    )}
+                />
             )}
-            
         </View>
     );
 };
-
 export default ItemSelected;
 
 const styles = StyleSheet.create({

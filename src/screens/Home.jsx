@@ -10,20 +10,10 @@ import ShortList from "../components/ShortList";
 
 const Home = ({ navigation }) => {
     const { user } = useSelector((state) => state.auth.value);
-
-    const {
-        data: categorias,
-        error: errorCategorias,
-        isLoading: isLoadingCategorias,
-    } = useGetCategoriesQuery();
-    const {
-        data: bebidas,
-        error: errorBebidas,
-        isLoading: isLoadingBebidas,
-    } = useGetDrinksQuery();
+    const { data: categorias } = useGetCategoriesQuery();
+    const { data: bebidas } = useGetDrinksQuery();
     const [busquedaGeneral, setBusquedaGeneral] = useState("");
     const [bebidasFiltradas, setBebidasFiltradas] = useState([]);
-
     useEffect(() => {
         if (bebidas) {
             const busquedaGeneralFilter = bebidas.filter((item) =>
@@ -38,7 +28,6 @@ const Home = ({ navigation }) => {
     useEffect(() => {
         setFlatListKey((prevKey) => prevKey + 1);
     }, [busquedaGeneral]);
-
     const bebidasFiltradasNoUser = bebidas ? bebidas.slice(0, 5) : null;
     return (
         <View style={styles.container}>
@@ -49,59 +38,57 @@ const Home = ({ navigation }) => {
                 }}
                 resizeMode="cover"
             />
-
             {!user ? (
                 <View>
-                <Text style={styles.text}>
-                    Inicia sesión para ver las categorías de bebidas
-                </Text>
-                <FlatList
-                    data={bebidasFiltradasNoUser}
-                    keyExtractor={(item) => item.id.toString()}
-                    renderItem={({ item }) => (
-                        <ShortList drink={item} navigation={navigation} />
-                    )}
-                />
-            </View>
-            ): (
-            <View>
-                <AllSearch
-                busquedaGeneral={busquedaGeneral}
-                setBusquedaGeneral={setBusquedaGeneral}
-            />
-            {busquedaGeneral ? (
-                <FlatList
-                    key={flatListKey}
-                    data={bebidasFiltradas}
-                    keyExtractor={(item) => item.id.toString()}
-                    renderItem={({ item }) => (
-                        <DrinkFilter drink={item} navigation={navigation} />
-                    )}
-                    numColumns={2}
-                />
+                    <Text style={styles.text}>
+                        Inicia sesión para ver las categorías de bebidas
+                    </Text>
+                    <FlatList
+                        data={bebidasFiltradasNoUser}
+                        keyExtractor={(item) => item.id.toString()}
+                        renderItem={({ item }) => (
+                            <ShortList drink={item} navigation={navigation} />
+                        )}
+                    />
+                </View>
             ) : (
-                <FlatList
-                    data={categorias}
-                    keyExtractor={(item, index) => index.toString()}
-                    renderItem={({ item }) => (
-                        <CategoryItem
-                            navigation={navigation}
-                            category={item}
+                <View>
+                    <AllSearch
+                        busquedaGeneral={busquedaGeneral}
+                        setBusquedaGeneral={setBusquedaGeneral}
+                    />
+                    {busquedaGeneral ? (
+                        <FlatList
+                            key={flatListKey}
+                            data={bebidasFiltradas}
+                            keyExtractor={(item) => item.id.toString()}
+                            renderItem={({ item }) => (
+                                <DrinkFilter
+                                    drink={item}
+                                    navigation={navigation}
+                                />
+                            )}
+                            numColumns={2}
+                        />
+                    ) : (
+                        <FlatList
+                            data={categorias}
+                            keyExtractor={(item, index) => index.toString()}
+                            renderItem={({ item }) => (
+                                <CategoryItem
+                                    navigation={navigation}
+                                    category={item}
+                                />
+                            )}
+                            style={styles.categories}
                         />
                     )}
-                    style={styles.categories}
-                />
+                </View>
             )}
-            </View>
-            )}
-            
-            
         </View>
     );
 };
-
 export default Home;
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,

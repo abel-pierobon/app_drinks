@@ -1,23 +1,14 @@
-import { StyleSheet, Image } from "react-native";
-import React, { useState } from "react";
+import { StyleSheet } from "react-native";
+import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import BottomTabNavigator from "./BottomTabNavigator";
-import { useSelector } from "react-redux";
-import LoginNavigator from "./LoginNavigator";
-
-
 const Navigator = () => {
-
-
-
     return (
-            <NavigationContainer style={styles.container}>
-                {/* {user ? <BottomTabNavigator /> : <LoginNavigator/>} */}
-                <BottomTabNavigator/>
-            </NavigationContainer> 
+        <NavigationContainer style={styles.container}>
+            <BottomTabNavigator />
+        </NavigationContainer>
     );
 };
-
 export default Navigator;
 
 const styles = StyleSheet.create({

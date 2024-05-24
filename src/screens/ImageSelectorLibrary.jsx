@@ -1,53 +1,44 @@
 import { StyleSheet, Text, View, Image, Pressable } from "react-native";
 import * as imagePicker from "expo-image-picker";
-import { colors } from "../constants/colors";
 import carpeta from "../Icons/carpeta.png";
 
-const ImageSelectorLibrary = ({ setImage,navigation,title }) => {
-
+const ImageSelectorLibrary = ({ setImage }) => {
     const verifyPermission = async () => {
-        const { granted } = await imagePicker.requestMediaLibraryPermissionsAsync();
+        const { granted } =
+            await imagePicker.requestMediaLibraryPermissionsAsync();
         return granted;
     };
-
     const pickImage = async () => {
-
         try {
             const permissionLibrary = await verifyPermission();
-        if (permissionLibrary) {
-            let result = await imagePicker.launchImageLibraryAsync({
-                mediaTypes: imagePicker.MediaTypeOptions.All,
-                allowsEditing: true,
-                base64: true,
-                aspect: [1, 1],
-                quality: 0.2,
-            });
-
-            if (!result.canceled) {
-                const imagen=  `data:image/jpeg;base64,${result.assets[0].base64}`
-                setImage(imagen);
+            if (permissionLibrary) {
+                let result = await imagePicker.launchImageLibraryAsync({
+                    mediaTypes: imagePicker.MediaTypeOptions.All,
+                    allowsEditing: true,
+                    base64: true,
+                    aspect: [1, 1],
+                    quality: 0.2,
+                });
+                if (!result.canceled) {
+                    const imagen = `data:image/jpeg;base64,${result.assets[0].base64}`;
+                    setImage(imagen);
+                }
             }
-        }
-        } catch (error) {
-            console.log(error);
-        }
+        } catch (error) {}
     };
-
     return (
         <View style={styles.container}>
-                <Pressable onPress={pickImage} style={styles.button}>
-                <Image source={carpeta} style={{ width: 30, height: 30 }}/>
-                </Pressable>
-        
+            <Pressable onPress={pickImage} style={styles.button}>
+                <Image source={carpeta} style={{ width: 30, height: 30 }} />
+            </Pressable>
         </View>
     );
 };
-
 export default ImageSelectorLibrary;
 
 const styles = StyleSheet.create({
     container: {
-        alignItems: "center"
+        alignItems: "center",
     },
     button: {
         padding: 10,

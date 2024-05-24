@@ -2,8 +2,7 @@ import { StyleSheet, Text, View, Image, FlatList } from "react-native";
 import React from "react";
 import Card from "./Card";
 import { colors } from "../constants/colors";
-
-const ShortList = ({ drink, navigation }) => {
+const ShortList = ({ drink }) => {
     return (
         <Card style={styles.container}>
             <Image source={{ uri: drink.imagen }} style={styles.imagen} />
@@ -21,13 +20,14 @@ const ShortList = ({ drink, navigation }) => {
                     Instrucciones de preparación:{" "}
                 </Text>
                 <Text style={styles.instrucciones}>
-                    {drink.instrucciones ? drink.instrucciones : drink.instruccionesIngles}
+                    {drink.instrucciones
+                        ? drink.instrucciones
+                        : drink.instruccionesIngles}
                 </Text>
             </View>
         </Card>
     );
 };
-
 export default ShortList;
 
 const styles = StyleSheet.create({

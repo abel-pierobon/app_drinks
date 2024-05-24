@@ -15,25 +15,25 @@ import { colors } from "../constants/colors";
 import { usePostFavoriteMutation } from "../services/services";
 import { useSelector } from "react-redux";
 import { useGetFavoritesQuery } from "../services/services";
-
 const Drink = ({ drink, goBack }) => {
-    const [triggerPostFavorite, result] = usePostFavoriteMutation();
+    const [triggerPostFavorite] = usePostFavoriteMutation();
     const { user } = useSelector(state => state.auth.value);
     const { data, isSuccess } = useGetFavoritesQuery(user);
     const [favoritesFiltered, setFavoritesFiltered] = useState([]);
     const [isFavorite, setIsFavorite] = useState(false);
     const [inFavoritos, setInFavoritos] = useState(false);
-
     useEffect(() => {
         if (isSuccess) {
+            if(data){
             const responseTransformed = Object.values(data);
             const favoritesFiltered = responseTransformed.filter(
                 (favorite) => favorite[1] === user
             );
             setFavoritesFiltered(favoritesFiltered);
+            }
+            
         }
     }, [data, isSuccess, user]);
-
     useEffect(() => {
         const favoriteIds = favoritesFiltered.map(favorite => favorite[0].id);
         if (favoriteIds.includes(drink.id)) {
@@ -42,7 +42,6 @@ const Drink = ({ drink, goBack }) => {
             setInFavoritos(false);
         }
     }, [favoritesFiltered, drink.id]);
-
     const addFavorite = async () => {
         await triggerPostFavorite([drink, user]);
         setIsFavorite(`${drink.nombre} agregado a favoritos`);
@@ -50,7 +49,6 @@ const Drink = ({ drink, goBack }) => {
             setIsFavorite(false);
         }, 2000);
     };
-
     return (
         <Card style={styles.container}>
             <View style={styles.iconos}>
@@ -98,7 +96,6 @@ const Drink = ({ drink, goBack }) => {
         </Card>
     );
 };
-
 export default Drink;
 
 const styles = StyleSheet.create({
