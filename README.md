@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Bartender es una aplicación de React Native construida con Expo, diseñada para gestionar,buscar y mostrar los porcesos de preparación de bebidas. La aplicación utiliza varias bibliotecas como React Navigation para la navegación, Redux Toolkit para la gestión del estado y Axios para las llamadas API. También incluye características como selección de imágenes, integración de base de datos SQLite y personalización de la barra de estado.
+Bartender es una aplicación de React Native construida con Expo, diseñada para gestionar,buscar y mostrar los procesos de preparación de bebidas. La aplicación utiliza varias bibliotecas como React Navigation para la navegación, Redux Toolkit para la gestión del estado y Axios para las llamadas API. También incluye características como selección de imágenes, integración de base de datos SQLite y personalización de la barra de estado.
 
 ## Características
 
